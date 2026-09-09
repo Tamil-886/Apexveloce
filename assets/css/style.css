@@ -129,14 +129,16 @@ button {
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: clamp(1rem, 3vw, 1.75rem);
+  padding-right: clamp(1rem, 3vw, 1.75rem);
+  box-sizing: border-box;
 }
 
 .container-fluid {
   width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: clamp(1rem, 3vw, 2rem);
+  padding-right: clamp(1rem, 3vw, 2rem);
+  box-sizing: border-box;
 }
 
 /* ===================================================================
@@ -150,16 +152,18 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4.25rem); font-weight: 800; }
-h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
-h3 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); }
-h4 { font-size: 1.3rem; }
+h1 { font-size: clamp(1.75rem, 5vw, 4.25rem); font-weight: 800; word-break: break-word; }
+h2 { font-size: clamp(1.4rem, 3.5vw, 3rem); word-break: break-word; }
+h3 { font-size: clamp(1.2rem, 2.2vw, 1.85rem); word-break: break-word; }
+h4 { font-size: clamp(1.05rem, 1.8vw, 1.35rem); }
 h5 { font-size: 1.1rem; }
 h6 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; }
 
 p {
   color: var(--text-muted);
   font-size: 1.05rem;
+  max-width: 100%;
+  word-break: break-word;
 }
 
 .text-gradient {
@@ -3080,6 +3084,7 @@ textarea.form-control {
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; width: 100%; }
 
 .mb-1 { margin-bottom: 0.5rem; }
 .mb-2 { margin-bottom: 1rem; }

@@ -223,7 +223,7 @@ img, video, iframe, canvas, svg {
    =================================================================== */
 @media (max-width: 992px) {
   :root {
-    --header-height: 72px;
+    --header-height: 70px;
   }
 
   /* Switch Desktop Nav to Mobile Drawer */
@@ -240,12 +240,66 @@ img, video, iframe, canvas, svg {
     justify-content: center;
   }
 
-  .hero-content {
+  /* Header Brand Logo & Actions Alignment */
+  .site-header .brand-logo .logo-text .subtitle {
+    display: none !important;
+  }
+
+  .site-header .header-actions .dir-toggle-btn {
+    display: none !important;
+  }
+
+  .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .theme-toggle-btn,
+  .cart-toggle-btn,
+  .mobile-toggle-btn {
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 38px !important;
+    font-size: 0.95rem !important;
+    border-radius: var(--radius-full) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hero-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
     text-align: center;
+    gap: 2.5rem !important;
+    width: 100% !important;
+  }
+
+  .hero-content {
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 720px !important;
+    width: 100% !important;
   }
 
   .hero-content .stickers-cluster {
     justify-content: center !important;
+  }
+
+  .hero-actions {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .reveal-left, .reveal-right {
+    transform: translateY(20px) !important;
+  }
+
+  .reveal-left.active, .reveal-right.active {
+    transform: translateY(0) !important;
   }
 
   /* Grid Conversions */
@@ -453,6 +507,23 @@ img, video, iframe, canvas, svg {
 
   .section-header {
     margin-bottom: 2.5rem;
+    text-align: center !important;
+  }
+
+  .hero-content {
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .hero-content .stickers-cluster {
+    justify-content: center !important;
+  }
+
+  .hero-actions {
+    justify-content: center !important;
+    width: 100% !important;
   }
 
   /* Typography Overrides */
@@ -469,6 +540,7 @@ img, video, iframe, canvas, svg {
     font-size: clamp(1.4rem, 5.2vw, 1.95rem) !important;
     word-break: break-word !important;
     overflow-wrap: break-word !important;
+    text-align: center !important;
   }
 
   p, .hero-desc, .hero-content p {
@@ -476,9 +548,18 @@ img, video, iframe, canvas, svg {
     line-height: 1.6 !important;
     max-width: 100% !important;
     word-break: break-word !important;
+    text-align: center !important;
   }
 
   /* Grid Layouts to Single or Balanced Columns */
+  .hero-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 2rem !important;
+    width: 100% !important;
+  }
+
   .grid-2, .grid-3, .grid-4 {
     grid-template-columns: 1fr !important;
     gap: 1.25rem;
@@ -831,6 +912,14 @@ img, video, iframe, canvas, svg {
     padding: 0 0.65rem !important;
     min-width: 34px !important;
     height: 34px !important;
+  }
+
+  .hero-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 1.5rem !important;
+    width: 100% !important;
   }
 
   /* Stickers Cluster */
