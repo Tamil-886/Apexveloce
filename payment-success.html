@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>Payment & Reservation Confirmed | APEX VELOCE Bespoke Motorstudio</title>
+  <meta name="description" content="Your Apex Veloce bespoke vehicle customization reservation has been confirmed. View your cleanroom build slot and order receipt.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/light-mode.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    @media print {
+      .site-header, .site-footer, .no-print {
+        display: none !important;
+      }
+      .success-page-card {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+    }
+  </style>
+</head>
+<body class="dark-mode">
+
+  <!-- ==================== SITE HEADER ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+        </a>
+
+        <div class="header-actions">
+          <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Theme"><i class="fa-solid fa-sun"></i></button>
+          <button class="dir-toggle-btn" aria-label="Toggle LTR / RTL Direction" title="Switch to RTL (Right-to-Left)"><span class="dir-badge">LTR</span> <i class="fa-solid fa-right-left"></i></button>
+          <a href="index.html" class="btn btn-primary btn-sm" style="font-size:0.85rem;">
+            <i class="fa-solid fa-house"></i> <span>Return Home</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN SUCCESS RECEIPT CARD ==================== -->
+  <main class="section-padding">
+    <div class="container">
+      
+      <div class="success-page-card reveal">
+        
+        <!-- Animated Pulsing Green Success Icon -->
+        <div class="success-check-badge">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
+        <div class="stickers-cluster mb-3">
+          <div class="apex-sticker sticker-emerald float-sticker-1"><i class="fa-solid fa-circle-check"></i> ESCROW SECURED</div>
+          <div class="apex-sticker sticker-gold float-sticker-2"><i class="fa-solid fa-truck-ramp-box"></i> ENCLOSED TRANSPORT</div>
+          <div class="apex-sticker sticker-cyan float-sticker-3"><i class="fa-solid fa-fan"></i> CLEANROOM BAY 04</div>
+        </div>
+        <div class="text-center mb-4">
+          <div class="d-flex justify-center align-center gap-2 mb-2" style="flex-wrap:wrap;">
+            <span class="badge badge-emerald"><i class="fa-solid fa-circle-check"></i> PAYMENT SUCCESSFUL</span>
+            <span class="badge-spec" id="orderStatusBadge"><i class="fa-solid fa-warehouse" style="color:var(--secondary);"></i> CLEANROOM BAY ALLOCATED</span>
+          </div>
+
+          <h2 style="font-size:clamp(1.8rem, 3vw, 2.5rem); margin-bottom:0.4rem;">
+            YOUR BESPOKE BUILD IS <span class="text-gradient">CONFIRMED</span>
+          </h2>
+          
+          <p style="color:var(--text-muted); max-width:600px; margin:0 auto; font-size:0.95rem;">
+            Thank you for trusting Apex Veloce. Your cleanroom bay slot and material allocation are officially reserved.
+          </p>
+        </div>
+
+        <!-- Order Meta Grid Box -->
+        <div class="order-receipt-box">
+          <div class="receipt-grid">
+            <div class="receipt-item">
+              <small>Order Reference</small>
+              <strong id="receiptOrderId" style="color:var(--primary); font-family:var(--font-mono); font-size:1.15rem;">APX-2026-89412</strong>
+            </div>
+            <div class="receipt-item">
+              <small>Transaction Date</small>
+              <strong id="receiptDate">September 8, 2026 • 03:30 PM</strong>
+            </div>
+            <div class="receipt-item">
+              <small>Client Name & Email</small>
+              <strong id="receiptClient">Tamil Vance (tamil@apexveloce.com)</strong>
+            </div>
+            <div class="receipt-item">
+              <small>Vehicle Specification</small>
+              <strong id="receiptVehicle">2024 Porsche 911 GT3 RS</strong>
+            </div>
+            <div class="receipt-item">
+              <small>Payment Method</small>
+              <strong id="receiptMethod">Credit Card (•••• 8921)</strong>
+            </div>
+            <div class="receipt-item">
+              <small>Total Amount Paid</small>
+              <strong id="receiptAmount" style="color:var(--emerald); font-size:1.25rem;">$2,800.00</strong>
+            </div>
+          </div>
+
+          <!-- Services Purchased List -->
+          <h5 style="margin:0 0 1rem 0; font-size:0.95rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">
+            Booked Customization Packages
+          </h5>
+          <div id="receiptItemsList" class="checkout-items-list" style="max-height:none; margin-bottom:0;">
+            <!-- Rendered by script -->
+          </div>
+        </div>
+
+        <!-- 3-Stage Protocol Timeline -->
+        <div class="no-print">
+          <h4 class="text-center mb-3" style="font-size:1.15rem;">What Happens Next?</h4>
+          <div class="protocol-steps">
+            <div class="protocol-step-card">
+              <div class="protocol-step-num">01</div>
+              <h5 style="margin:0 0 0.3rem 0; font-size:0.92rem;">Vehicle Arrival</h5>
+              <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">Drop off vehicle or arrange enclosed transport at scheduled date.</p>
+            </div>
+            <div class="protocol-step-card">
+              <div class="protocol-step-num" style="color:var(--secondary);">02</div>
+              <h5 style="margin:0 0 0.3rem 0; font-size:0.92rem;">100-Point Decon</h5>
+              <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">Clay bar, paint inspection, and panel disassembly in climate bay.</p>
+            </div>
+            <div class="protocol-step-card">
+              <div class="protocol-step-num" style="color:var(--emerald);">03</div>
+              <h5 style="margin:0 0 0.3rem 0; font-size:0.92rem;">Cleanroom Build</h5>
+              <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">Master wrap application, 90°C post-heat, and photo telemetry updates.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action CTA Buttons -->
+        <div class="d-flex justify-center gap-3 no-print" style="flex-wrap:wrap; margin-top:2.5rem;">
+          <button type="button" class="btn btn-secondary" onclick="window.print();">
+            <i class="fa-solid fa-print"></i> <span>Print Build Receipt</span>
+          </button>
+          <a href="gallery.html" class="btn btn-secondary">
+            <i class="fa-solid fa-images"></i> <span>Browse Studio Gallery</span>
+          </a>
+          <a href="index.html" class="btn btn-primary">
+            <span>Return to Home</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== SITE FOOTER / CONCIERGE HUB ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand, Bio & Trust Chips -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo mb-3">
+            <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+          </a>
+          <p>The pinnacle of bespoke vehicle wraps, self-healing paint protection armor, carbon aerodynamic coachwork, and luxury automotive styling executed in ISO-7 cleanroom laboratories.</p>
+          
+          <div class="footer-trust-chips">
+            <span class="footer-trust-chip"><i class="fa-solid fa-certificate"></i> XPEL & 3M Certified</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-fan"></i> ISO-7 Cleanroom</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-shield-heart"></i> 100% Paint-Safe</span>
+          </div>
+
+          <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/18005559827" target="_blank" rel="noopener" class="footer-social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-widget">
+          <h5>Studio Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Flagship Studio</a></li>
+            <li><a href="home-2.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Wrap & Mod Studio</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cleanroom Facility</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 4K Portfolio Gallery</a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pricing & Calculator</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Automotive Journal</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> VIP Consultation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Specialties -->
+        <div class="footer-widget">
+          <h5>Disciplines</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cast Color Change Wraps</a></li>
+            <li><a href="service-details.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> XPEL Paint Protection</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 9H Ceramic Matrix</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pre-Preg Carbon Aero</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Starlight Headliners</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Track PPF Armor</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge & Newsletter -->
+        <div class="footer-widget">
+          <h5>Studio Concierge</h5>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>742 Motor Enclave Blvd,<br>Beverly Hills, CA 90210</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <a href="tel:+18005559827" style="color:inherit; font-weight:700;">+1 (800) 555-WRAP</a>
+              <div>
+                <span class="footer-live-badge"><span class="footer-live-dot"></span> LIVE CONCIERGE ACTIVE</span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:bespoke@apexveloce.com" style="color:inherit;">bespoke@apexveloce.com</a>
+          </div>
+
+          <!-- VIP Newsletter Box -->
+          <div class="footer-newsletter-box">
+            <small>VIP Studio Drops & Finish Alerts</small>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showApexToast) window.showApexToast('Subscribed to VIP Studio Drops!', 'success'); this.reset();">
+              <input type="email" class="footer-newsletter-input" placeholder="Enter your email..." required>
+              <button type="submit" class="footer-newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© <span class="current-year">2026</span> APEX VELOCE BESPOKE MOTORSTUDIO. ALL RIGHTS RESERVED.</span>
+          <span class="badge-spec" style="margin-left:0.75rem; font-size:0.7rem;"><i class="fa-solid fa-lock" style="color:#10B981;"></i> 256-BIT SSL SECURED</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="contact.html">Privacy Policy</a>
+          <a href="contact.html">Terms of Service</a>
+          <a href="pricing.html">Warranty Charter</a>
+          <a href="contact.html">Client Support</a>
+        </div>
+        <button type="button" class="footer-back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+          <i class="fa-solid fa-arrow-up"></i> <span>Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING STICKY CONCIERGE BAR ==================== -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+18005559827" class="sticky-bar-pill">
+      <i class="fa-solid fa-phone" style="color:var(--primary);"></i> <span>+1 (800) 555-WRAP</span>
+    </a>
+    <a href="contact.html" class="sticky-bar-pill sticky-bar-cta">
+      <i class="fa-solid fa-calendar-check"></i> <span>Book Studio Bay</span>
+    </a>
+    <button type="button" class="sticky-bar-cart cart-toggle-btn" aria-label="Open Cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-badge" style="display:none; position:absolute; top:-4px; right:-4px;">0</span>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const RECENT_ORDER_KEY = 'apex_recent_order';
+      let order = null;
+
+      try {
+        order = JSON.parse(localStorage.getItem(RECENT_ORDER_KEY));
+      } catch (e) {
+        console.error('Error loading recent order:', e);
+      }
+
+      // Default mock fallback if opened directly
+      if (!order) {
+        order = {
+          orderId: 'APX-' + new Date().getFullYear() + '-' + Math.floor(10000 + Math.random() * 90000),
+          orderDate: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) + ' • 03:30 PM',
+          customer: { name: 'VIP Motoring Client', email: 'client@apexveloce.com', vehicle: 'Porsche 911 GT3 RS' },
+          payment: { methodLabel: 'Authorized Payment Gateway' },
+          pricing: { total: 2800 },
+          items: [
+            {
+              name: 'Full Color Change Vehicle Wrap',
+              tier: 'Full Wrap Package',
+              price: 2800,
+              quantity: 1,
+              image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=400&q=80'
+            }
+          ]
+        };
+      }
+
+      // Populate DOM elements
+      const idEl = document.querySelector('#receiptOrderId');
+      const dateEl = document.querySelector('#receiptDate');
+      const clientEl = document.querySelector('#receiptClient');
+      const vehicleEl = document.querySelector('#receiptVehicle');
+      const methodEl = document.querySelector('#receiptMethod');
+      const amountEl = document.querySelector('#receiptAmount');
+      const itemsListEl = document.querySelector('#receiptItemsList');
+
+      if (idEl) idEl.innerText = order.orderId || 'APX-2026-VIP';
+      if (dateEl) dateEl.innerText = order.orderDate || new Date().toLocaleString();
+      if (clientEl) clientEl.innerText = `${order.customer.name} (${order.customer.email})`;
+      if (vehicleEl) vehicleEl.innerText = order.customer.vehicle || 'Custom Supercar';
+      if (methodEl) methodEl.innerText = order.payment.methodLabel || 'Paid';
+      if (amountEl) amountEl.innerText = `$${(order.pricing.total || 0).toLocaleString()}`;
+
+      if (itemsListEl && order.items && order.items.length > 0) {
+        itemsListEl.innerHTML = '';
+        order.items.forEach((item) => {
+          const row = document.createElement('div');
+          row.className = 'checkout-item-row';
+          row.innerHTML = `
+            <div class="checkout-item-img">
+              <img src="${item.image}" alt="${item.name}">
+            </div>
+            <div class="checkout-item-info">
+              <h5>${item.name}</h5>
+              <div class="d-flex align-center gap-2">
+                <span class="badge badge-primary" style="font-size:0.65rem; padding:0.15rem 0.4rem;">${item.tier}</span>
+                <span style="font-size:0.8rem; color:var(--text-muted);">Qty: ${item.quantity || 1}</span>
+              </div>
+            </div>
+            <div class="checkout-item-price">$${((item.price || 0) * (item.quantity || 1)).toLocaleString()}</div>
+          `;
+          itemsListEl.appendChild(row);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

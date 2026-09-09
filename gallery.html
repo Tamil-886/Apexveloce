@@ -1,0 +1,1088 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>Masterpiece Gallery | APEX VELOCE Bespoke Automotive Showcase</title>
+  <meta name="description" content="Explore our bespoke portfolio of 10 signature completed supercar transformations, cast vehicle wraps, XPEL self-healing PPF armor, and custom modifications.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/light-mode.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="dark-mode">
+
+  <!-- ==================== SITE HEADER / NAVBAR ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
+            <div class="dropdown-menu">
+              <a href="index.html" class="dropdown-item"><i class="fa-solid fa-gauge-high"></i> Home 1 — Flagship Studio</a>
+              <a href="home-2.html" class="dropdown-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Home 2 — Wrap & Custom Builds</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Theme"><i class="fa-solid fa-sun"></i></button>
+          <button class="dir-toggle-btn" aria-label="Toggle LTR / RTL Direction" title="Switch to RTL (Right-to-Left)"><span class="dir-badge">LTR</span> <i class="fa-solid fa-right-left"></i></button>
+          <button class="cart-toggle-btn" aria-label="View Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" style="display:none;">0</span>
+          </button>
+          <div class="nav-auth-group">
+            <a href="register.html" class="btn btn-primary btn-sm nav-signup-btn">
+              <span>Register</span> <i class="fa-solid fa-user-plus"></i>
+            </a>
+          </div>
+          <button class="mobile-toggle-btn" aria-label="Open Mobile Menu"><i class="fa-solid fa-bars-staggered"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE DRAWER ==================== -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">MOTORSTUDIO</span></div>
+      </a>
+      <button class="drawer-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="drawer-menu">
+      <li><a href="index.html" class="drawer-link"><span>Home 1 — Flagship</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="home-2.html" class="drawer-link"><span>Home 2 — Wrap Studio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="about.html" class="drawer-link"><span>About Studio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="services.html" class="drawer-link"><span>Services Directory</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="service-details.html" class="drawer-link"><span>Service Details</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="gallery.html" class="drawer-link active"><span>Showcase Portfolio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="pricing.html" class="drawer-link"><span>Pricing & Packages</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="blog.html" class="drawer-link"><span>Automotive Journal</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="contact.html" class="drawer-link"><span>Design Consultation</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+    </ul>
+    <div class="drawer-footer drawer-auth-group">
+      <div class="mb-2">
+        <button type="button" class="btn btn-secondary dir-toggle-btn drawer-dir-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem; justify-content:center;">
+          <span class="dir-badge">LTR</span> <span>Switch to RTL</span> <i class="fa-solid fa-right-left"></i>
+        </button>
+      </div>
+      <div class="mb-2">
+        <button type="button" class="btn btn-secondary cart-toggle-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem;">
+          <i class="fa-solid fa-cart-shopping"></i> <span>View Cart</span>
+          <span class="cart-badge" style="display:none; position:static; margin-left:0.4rem;">0</span>
+        </button>
+      </div>
+      <a href="register.html" class="btn btn-primary mb-2"><span>Register VIP</span> <i class="fa-solid fa-user-plus"></i></a>
+      <a href="contact.html" class="btn btn-secondary" style="border-color:var(--primary); color:var(--primary);"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </aside>
+
+  <!-- ==================== GALLERY HERO BANNER ==================== -->
+  <section class="hero-section section-padding" style="position:relative; overflow:hidden; padding-top:4.5rem; padding-bottom:3rem; background: linear-gradient(180deg, rgba(11,13,18,0.72) 0%, rgba(11,13,18,0.94) 100%), url('https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1920&q=80') center center / cover no-repeat; border-bottom:1px solid var(--border-card);">
+    <!-- Subtle Background Ambient Glow -->
+    <div style="position:absolute; top:-100px; left:50%; transform:translateX(-50%); width:600px; height:500px; background:radial-gradient(circle, rgba(255,42,84,0.14) 0%, rgba(0,0,0,0) 70%); pointer-events:none;"></div>
+
+    <div class="container text-center reveal active" style="position:relative; z-index:1;">
+      <div class="stickers-cluster mb-3">
+        <div class="apex-sticker sticker-neon-red float-sticker-1"><i class="fa-solid fa-camera"></i> 4K 60FPS SHOWCASE</div>
+        <div class="apex-sticker sticker-cyan float-sticker-2"><i class="fa-solid fa-car-rear"></i> 10 SIGNATURE BUILDS</div>
+        <div class="apex-sticker sticker-gold float-sticker-3"><i class="fa-solid fa-star"></i> 100% 5-STAR RATED</div>
+        <div class="apex-sticker sticker-emerald float-sticker-1"><i class="fa-solid fa-droplet"></i> CERAMIC INFUSED</div>
+        <div class="apex-sticker sticker-hologram float-sticker-2"><i class="fa-solid fa-gem"></i> BESPOKE EXOTICS</div>
+      </div>
+      <!-- Title-Related Badge -->
+      <div class="d-inline-flex align-center gap-2 mb-3" style="background:rgba(255,42,84,0.12); border:1px solid rgba(255,42,84,0.3); border-radius:var(--radius-full); padding:0.4rem 1.1rem;">
+        <i class="fa-solid fa-award" style="color:var(--primary); font-size:0.85rem;"></i>
+        <span style="color:#FFFFFF; font-size:0.82rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;">10 Bespoke Completed Builds</span>
+      </div>
+
+      <!-- High-Contrast Heading -->
+      <h1 style="max-width:850px; margin:0 auto 1.2rem auto; font-size:clamp(2.2rem, 4.5vw, 3.6rem); font-weight:800; color:#FFFFFF; line-height:1.15; text-shadow:0 4px 20px rgba(0,0,0,0.85);">
+        OUR MASTERPIECE <span style="color:var(--primary); text-shadow:0 0 25px rgba(255,42,84,0.5);">SHOWCASE</span> GALLERY
+      </h1>
+
+      <!-- Subtitle -->
+      <p style="max-width:700px; margin:0 auto; font-size:1.1rem; color:#E2E8F0; line-height:1.65; text-shadow:0 2px 10px rgba(0,0,0,0.7);">
+        Explore 10 signature completed automotive transformations across vehicle wraps, self-healing paint protection armor, carbon aero styling, and luxury interior craftsmanship.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== FILTERABLE SHOWCASE GALLERY ==================== -->
+  <section class="section-padding" style="padding-top:2.5rem; padding-bottom:5rem;">
+    <div class="container">
+      
+      <!-- Controls Bar: Category Filters + Live Search + Counter -->
+      <div class="gallery-controls-bar reveal active">
+        <!-- Filter Buttons with Auto Count Badges -->
+        <div class="gallery-filters" id="galleryFilters" style="margin-bottom:0;">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fa-solid fa-border-all"></i> <span>All Builds</span> <span class="filter-count">10</span>
+          </button>
+          <button class="filter-btn" data-filter="wraps">
+            <i class="fa-solid fa-car-side"></i> <span>🚗 Vehicle Wraps</span> <span class="filter-count">4</span>
+          </button>
+          <button class="filter-btn" data-filter="protection">
+            <i class="fa-solid fa-shield-virus"></i> <span>🛡️ PPF & Ceramic</span> <span class="filter-count">2</span>
+          </button>
+          <button class="filter-btn" data-filter="modification">
+            <i class="fa-solid fa-wrench"></i> <span>🔧 Custom Modification</span> <span class="filter-count">2</span>
+          </button>
+          <button class="filter-btn" data-filter="interior">
+            <i class="fa-solid fa-couch"></i> <span>🏎️ Interior & Flagship</span> <span class="filter-count">2</span>
+          </button>
+        </div>
+
+        <!-- Real-Time Search Input & Results Indicator -->
+        <div class="d-flex align-center gap-3" style="flex-wrap:wrap;">
+          <div class="gallery-search-wrap">
+            <input type="text" id="gallerySearchInput" class="form-control" placeholder="Search model, finish, or PPF...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <span class="gallery-results-count" id="galleryResultsCount">Showing 10 of 10 builds</span>
+        </div>
+      </div>
+
+      <!-- Enhanced 10-Card Showcase Gallery Grid -->
+      <div class="gallery-grid reveal active" id="galleryGrid">
+        <!-- Showcase Project 1: Stealth Black BMW M4 -->
+        <div class="gallery-card gallery-item reveal active" 
+             data-category="wraps" 
+             data-category-name="Vehicle Wrap" 
+             data-title="Stealth Black BMW M4" 
+             data-vehicle="BMW M4 Competition Coupe"
+             data-service="Full Vehicle Wrap, Satin Black"
+             data-desc="Complete body transformation in Avery Satin Nero Black with gloss carbon fiber roof and mirror accents."
+             data-spec-film="Avery Supreme Satin Nero Black"
+             data-spec-coverage="100% Full Exterior + Door Jambs"
+             data-spec-time="5 Business Days"
+             data-spec-warranty="5-Year Studio Warranty"
+             data-completed="%5B%22Avery%20Satin%20Nero%20Cast%20Vinyl%20Wrap%22%2C%22Full%20Door%20Jambs%20%26%20Inner%20Returns%22%2C%22Gloss%20Carbon%20Fiber%20Aero%20Accents%22%2C%225-Year%20Studio%20Warranty%20Protection%22%5D"
+             data-spec="stealth black bmw m4 bmw m4 competition coupe full vehicle wrap, satin black wraps">
+          
+          <!-- Card Media Header with Aspect Ratio & Zoom -->
+          <div class="gallery-media">
+            <span class="badge badge-primary gallery-status-badge">
+              <i class="fa-solid fa-award"></i> FEATURED BUILD
+            </span>
+            <span class="gallery-category-tag">Vehicle Wrap</span>
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80" alt="Stealth Black BMW M4 - BMW M4 Competition Coupe">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> View 4K Dossier</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> BMW M4 Competition Coupe</span>
+              <span class="gallery-service-type">Vehicle Wrap</span>
+            </div>
+
+            <h3 class="gallery-card-title">Stealth Black BMW M4</h3>
+            
+            <div class="gallery-service-pill mb-2">
+              <i class="fa-solid fa-wrench" style="color:var(--primary); font-size:0.75rem;"></i>
+              <span>Full Vehicle Wrap, Satin Black</span>
+            </div>
+
+            <p class="gallery-card-desc">Complete body transformation in Avery Satin Nero Black with gloss carbon fiber roof and mirror accents.</p>
+
+            <!-- Structured Completed Work Checklist -->
+            <div class="gallery-completed-work">
+              <h6><i class="fa-solid fa-list-check"></i> Completed Work:</h6>
+              <ul class="gallery-work-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>Avery Satin Nero Cast Vinyl Wrap</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Full Door Jambs & Inner Returns</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Gloss Carbon Fiber Aero Accents</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>5-Year Studio Warranty Protection</span></li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="gallery-card-actions">
+              <button type="button" class="btn btn-primary btn-sm view-project-btn" aria-label="View Project Dossier">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Project</span>
+              </button>
+              <a href="contact.html?project=Stealth%20Black%20BMW%20M4" class="btn btn-secondary btn-sm" aria-label="Inquire on Build">
+                <span>Inquire Build</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Showcase Project 2: Midnight Blue Audi RS5 -->
+        <div class="gallery-card gallery-item reveal active" 
+             data-category="wraps" 
+             data-category-name="Color Change" 
+             data-title="Midnight Blue Audi RS5" 
+             data-vehicle="Audi RS5 Sportback"
+             data-service="Color Change Wrap, Gloss Metallic Blue"
+             data-desc="Deep gloss midnight metallic blue color change wrap with ceramic top-seal and gloss blackout trim package."
+             data-spec-film="Inozetek Super Gloss Midnight Blue"
+             data-spec-coverage="Full Body + Blackout Trim Pack"
+             data-spec-time="4-5 Days"
+             data-spec-warranty="7-Year Colorfast Warranty"
+             data-completed="%5B%22Inozetek%20Gloss%20Midnight%20Blue%20Wrap%22%2C%22Full%20Chrome%20Delete%20Blackout%20Trim%22%2C%22Gyeon%20Ceramic%20Vinyl%20Top%20Shield%22%2C%227-Year%20UV%20Colorfast%20Protection%22%5D"
+             data-spec="midnight blue audi rs5 audi rs5 sportback color change wrap, gloss metallic blue wraps">
+          
+          <!-- Card Media Header with Aspect Ratio & Zoom -->
+          <div class="gallery-media">
+            <span class="badge badge-cyan gallery-status-badge">
+              <i class="fa-solid fa-award"></i> COMPLETED BUILD
+            </span>
+            <span class="gallery-category-tag">Color Change</span>
+            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=80" alt="Midnight Blue Audi RS5 - Audi RS5 Sportback">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> View 4K Dossier</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> Audi RS5 Sportback</span>
+              <span class="gallery-service-type">Color Change</span>
+            </div>
+
+            <h3 class="gallery-card-title">Midnight Blue Audi RS5</h3>
+            
+            <div class="gallery-service-pill mb-2">
+              <i class="fa-solid fa-wrench" style="color:var(--primary); font-size:0.75rem;"></i>
+              <span>Color Change Wrap, Gloss Metallic Blue</span>
+            </div>
+
+            <p class="gallery-card-desc">Deep gloss midnight metallic blue color change wrap with ceramic top-seal and gloss blackout trim package.</p>
+
+            <!-- Structured Completed Work Checklist -->
+            <div class="gallery-completed-work">
+              <h6><i class="fa-solid fa-list-check"></i> Completed Work:</h6>
+              <ul class="gallery-work-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>Inozetek Gloss Midnight Blue Wrap</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Full Chrome Delete Blackout Trim</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Gyeon Ceramic Vinyl Top Shield</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>7-Year UV Colorfast Protection</span></li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="gallery-card-actions">
+              <button type="button" class="btn btn-primary btn-sm view-project-btn" aria-label="View Project Dossier">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Project</span>
+              </button>
+              <a href="contact.html?project=Midnight%20Blue%20Audi%20RS5" class="btn btn-secondary btn-sm" aria-label="Inquire on Build">
+                <span>Inquire Build</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Showcase Project 3: Performance Red Toyota Supra -->
+        <div class="gallery-card gallery-item reveal active" 
+             data-category="wraps" 
+             data-category-name="Graphic Livery" 
+             data-title="Performance Red Toyota Supra" 
+             data-vehicle="Toyota GR Supra (A90)"
+             data-service="Custom Graphic Wrap"
+             data-desc="High-impact bespoke motorsport racing livery with matte & gloss contrast vinyl stripes and sponsorship die-cuts."
+             data-spec-film="3M IJ180mC-10 Cast Digital Vinyl"
+             data-spec-coverage="Full Motorsport Livery Wrap"
+             data-spec-time="4 Days"
+             data-spec-warranty="5-Year Graphic Durability"
+             data-completed="%5B%22Custom%20Vector%20Livery%20Graphic%20Design%22%2C%223M%20IJ180mC%20Cast%20Digital%20Film%20Print%22%2C%22Satin%20Overlaminate%20UV%20Barrier%22%2C%22Track-Spec%20Precision%20Edge%20Seal%22%5D"
+             data-spec="performance red toyota supra toyota gr supra (a90) custom graphic wrap wraps">
+          
+          <!-- Card Media Header with Aspect Ratio & Zoom -->
+          <div class="gallery-media">
+            <span class="badge badge-primary gallery-status-badge">
+              <i class="fa-solid fa-award"></i> FEATURED BUILD
+            </span>
+            <span class="gallery-category-tag">Graphic Livery</span>
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80" alt="Performance Red Toyota Supra - Toyota GR Supra (A90)">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> View 4K Dossier</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> Toyota GR Supra (A90)</span>
+              <span class="gallery-service-type">Graphic Livery</span>
+            </div>
+
+            <h3 class="gallery-card-title">Performance Red Toyota Supra</h3>
+            
+            <div class="gallery-service-pill mb-2">
+              <i class="fa-solid fa-wrench" style="color:var(--primary); font-size:0.75rem;"></i>
+              <span>Custom Graphic Wrap</span>
+            </div>
+
+            <p class="gallery-card-desc">High-impact bespoke motorsport racing livery with matte & gloss contrast vinyl stripes and sponsorship die-cuts.</p>
+
+            <!-- Structured Completed Work Checklist -->
+            <div class="gallery-completed-work">
+              <h6><i class="fa-solid fa-list-check"></i> Completed Work:</h6>
+              <ul class="gallery-work-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>Custom Vector Livery Graphic Design</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>3M IJ180mC Cast Digital Film Print</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Satin Overlaminate UV Barrier</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Track-Spec Precision Edge Seal</span></li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="gallery-card-actions">
+              <button type="button" class="btn btn-primary btn-sm view-project-btn" aria-label="View Project Dossier">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Project</span>
+              </button>
+              <a href="contact.html?project=Performance%20Red%20Toyota%20Supra" class="btn btn-secondary btn-sm" aria-label="Inquire on Build">
+                <span>Inquire Build</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Showcase Project 4: Gloss Black Porsche 911 -->
+        <div class="gallery-card gallery-item reveal active" 
+             data-category="protection" 
+             data-category-name="XPEL PPF Armor" 
+             data-title="Gloss Black Porsche 911" 
+             data-vehicle="Porsche 911 Carrera GTS"
+             data-service="Paint Protection Film (PPF)"
+             data-desc="Full-body XPEL Ultimate Plus 10-mil self-healing armor with custom rolled edges for undetectable protection."
+             data-spec-film="XPEL Ultimate Plus (10-Mil)"
+             data-spec-coverage="Complete Vehicle Body Armor"
+             data-spec-time="4 Days"
+             data-spec-warranty="10-Year Manufacturer Warranty"
+             data-completed="%5B%22XPEL%20Ultimate%20Plus%2010-Mil%20PPF%22%2C%22100%25%20Wrapped%20%26%20Tucked%20Edges%22%2C%22Self-Healing%20Micro-Scratch%20Shield%22%2C%2210-Year%20Nationwide%20Warranty%22%5D"
+             data-spec="gloss black porsche 911 porsche 911 carrera gts paint protection film (ppf) protection">
+          
+          <!-- Card Media Header with Aspect Ratio & Zoom -->
+          <div class="gallery-media">
+            <span class="badge badge-emerald gallery-status-badge">
+              <i class="fa-solid fa-award"></i> COMPLETED BUILD
+            </span>
+            <span class="gallery-category-tag">XPEL PPF Armor</span>
+            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80" alt="Gloss Black Porsche 911 - Porsche 911 Carrera GTS">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> View 4K Dossier</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> Porsche 911 Carrera GTS</span>
+              <span class="gallery-service-type">XPEL PPF Armor</span>
+            </div>
+
+            <h3 class="gallery-card-title">Gloss Black Porsche 911</h3>
+            
+            <div class="gallery-service-pill mb-2">
+              <i class="fa-solid fa-wrench" style="color:var(--primary); font-size:0.75rem;"></i>
+              <span>Paint Protection Film (PPF)</span>
+            </div>
+
+            <p class="gallery-card-desc">Full-body XPEL Ultimate Plus 10-mil self-healing armor with custom rolled edges for undetectable protection.</p>
+
+            <!-- Structured Completed Work Checklist -->
+            <div class="gallery-completed-work">
+              <h6><i class="fa-solid fa-list-check"></i> Completed Work:</h6>
+              <ul class="gallery-work-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>XPEL Ultimate Plus 10-Mil PPF</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>100% Wrapped & Tucked Edges</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Self-Healing Micro-Scratch Shield</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>10-Year Nationwide Warranty</span></li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="gallery-card-actions">
+              <button type="button" class="btn btn-primary btn-sm view-project-btn" aria-label="View Project Dossier">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Project</span>
+              </button>
+              <a href="contact.html?project=Gloss%20Black%20Porsche%20911" class="btn btn-secondary btn-sm" aria-label="Inquire on Build">
+                <span>Inquire Build</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Showcase Project 5: Luxury Range Rover -->
+        <div class="gallery-card gallery-item reveal active" 
+             data-category="modification" 
+             data-category-name="Custom Mod" 
+             data-title="Luxury Range Rover" 
+             data-vehicle="Range Rover Autobiography"
+             data-service="Complete Custom Modification"
+             data-desc="Bespoke dual-tone satin body styling, 23-inch custom forged alloy wheels, power deployable steps, and shadow exterior pack."
+             data-spec-film="3M 2080 Satin Duo-Tone + Forged Alloys"
+             data-spec-coverage="Exterior Wrap + Wheels + Stance Setup"
+             data-spec-time="6 Days"
+             data-spec-warranty="5-Year Studio Platinum Warranty"
+             data-completed="%5B%22Bespoke%20Two-Tone%20Satin%20Body%20Wrap%22%2C%2223%5C%22%20Custom%20Forged%20Monoblock%20Wheels%22%2C%22Shadow%20Edition%20De-Chrome%20Package%22%2C%22Electronic%20Air%20Suspension%20Calibration%22%5D"
+             data-spec="luxury range rover range rover autobiography complete custom modification modification">
+          
+          <!-- Card Media Header with Aspect Ratio & Zoom -->
+          <div class="gallery-media">
+            <span class="badge badge-gold gallery-status-badge">
+              <i class="fa-solid fa-award"></i> FEATURED BUILD
+            </span>
+            <span class="gallery-category-tag">Custom Mod</span>
+            <img src="https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?auto=format&fit=crop&w=1200&q=80" alt="Luxury Range Rover - Range Rover Autobiography">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> View 4K Dossier</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> Range Rover Autobiography</span>
+              <span class="gallery-service-type">Custom Mod</span>
+            </div>
+
+            <h3 class="gallery-card-title">Luxury Range Rover</h3>
+            
+            <div class="gallery-service-pill mb-2">
+              <i class="fa-solid fa-wrench" style="color:var(--primary); font-size:0.75rem;"></i>
+              <span>Complete Custom Modification</span>
+            </div>
+
+            <p class="gallery-card-desc">Bespoke dual-tone satin body styling, 23-inch custom forged alloy wheels, power deployable steps, and shadow exterior pack.</p>
+
+            <!-- Structured Completed Work Checklist -->
+            <div class="gallery-completed-work">
+              <h6><i class="fa-solid fa-list-check"></i> Completed Work:</h6>
+              <ul class="gallery-work-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>Bespoke Two-Tone Satin Body Wrap</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>23" Custom Forged Monoblock Wheels</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Shadow Edition De-Chrome Package</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Electronic Air Suspension Calibration</span></li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="gallery-card-actions">
+              <button type="button" class="btn btn-primary btn-sm view-project-btn" aria-label="View Project Dossier">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Project</span>
+              </button>
+              <a href="contact.html?project=Luxury%20Range%20Rover" class="btn btn-secondary btn-sm" aria-label="Inquire on Build">
+                <span>Inquire Build</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Showcase Project 6: Sport Edition Ford Mustang -->
+        <div class="gallery-card gallery-item reveal active" 
+             data-category="modification" 
+             data-category-name="Carbon Aero" 
+             data-title="Sport Edition Ford Mustang" 
+             data-vehicle="Ford Mustang GT Fastback"
+             data-service="Body Kit + Spoiler & Aero Upgrades"
+             data-desc="Track-spec wide front splitter, side rocker extensions, carbon rear diffuser, and carbon fiber GT swan-neck wing."
+             data-spec-film="Toray 3K Pre-Preg Dry Carbon Fiber"
+             data-spec-coverage="Front Splitter, Diffuser & GT Wing"
+             data-spec-time="3-4 Days"
+             data-spec-warranty="Lifetime Carbon Structural"
+             data-completed="%5B%22Pre-Preg%20Autoclaved%20Carbon%20Aero%20Kit%22%2C%22GT%20Swan-Neck%20High-Downforce%20Wing%22%2C%22Chassis-Mounted%20Splitter%20Rods%22%2C%22Active%20Valve%20Quad%20Exhaust%20Integration%22%5D"
+             data-spec="sport edition ford mustang ford mustang gt fastback body kit + spoiler & aero upgrades modification">
+          
+          <!-- Card Media Header with Aspect Ratio & Zoom -->
+          <div class="gallery-media">
+            <span class="badge badge-primary gallery-status-badge">
+              <i class="fa-solid fa-award"></i> COMPLETED BUILD
+            </span>
+            <span class="gallery-category-tag">Carbon Aero</span>
+            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1200&q=80" alt="Sport Edition Ford Mustang - Ford Mustang GT Fastback">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> View 4K Dossier</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> Ford Mustang GT Fastback</span>
+              <span class="gallery-service-type">Carbon Aero</span>
+            </div>
+
+            <h3 class="gallery-card-title">Sport Edition Ford Mustang</h3>
+            
+            <div class="gallery-service-pill mb-2">
+              <i class="fa-solid fa-wrench" style="color:var(--primary); font-size:0.75rem;"></i>
+              <span>Body Kit + Spoiler & Aero Upgrades</span>
+            </div>
+
+            <p class="gallery-card-desc">Track-spec wide front splitter, side rocker extensions, carbon rear diffuser, and carbon fiber GT swan-neck wing.</p>
+
+            <!-- Structured Completed Work Checklist -->
+            <div class="gallery-completed-work">
+              <h6><i class="fa-solid fa-list-check"></i> Completed Work:</h6>
+              <ul class="gallery-work-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>Pre-Preg Autoclaved Carbon Aero Kit</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>GT Swan-Neck High-Downforce Wing</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Chassis-Mounted Splitter Rods</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Active Valve Quad Exhaust Integration</span></li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="gallery-card-actions">
+              <button type="button" class="btn btn-primary btn-sm view-project-btn" aria-label="View Project Dossier">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Project</span>
+              </button>
+              <a href="contact.html?project=Sport%20Edition%20Ford%20Mustang" class="btn btn-secondary btn-sm" aria-label="Inquire on Build">
+                <span>Inquire Build</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Showcase Project 7: Premium Mercedes-Benz C-Class -->
+        <div class="gallery-card gallery-item reveal active" 
+             data-category="protection" 
+             data-category-name="9H Ceramic Care" 
+             data-title="Premium Mercedes-Benz C-Class" 
+             data-vehicle="Mercedes-Benz C63 AMG"
+             data-service="Ceramic Coating + Paint Correction"
+             data-desc="3-stage compound and jewel polish eliminating 98% swirl marks, topped with Gyeon 9H dual-layer molecular quartz matrix."
+             data-spec-film="Gyeon Quartz Infinite 9H Ceramic"
+             data-spec-coverage="Paint, Calipers, Glass & Wheels"
+             data-spec-time="2-3 Days"
+             data-spec-warranty="5-Year Certified Ceramic Warranty"
+             data-completed="%5B%223-Stage%20Mirror%20Paint%20Correction%22%2C%22Dual-Layer%209H%20Molecular%20Quartz%20Seal%22%2C%22Wheel%20%26%20Caliper%20Ceramic%20Heat%20Matrix%22%2C%225-Year%20Certified%20Warranty%22%5D"
+             data-spec="premium mercedes-benz c-class mercedes-benz c63 amg ceramic coating + paint correction protection">
+          
+          <!-- Card Media Header with Aspect Ratio & Zoom -->
+          <div class="gallery-media">
+            <span class="badge badge-cyan gallery-status-badge">
+              <i class="fa-solid fa-award"></i> COMPLETED BUILD
+            </span>
+            <span class="gallery-category-tag">9H Ceramic Care</span>
+            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80" alt="Premium Mercedes-Benz C-Class - Mercedes-Benz C63 AMG">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> View 4K Dossier</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> Mercedes-Benz C63 AMG</span>
+              <span class="gallery-service-type">9H Ceramic Care</span>
+            </div>
+
+            <h3 class="gallery-card-title">Premium Mercedes-Benz C-Class</h3>
+            
+            <div class="gallery-service-pill mb-2">
+              <i class="fa-solid fa-wrench" style="color:var(--primary); font-size:0.75rem;"></i>
+              <span>Ceramic Coating + Paint Correction</span>
+            </div>
+
+            <p class="gallery-card-desc">3-stage compound and jewel polish eliminating 98% swirl marks, topped with Gyeon 9H dual-layer molecular quartz matrix.</p>
+
+            <!-- Structured Completed Work Checklist -->
+            <div class="gallery-completed-work">
+              <h6><i class="fa-solid fa-list-check"></i> Completed Work:</h6>
+              <ul class="gallery-work-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>3-Stage Mirror Paint Correction</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Dual-Layer 9H Molecular Quartz Seal</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Wheel & Caliper Ceramic Heat Matrix</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>5-Year Certified Warranty</span></li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="gallery-card-actions">
+              <button type="button" class="btn btn-primary btn-sm view-project-btn" aria-label="View Project Dossier">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Project</span>
+              </button>
+              <a href="contact.html?project=Premium%20Mercedes-Benz%20C-Class" class="btn btn-secondary btn-sm" aria-label="Inquire on Build">
+                <span>Inquire Build</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Showcase Project 8: Custom Lamborghini Huracán -->
+        <div class="gallery-card gallery-item reveal active" 
+             data-category="wraps" 
+             data-category-name="Chrome Wrap" 
+             data-title="Custom Lamborghini Huracán" 
+             data-vehicle="Lamborghini Huracán EVO"
+             data-service="Chrome & Metallic Wrap"
+             data-desc="Liquid chrome mirror vinyl transformation with high-gloss black roof and acid green brake caliper thermal customization."
+             data-spec-film="TeckWrap Super Chrome Mirror Cast"
+             data-spec-coverage="Full Body + Calipers + Gloss Roof"
+             data-spec-time="5 Days"
+             data-spec-warranty="5-Year Studio Warranty"
+             data-completed="%5B%22Liquid%20Silver%20Mirror%20Chrome%20Cast%20Wrap%22%2C%22Gloss%20Obsidian%20Black%20Roof%20%26%20Accents%22%2C%22Acid%20Green%20High-Temp%20Caliper%20Coating%22%2C%22Zero-Blade%20Cleanroom%20Install%22%5D"
+             data-spec="custom lamborghini huracán lamborghini huracán evo chrome & metallic wrap wraps">
+          
+          <!-- Card Media Header with Aspect Ratio & Zoom -->
+          <div class="gallery-media">
+            <span class="badge badge-gold gallery-status-badge">
+              <i class="fa-solid fa-award"></i> FEATURED BUILD
+            </span>
+            <span class="gallery-category-tag">Chrome Wrap</span>
+            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80" alt="Custom Lamborghini Huracán - Lamborghini Huracán EVO">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> View 4K Dossier</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> Lamborghini Huracán EVO</span>
+              <span class="gallery-service-type">Chrome Wrap</span>
+            </div>
+
+            <h3 class="gallery-card-title">Custom Lamborghini Huracán</h3>
+            
+            <div class="gallery-service-pill mb-2">
+              <i class="fa-solid fa-wrench" style="color:var(--primary); font-size:0.75rem;"></i>
+              <span>Chrome & Metallic Wrap</span>
+            </div>
+
+            <p class="gallery-card-desc">Liquid chrome mirror vinyl transformation with high-gloss black roof and acid green brake caliper thermal customization.</p>
+
+            <!-- Structured Completed Work Checklist -->
+            <div class="gallery-completed-work">
+              <h6><i class="fa-solid fa-list-check"></i> Completed Work:</h6>
+              <ul class="gallery-work-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>Liquid Silver Mirror Chrome Cast Wrap</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Gloss Obsidian Black Roof & Accents</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Acid Green High-Temp Caliper Coating</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Zero-Blade Cleanroom Install</span></li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="gallery-card-actions">
+              <button type="button" class="btn btn-primary btn-sm view-project-btn" aria-label="View Project Dossier">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Project</span>
+              </button>
+              <a href="contact.html?project=Custom%20Lamborghini%20Hurac%C3%A1n" class="btn btn-secondary btn-sm" aria-label="Inquire on Build">
+                <span>Inquire Build</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Showcase Project 9: Luxury BMW Interior -->
+        <div class="gallery-card gallery-item reveal active" 
+             data-category="interior" 
+             data-category-name="Bespoke Cabin" 
+             data-title="Luxury BMW Interior" 
+             data-vehicle="BMW M8 Gran Coupé"
+             data-service="Complete Interior Customization"
+             data-desc="Handcrafted Crimson Italian Nappa leather retrim, diamond-quilted Alcantara headliner with 1,200 fiber-optic starlight elements."
+             data-spec-film="Pasubio Italian Nappa + Toray Alcantara"
+             data-spec-coverage="Seats, Dash, Door Cards & Ceiling"
+             data-spec-time="6 Business Days"
+             data-spec-warranty="Lifetime Craftsmanship Guarantee"
+             data-completed="%5B%22Italian%20Nappa%20Crimson%20Hide%20Retrim%22%2C%221%2C200-Fiber%20Starlight%20Shooting%20Stars%22%2C%22Forged%20Carbon%20Console%20%26%20Dash%20Panels%22%2C%2264-Color%20Dynamic%20Fiber-Optic%20Cabin%22%5D"
+             data-spec="luxury bmw interior bmw m8 gran coupé complete interior customization interior">
+          
+          <!-- Card Media Header with Aspect Ratio & Zoom -->
+          <div class="gallery-media">
+            <span class="badge badge-gold gallery-status-badge">
+              <i class="fa-solid fa-award"></i> FEATURED BUILD
+            </span>
+            <span class="gallery-category-tag">Bespoke Cabin</span>
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80" alt="Luxury BMW Interior - BMW M8 Gran Coupé">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> View 4K Dossier</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> BMW M8 Gran Coupé</span>
+              <span class="gallery-service-type">Bespoke Cabin</span>
+            </div>
+
+            <h3 class="gallery-card-title">Luxury BMW Interior</h3>
+            
+            <div class="gallery-service-pill mb-2">
+              <i class="fa-solid fa-wrench" style="color:var(--primary); font-size:0.75rem;"></i>
+              <span>Complete Interior Customization</span>
+            </div>
+
+            <p class="gallery-card-desc">Handcrafted Crimson Italian Nappa leather retrim, diamond-quilted Alcantara headliner with 1,200 fiber-optic starlight elements.</p>
+
+            <!-- Structured Completed Work Checklist -->
+            <div class="gallery-completed-work">
+              <h6><i class="fa-solid fa-list-check"></i> Completed Work:</h6>
+              <ul class="gallery-work-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>Italian Nappa Crimson Hide Retrim</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>1,200-Fiber Starlight Shooting Stars</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Forged Carbon Console & Dash Panels</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>64-Color Dynamic Fiber-Optic Cabin</span></li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="gallery-card-actions">
+              <button type="button" class="btn btn-primary btn-sm view-project-btn" aria-label="View Project Dossier">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Project</span>
+              </button>
+              <a href="contact.html?project=Luxury%20BMW%20Interior" class="btn btn-secondary btn-sm" aria-label="Inquire on Build">
+                <span>Inquire Build</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Showcase Project 10: Ultimate Custom Build -->
+        <div class="gallery-card gallery-item reveal active" 
+             data-category="interior" 
+             data-category-name="Apex Flagship" 
+             data-title="Ultimate Custom Build" 
+             data-vehicle="Porsche 911 Turbo S "Apex One""
+             data-service="Wrap + PPF + Wheels + Lighting + Body Styling + Interior"
+             data-desc="Flagship full studio build: Satin Liquid Metallic Wrap, full XPEL PPF armor, custom 21-inch forged wheels, laser DRLs, full carbon aero, and custom Alcantara cockpit."
+             data-spec-film="Full Studio Multi-Discipline Suite"
+             data-spec-coverage="Complete Exterior + Interior + Stance"
+             data-spec-time="10 Days Concierge Build"
+             data-spec-warranty="10-Year Apex Lifetime Platinum"
+             data-completed="%5B%22Full%20Satin%20Wrap%20%2B%20XPEL%20PPF%20Armor%22%2C%2221%5C%22%203-Piece%20Custom%20Forged%20Wheels%22%2C%22Full%20Pre-Preg%20Carbon%20Aero%20Package%22%2C%22Demon%20Laser%20Lights%20%26%20Starlight%20Cabin%22%5D"
+             data-spec="ultimate custom build porsche 911 turbo s "apex one" wrap + ppf + wheels + lighting + body styling + interior interior">
+          
+          <!-- Card Media Header with Aspect Ratio & Zoom -->
+          <div class="gallery-media">
+            <span class="badge badge-gold gallery-status-badge">
+              <i class="fa-solid fa-award"></i> 🏆 APEX FLAGSHIP BUILD
+            </span>
+            <span class="gallery-category-tag">Apex Flagship</span>
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Ultimate Custom Build - Porsche 911 Turbo S "Apex One"">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> View 4K Dossier</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> Porsche 911 Turbo S "Apex One"</span>
+              <span class="gallery-service-type">Apex Flagship</span>
+            </div>
+
+            <h3 class="gallery-card-title">Ultimate Custom Build</h3>
+            
+            <div class="gallery-service-pill mb-2">
+              <i class="fa-solid fa-wrench" style="color:var(--primary); font-size:0.75rem;"></i>
+              <span>Wrap + PPF + Wheels + Lighting + Body Styling + Interior</span>
+            </div>
+
+            <p class="gallery-card-desc">Flagship full studio build: Satin Liquid Metallic Wrap, full XPEL PPF armor, custom 21-inch forged wheels, laser DRLs, full carbon aero, and custom Alcantara cockpit.</p>
+
+            <!-- Structured Completed Work Checklist -->
+            <div class="gallery-completed-work">
+              <h6><i class="fa-solid fa-list-check"></i> Completed Work:</h6>
+              <ul class="gallery-work-list">
+                <li><i class="fa-solid fa-circle-check"></i> <span>Full Satin Wrap + XPEL PPF Armor</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>21" 3-Piece Custom Forged Wheels</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Full Pre-Preg Carbon Aero Package</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Demon Laser Lights & Starlight Cabin</span></li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="gallery-card-actions">
+              <button type="button" class="btn btn-primary btn-sm view-project-btn" aria-label="View Project Dossier">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Project</span>
+              </button>
+              <a href="contact.html?project=Ultimate%20Custom%20Build" class="btn btn-secondary btn-sm" aria-label="Inquire on Build">
+                <span>Inquire Build</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== UPGRADED 4K LIGHTBOX MODAL ==================== -->
+  <div class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Supercar Build Lightbox View">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Close Lightbox"><i class="fa-solid fa-xmark"></i></button>
+      
+      <!-- Image Stage with Carousel Navigators -->
+      <div class="lightbox-img-wrap">
+        <button class="lightbox-nav-btn prev" aria-label="Previous Build"><i class="fa-solid fa-chevron-left"></i></button>
+        <img id="lightboxMainImg" src="" alt="Enlarged Supercar Build View">
+        <button class="lightbox-nav-btn next" aria-label="Next Build"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+
+      <!-- Information & Specs Panel -->
+      <div class="lightbox-info">
+        <div>
+          <div class="d-flex justify-between align-center mb-2">
+            <span class="badge badge-primary lightbox-category" id="lightboxCategoryTag">VEHICLE WRAP</span>
+            <span class="lightbox-counter" id="lightboxBuildCounter">BUILD 1 OF 10</span>
+          </div>
+          
+          <div class="lightbox-vehicle-tag mb-1" id="lightboxVehicleModel" style="color:var(--secondary); font-size:0.85rem; font-weight:700;">
+            <i class="fa-solid fa-car-side"></i> Vehicle Model
+          </div>
+
+          <h3 class="lightbox-title mb-2" id="lightboxMainTitle" style="font-size:1.6rem; line-height:1.2; color:#FFFFFF;">Project Title</h3>
+          
+          <p class="lightbox-desc" id="lightboxMainDesc" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+            Project detailed information.
+          </p>
+
+          <!-- Specifications Matrix Table -->
+          <div class="lightbox-meta-grid mb-3">
+            <div class="lightbox-meta-item">
+              <small><i class="fa-solid fa-film" style="color:var(--primary);"></i> Specification</small>
+              <strong id="lightboxMetaFilm">Film Material</strong>
+            </div>
+            <div class="lightbox-meta-item">
+              <small><i class="fa-solid fa-layer-group" style="color:var(--secondary);"></i> Coverage</small>
+              <strong id="lightboxMetaCoverage">Full Coverage</strong>
+            </div>
+            <div class="lightbox-meta-item">
+              <small><i class="fa-solid fa-stopwatch" style="color:var(--accent-gold);"></i> Turnaround</small>
+              <strong id="lightboxMetaTime">4-5 Days</strong>
+            </div>
+            <div class="lightbox-meta-item">
+              <small><i class="fa-solid fa-shield-check" style="color:var(--emerald);"></i> Warranty</small>
+              <strong id="lightboxMetaWarranty">5-Year Studio Warranty</strong>
+            </div>
+          </div>
+
+          <!-- Completed Work Highlights in Modal -->
+          <div class="lightbox-completed-block" style="background:rgba(11,13,18,0.5); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:0.85rem 1rem;">
+            <small style="color:#FFF; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:0.4rem;">
+              <i class="fa-solid fa-circle-check" style="color:var(--emerald);"></i> Verified Completed Work
+            </small>
+            <ul id="lightboxCompletedList" style="margin:0; padding-left:1.1rem; font-size:0.82rem; color:var(--text-muted); line-height:1.5;">
+              <!-- Populated by JS -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Action CTA Buttons -->
+        <div class="d-flex gap-2" style="flex-wrap:wrap; margin-top:1.25rem;">
+          <a href="contact.html" id="lightboxInquireBtn" class="btn btn-primary" style="flex:1; justify-content:center;">
+            <span>Inquire on this Build</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="pricing.html" class="btn btn-secondary" style="flex:1; justify-content:center;">
+            <span>Pricing Matrix</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CART DRAWER ==================== -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-drawer-header">
+      <div class="d-flex align-center gap-2">
+        <i class="fa-solid fa-cart-shopping" style="color:var(--primary); font-size:1.2rem;"></i>
+        <h4 style="margin:0;">Studio Cart</h4>
+      </div>
+      <button class="cart-drawer-close" id="cartDrawerClose" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="cart-drawer-body">
+      <div class="cart-empty-state" id="cartDrawerEmpty" style="display:none;">
+        <div class="cart-empty-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i></div>
+        <h4>Your Cart is Empty</h4>
+        <p>Explore our bespoke wraps, PPF armor packages, and customization upgrades.</p>
+        <a href="services.html" class="btn btn-secondary btn-sm" id="cartEmptyBrowseBtn">Browse Services</a>
+      </div>
+
+      <div class="cart-items-list" id="cartDrawerItems">
+        <!-- Rendered dynamically by cart.js -->
+      </div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-summary-row">
+        <span>Estimated Subtotal</span>
+        <span class="cart-summary-val" id="cartDrawerSubtotal">$0</span>
+      </div>
+      <div class="cart-summary-row total">
+        <span>Total Due</span>
+        <span class="cart-summary-val" id="cartDrawerTotal">$0</span>
+      </div>
+      <div class="d-flex flex-column gap-2 mt-3">
+        <a href="payment.html" class="btn btn-primary" style="width:100%; justify-content:center;">
+          <span>Proceed to Studio Checkout</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button type="button" class="btn btn-secondary cart-continue-btn" id="cartContinueCustomizing" data-cart-close style="width:100%; justify-content:center;">
+          <span>Continue Shopping</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== SITE FOOTER / CONCIERGE HUB ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand, Bio & Trust Chips -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo mb-3">
+            <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+          </a>
+          <p>The pinnacle of bespoke vehicle wraps, self-healing paint protection armor, carbon aerodynamic coachwork, and luxury automotive styling executed in ISO-7 cleanroom laboratories.</p>
+          
+          <div class="footer-trust-chips">
+            <span class="footer-trust-chip"><i class="fa-solid fa-certificate"></i> XPEL & 3M Certified</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-fan"></i> ISO-7 Cleanroom</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-shield-heart"></i> 100% Paint-Safe</span>
+          </div>
+
+          <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/18005559827" target="_blank" rel="noopener" class="footer-social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-widget">
+          <h5>Studio Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Flagship Studio</a></li>
+            <li><a href="home-2.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Wrap & Mod Studio</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cleanroom Facility</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 4K Portfolio Gallery</a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pricing & Calculator</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Automotive Journal</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> VIP Consultation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Specialties -->
+        <div class="footer-widget">
+          <h5>Disciplines</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=color-change-wrap"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cast Color Change Wraps</a></li>
+            <li><a href="service-details.html?service=paint-protection-film"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> XPEL Paint Protection</a></li>
+            <li><a href="service-details.html?service=ceramic-coating"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 9H Ceramic Matrix</a></li>
+            <li><a href="service-details.html?service=custom-body-kit-installation"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pre-Preg Carbon Aero</a></li>
+            <li><a href="service-details.html?service=complete-interior-customization"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Starlight Headliners</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 25 Bespoke Disciplines</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge & Newsletter -->
+        <div class="footer-widget">
+          <h5>Studio Concierge</h5>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>742 Motor Enclave Blvd,<br>Beverly Hills, CA 90210</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <a href="tel:+18005559827" style="color:inherit; font-weight:700;">+1 (800) 555-WRAP</a>
+              <div>
+                <span class="footer-live-badge"><span class="footer-live-dot"></span> LIVE CONCIERGE ACTIVE</span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:bespoke@apexveloce.com" style="color:inherit;">bespoke@apexveloce.com</a>
+          </div>
+
+          <!-- VIP Newsletter Box -->
+          <div class="footer-newsletter-box">
+            <small>VIP Studio Drops & Finish Alerts</small>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showApexToast) window.showApexToast('Subscribed to VIP Studio Drops!', 'success'); this.reset();">
+              <input type="email" class="footer-newsletter-input" placeholder="Enter your email..." required>
+              <button type="submit" class="footer-newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© <span class="current-year">2026</span> APEX VELOCE BESPOKE MOTORSTUDIO. ALL RIGHTS RESERVED.</span>
+          <span class="badge-spec" style="margin-left:0.75rem; font-size:0.7rem;"><i class="fa-solid fa-lock" style="color:#10B981;"></i> 256-BIT SSL SECURED</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="contact.html">Privacy Policy</a>
+          <a href="contact.html">Terms of Service</a>
+          <a href="pricing.html">Warranty Charter</a>
+          <a href="contact.html">Client Support</a>
+        </div>
+        <button type="button" class="footer-back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+          <i class="fa-solid fa-arrow-up"></i> <span>Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING STICKY CONCIERGE BAR ==================== -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+18005559827" class="sticky-bar-pill">
+      <i class="fa-solid fa-phone" style="color:var(--primary);"></i> <span>+1 (800) 555-WRAP</span>
+    </a>
+    <a href="contact.html" class="sticky-bar-pill sticky-bar-cta">
+      <i class="fa-solid fa-calendar-check"></i> <span>Book Studio Bay</span>
+    </a>
+    <button type="button" class="sticky-bar-cart cart-toggle-btn" aria-label="Open Cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-badge" style="display:none; position:absolute; top:-4px; right:-4px;">0</span>
+    </button>
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

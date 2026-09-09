@@ -1,0 +1,957 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>Home 2 — Wrap & Custom Modification Studio | APEX VELOCE</title>
+  <meta name="description" content="High-octane automotive customization studio specializing in bespoke color change wraps, aerodynamic carbon fiber kits, custom forged wheels, and stance engineering.">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/light-mode.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="dark-mode">
+
+  <!-- ==================== SITE HEADER / NAVBAR ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="logo-text">
+            <span class="title">APEX VELOCE</span>
+            <span class="subtitle">WRAP & MOD STUDIO</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="home-2.html" class="nav-link active">Home <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
+            <div class="dropdown-menu">
+              <a href="index.html" class="dropdown-item"><i class="fa-solid fa-gauge-high"></i> Home 1 — Flagship Studio</a>
+              <a href="home-2.html" class="dropdown-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Home 2 — Wrap & Custom Builds</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Theme"><i class="fa-solid fa-sun"></i></button>
+          <button class="dir-toggle-btn" aria-label="Toggle LTR / RTL Direction" title="Switch to RTL (Right-to-Left)"><span class="dir-badge">LTR</span> <i class="fa-solid fa-right-left"></i></button>
+          <button class="cart-toggle-btn" aria-label="View Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" style="display:none;">0</span>
+          </button>
+          <div class="nav-auth-group">
+            <a href="register.html" class="btn btn-primary btn-sm nav-signup-btn">
+              <span>Register</span> <i class="fa-solid fa-user-plus"></i>
+            </a>
+          </div>
+          <button class="mobile-toggle-btn" aria-label="Open Mobile Menu"><i class="fa-solid fa-bars-staggered"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE DRAWER ==================== -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="logo-text">
+          <span class="title">APEX VELOCE</span>
+          <span class="subtitle">MOTORSTUDIO</span>
+        </div>
+      </a>
+      <button class="drawer-close-btn" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="drawer-menu">
+      <li><a href="index.html" class="drawer-link"><span>Home 1 — Flagship</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="home-2.html" class="drawer-link active"><span>Home 2 — Wrap Studio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="about.html" class="drawer-link"><span>About Studio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="services.html" class="drawer-link"><span>Services Directory</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="service-details.html" class="drawer-link"><span>Service Details</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="gallery.html" class="drawer-link"><span>Showcase Portfolio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="pricing.html" class="drawer-link"><span>Pricing & Packages</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="blog.html" class="drawer-link"><span>Automotive Journal</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="contact.html" class="drawer-link"><span>Design Consultation</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+    </ul>
+    <div class="drawer-footer drawer-auth-group">
+      <div class="mb-2">
+        <button type="button" class="btn btn-secondary dir-toggle-btn drawer-dir-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem; justify-content:center;">
+          <span class="dir-badge">LTR</span> <span>Switch to RTL</span> <i class="fa-solid fa-right-left"></i>
+        </button>
+      </div>
+      <div class="mb-2">
+        <button type="button" class="btn btn-secondary cart-toggle-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem;">
+          <i class="fa-solid fa-cart-shopping"></i> <span>View Cart</span>
+          <span class="cart-badge" style="display:none; position:static; margin-left:0.4rem;">0</span>
+        </button>
+      </div>
+      <a href="register.html" class="btn btn-primary mb-2"><span>Register VIP</span> <i class="fa-solid fa-user-plus"></i></a>
+      <a href="contact.html" class="btn btn-secondary" style="border-color:var(--primary); color:var(--primary);"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </aside>
+
+
+  <!-- =========================================================================
+       1. HERO SECTION
+       ========================================================================= -->
+  <section class="hero-section section-padding" style="position:relative; overflow:hidden; padding-top:4.5rem; padding-bottom:4rem;">
+    <!-- Ambient Radial Glows -->
+    <div style="position:absolute; top:-120px; right:10%; width:600px; height:600px; background:radial-gradient(circle, rgba(0,229,255,0.14) 0%, rgba(0,0,0,0) 70%); pointer-events:none; z-index:0;"></div>
+    <div style="position:absolute; bottom:-80px; left:5%; width:550px; height:550px; background:radial-gradient(circle, rgba(255,42,84,0.12) 0%, rgba(0,0,0,0) 70%); pointer-events:none; z-index:0;"></div>
+
+    <div class="container text-center" style="position:relative; z-index:1;">
+      <div class="stickers-cluster mb-3">
+        <div class="apex-sticker sticker-neon-red float-sticker-1"><i class="fa-solid fa-wand-magic-sparkles"></i> BESPOKE WRAP STUDIO</div>
+        <div class="apex-sticker sticker-cyan float-sticker-2"><i class="fa-solid fa-palette"></i> 200+ VINYL FINISHES</div>
+        <div class="apex-sticker sticker-gold float-sticker-3"><i class="fa-solid fa-scissors"></i> ZERO-BLADE GUARANTEE</div>
+        <div class="apex-sticker sticker-emerald float-sticker-1"><i class="fa-solid fa-shield-halved"></i> 100% PAINT SAFE</div>
+        <div class="apex-sticker sticker-hologram float-sticker-2"><i class="fa-solid fa-stopwatch"></i> 4-DAY TURNAROUND</div>
+      </div>
+      <!-- Category Badge -->
+      <div class="d-inline-flex align-center gap-2 mb-3" style="background:rgba(255,42,84,0.12); border:1px solid rgba(255,42,84,0.3); border-radius:var(--radius-full); padding:0.4rem 1.2rem;">
+        <i class="fa-solid fa-fire" style="color:var(--primary); font-size:0.85rem;"></i>
+        <span class="hero-cat-text" style="font-size:0.82rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;">Specialized Wrap & Custom Modification Studio</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="hero-headline" style="max-width:950px; margin:0 auto 1.2rem auto; font-size:clamp(2.4rem, 5vw, 4rem); font-weight:800; line-height:1.12;">
+        TRANSFORM YOUR RIDE. <br><span class="text-gradient">DEFINE YOUR STYLE.</span>
+      </h1>
+
+      <!-- Short Description -->
+      <p class="hero-desc" style="max-width:760px; margin:0 auto 2rem auto; font-size:1.15rem; line-height:1.7;">
+        From full-body color change vinyl transformations and self-healing XPEL paint armor to aerodynamic carbon fiber coachwork and bespoke stance engineering, we turn high-performance vehicles into bespoke automotive art.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="d-flex justify-center gap-3 align-center mb-5" style="flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary btn-lg hover-pulse">
+          <i class="fa-solid fa-file-signature"></i> <span>Get a Free Quote</span>
+        </a>
+        <a href="#featured-builds" class="btn btn-secondary btn-lg hover-glow">
+          <i class="fa-solid fa-car"></i> <span>Explore Our Builds</span>
+        </a>
+      </div>
+
+      <!-- Large Customized Vehicle Banner + Floating Stickers -->
+      <div class="reveal active" style="position:relative; max-width:1150px; margin:0 auto;">
+        <div class="img-reveal-wrap" style="position:relative; border-radius:var(--radius-xl); border:1px solid var(--border-card); box-shadow:0 25px 60px -15px rgba(0,0,0,0.85), 0 0 35px rgba(0,229,255,0.18); overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1600&q=80" alt="Apex Veloce Bespoke Custom Porsche Build" style="width:100%; height:480px; object-fit:cover; display:block;">
+          <div style="position:absolute; bottom:0; left:0; right:0; height:50%; background:linear-gradient(to top, rgba(11,13,18,0.92) 0%, rgba(11,13,18,0) 100%); pointer-events:none;"></div>
+          
+          <!-- Banner Title Overlay -->
+          <div style="position:absolute; bottom:2rem; left:2.5rem; text-align:left; z-index:3;">
+            <span class="badge badge-cyan mb-1"><i class="fa-solid fa-wand-magic-sparkles"></i> APEX BESPOKE MODIFICATION SUITE</span>
+            <h3 style="margin:0; font-size:1.5rem; color:#FFFFFF; text-shadow:0 3px 10px rgba(0,0,0,0.8);">Porsche 911 GT3 RS • Satin Liquid Crimson & Pre-Preg Aero</h3>
+          </div>
+        </div>
+
+        <!-- Floating Sticker 1: 100% Paint Safe -->
+        <div class="floating-badge animate-float" style="top:-20px; right:-20px;">
+          <div class="icon-box" style="background:rgba(0, 229, 255, 0.15); color:var(--secondary);"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="badge-text" style="text-align:left;">
+            <h6>100% PAINT SAFE</h6>
+            <p>7-Year Inozetek & XPEL Warranty</p>
+          </div>
+        </div>
+
+        <!-- Floating Sticker 2: Stage 3 Custom Studio -->
+        <div class="floating-badge animate-float-reverse" style="bottom:-20px; left:-20px; background:var(--bg-glass-strong);">
+          <div class="icon-box" style="background:rgba(255, 42, 84, 0.15); color:var(--primary);"><i class="fa-solid fa-fire"></i></div>
+          <div class="badge-text" style="text-align:left;">
+            <h6>STAGE 3 CUSTOM STUDIO</h6>
+            <p>Bespoke Wraps & Carbon Aero</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       2. TRUST STATS RIBBON
+       ========================================================================= -->
+  <section class="section-padding bg-alt" style="padding-top:3rem; padding-bottom:3rem; border-top:1px solid var(--border-card); border-bottom:1px solid var(--border-card);">
+    <div class="container">
+      <div class="grid-4 text-center reveal active" style="gap:2rem;">
+        
+        <!-- Stat 1 -->
+        <div class="card p-3 hover-glow-card" style="border-color:var(--border-subtle); background:var(--bg-card);">
+          <div class="mb-2" style="font-size:1.6rem; color:var(--secondary);"><i class="fa-solid fa-car-side"></i></div>
+          <h3 class="mono stat-number" data-target="500" data-suffix="+" style="font-size:2.2rem; font-weight:800; color:var(--secondary); margin-bottom:0.25rem;">500+</h3>
+          <p class="stat-title" style="font-size:0.9rem; font-weight:700; color:var(--text-main); margin:0; text-transform:uppercase; letter-spacing:0.05em;">Vehicles Wrapped</p>
+          <small style="color:var(--text-muted); font-size:0.75rem;">Supercars & Luxury Builds</small>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="card p-3 hover-glow-card" style="border-color:var(--border-subtle); background:var(--bg-card);">
+          <div class="mb-2" style="font-size:1.6rem; color:var(--primary);"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3 class="mono stat-number" data-target="10" data-suffix="+" style="font-size:2.2rem; font-weight:800; color:var(--primary); margin-bottom:0.25rem;">10+</h3>
+          <p class="stat-title" style="font-size:0.9rem; font-weight:700; color:var(--text-main); margin:0; text-transform:uppercase; letter-spacing:0.05em;">Years Experience</p>
+          <small style="color:var(--text-muted); font-size:0.75rem;">Master Certified Craftsmen</small>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="card p-3 hover-glow-card" style="border-color:var(--border-subtle); background:var(--bg-card);">
+          <div class="mb-2" style="font-size:1.6rem; color:var(--accent-gold);"><i class="fa-solid fa-award"></i></div>
+          <h3 style="font-size:2.2rem; font-weight:800; color:var(--accent-gold); margin-bottom:0.25rem; font-family:var(--font-mono);">PREMIUM</h3>
+          <p class="stat-title" style="font-size:0.9rem; font-weight:700; color:var(--text-main); margin:0; text-transform:uppercase; letter-spacing:0.05em;">Cast Materials</p>
+          <small style="color:var(--text-muted); font-size:0.75rem;">3M • Inozetek • XPEL • Avery</small>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="card p-3 hover-glow-card" style="border-color:var(--border-subtle); background:var(--bg-card);">
+          <div class="mb-2" style="font-size:1.6rem; color:#10B981;"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 class="mono stat-number" data-target="100" data-suffix="%" style="font-size:2.2rem; font-weight:800; color:#10B981; margin-bottom:0.25rem;">100%</h3>
+          <p class="stat-title" style="font-size:0.9rem; font-weight:700; color:var(--text-main); margin:0; text-transform:uppercase; letter-spacing:0.05em;">Satisfaction</p>
+          <small style="color:var(--text-muted); font-size:0.75rem;">100-Point Quality Inspection</small>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       3. WHAT WE SPECIALIZE IN
+       ========================================================================= -->
+  <section class="section-padding" id="specializations">
+    <div class="container">
+      <div class="section-header text-center reveal active">
+        <span class="badge badge-primary"><i class="fa-solid fa-layer-group"></i> CORE DISCIPLINES</span>
+        <h2>WHAT WE SPECIALIZE IN</h2>
+        <p>Comprehensive automotive transformation services engineered to factory-exceeding standards.</p>
+      </div>
+
+      <div class="grid-4 reveal active" style="gap:2rem;">
+        <!-- Spec 1: Vehicle Wraps -->
+        <div class="card text-center hover-glow-card" style="padding:2.25rem 1.5rem; display:flex; flex-direction:column;">
+          <div class="btn-icon mb-3" style="margin:0 auto; width:65px; height:65px; font-size:1.6rem; background:rgba(255,42,84,0.12); color:var(--primary); border:1px solid rgba(255,42,84,0.3); border-radius:50%;">
+            <i class="fa-solid fa-car-side"></i>
+          </div>
+          <h4 class="mb-2">Vehicle Wraps</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; flex-grow:1; margin-bottom:1.25rem;">
+            Full and partial color changes in matte, gloss, satin, chrome, and custom graphic vinyl with zero-blade precision cutting and seamless edge tucks.
+          </p>
+          <a href="services.html" class="btn btn-sm btn-secondary w-100">Explore Wraps <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Spec 2: Paint Protection Film -->
+        <div class="card text-center hover-glow-card" style="padding:2.25rem 1.5rem; display:flex; flex-direction:column;">
+          <div class="btn-icon mb-3" style="margin:0 auto; width:65px; height:65px; font-size:1.6rem; background:rgba(0,229,255,0.12); color:var(--secondary); border:1px solid rgba(0,229,255,0.3); border-radius:50%;">
+            <i class="fa-solid fa-shield-virus"></i>
+          </div>
+          <h4 class="mb-2">Paint Protection Film</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; flex-grow:1; margin-bottom:1.25rem;">
+            Self-healing 10-mil clear and stealth satin PPF shielding against rock chips, road debris, bug splatter, and UV degradation.
+          </p>
+          <a href="service-details.html?service=paint-protection-film" class="btn btn-sm btn-secondary w-100">Explore PPF <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Spec 3: Custom Modifications -->
+        <div class="card text-center hover-glow-card" style="padding:2.25rem 1.5rem; display:flex; flex-direction:column;">
+          <div class="btn-icon mb-3" style="margin:0 auto; width:65px; height:65px; font-size:1.6rem; background:rgba(212,175,55,0.12); color:var(--accent-gold); border:1px solid rgba(212,175,55,0.3); border-radius:50%;">
+            <i class="fa-solid fa-wrench"></i>
+          </div>
+          <h4 class="mb-2">Custom Modifications</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; flex-grow:1; margin-bottom:1.25rem;">
+            Pre-preg dry carbon fiber body kits, GT swan-neck wings, custom forged monoblock wheels, and laser-measured track stance fitment.
+          </p>
+          <a href="services.html" class="btn btn-sm btn-secondary w-100">Explore Mods <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Spec 4: Interior Customization -->
+        <div class="card text-center hover-glow-card" style="padding:2.25rem 1.5rem; display:flex; flex-direction:column;">
+          <div class="btn-icon mb-3" style="margin:0 auto; width:65px; height:65px; font-size:1.6rem; background:rgba(16,185,129,0.12); color:#10B981; border:1px solid rgba(16,185,129,0.3); border-radius:50%;">
+            <i class="fa-solid fa-couch"></i>
+          </div>
+          <h4 class="mb-2">Interior Customization</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; flex-grow:1; margin-bottom:1.25rem;">
+            Handcrafted Italian Nappa leather retrimming, diamond-quilted Alcantara, 1,200-fiber starlight ceilings, and ambient cabin lighting.
+          </p>
+          <a href="service-details.html?service=complete-interior-customization" class="btn btn-sm btn-secondary w-100">Explore Interiors <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       4. SIGNATURE WRAP COLLECTION
+       ========================================================================= -->
+  <section class="section-padding bg-alt" id="wrap-collection">
+    <div class="container">
+      <div class="section-header text-center reveal active">
+        <span class="badge badge-primary"><i class="fa-solid fa-swatchbook"></i> PREMIUM FINISHES</span>
+        <h2>SIGNATURE WRAP COLLECTION</h2>
+        <p>Explore our 5 signature wrap styles engineered with 7-year UV resistance and mirror clarity.</p>
+      </div>
+
+      <!-- 5 Showcase Cards (Bespoke 3 + 2 Symmetrical Grid) -->
+      <div class="wrap-collection-grid reveal active">
+        
+        <!-- 1. Matte -->
+        <div class="service-card hover-glow-card">
+          <div class="card-thumb img-reveal-wrap">
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Matte Finish Wrap">
+            <span class="badge badge-gold card-badge"><i class="fa-solid fa-shield-halved"></i> MATTE FINISH</span>
+            <span class="card-price">From $2,750</span>
+          </div>
+          <div class="card-body">
+            <h4 class="mb-2">Stealth Matte</h4>
+            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.55;">Non-reflective satin and stealth tones that absorb glare to highlight sharp vehicle contours and aggressive styling.</p>
+            <div class="card-footer">
+              <a href="service-details.html?service=matte-finish-wrap" class="link-arrow">Inspect Details <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn btn-sm btn-primary" data-add-cart data-id="wrap-matte" data-name="Stealth Matte Full Wrap" data-price="2750" data-tier="Matte Finish" data-image="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=400&q=80">
+                <i class="fa-solid fa-cart-plus"></i> <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Gloss -->
+        <div class="service-card hover-glow-card">
+          <div class="card-thumb img-reveal-wrap">
+            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Gloss Finish Wrap">
+            <span class="badge badge-cyan card-badge"><i class="fa-solid fa-gem"></i> GLOSS FINISH</span>
+            <span class="card-price">From $2,950</span>
+          </div>
+          <div class="card-body">
+            <h4 class="mb-2">Ultra High-Gloss</h4>
+            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.55;">Zero orange peel PET liner vinyl delivering a mirror-wet shine that rivals and often surpasses OEM factory paint.</p>
+            <div class="card-footer">
+              <a href="service-details.html?service=gloss-finish-wrap" class="link-arrow">Inspect Details <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn btn-sm btn-primary" data-add-cart data-id="wrap-gloss" data-name="Ultra Gloss Full Wrap" data-price="2950" data-tier="Gloss Finish" data-image="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=400&q=80">
+                <i class="fa-solid fa-cart-plus"></i> <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Satin -->
+        <div class="service-card hover-glow-card">
+          <div class="card-thumb img-reveal-wrap">
+            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" alt="Satin Finish Wrap">
+            <span class="badge badge-primary card-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> SATIN FINISH</span>
+            <span class="card-price">From $2,800</span>
+          </div>
+          <div class="card-body">
+            <h4 class="mb-2">Liquid Satin</h4>
+            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.55;">The perfect balance of gloss and matte with embedded micro-flakes that produce a liquid metallic sheen under sunlight.</p>
+            <div class="card-footer">
+              <a href="service-details.html?service=satin-finish-wrap" class="link-arrow">Inspect Details <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn btn-sm btn-primary" data-add-cart data-id="wrap-satin" data-name="Liquid Satin Full Wrap" data-price="2800" data-tier="Satin Finish" data-image="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=400&q=80">
+                <i class="fa-solid fa-cart-plus"></i> <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Metallic & Chrome -->
+        <div class="service-card hover-glow-card">
+          <div class="card-thumb img-reveal-wrap">
+            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80" alt="Metallic and Chrome Wrap">
+            <span class="badge badge-gold card-badge"><i class="fa-solid fa-bolt"></i> METALLIC & CHROME</span>
+            <span class="card-price">From $3,400</span>
+          </div>
+          <div class="card-body">
+            <h4 class="mb-2">Chrome & Metallic</h4>
+            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.55;">Vibrant multi-layer cast vinyl with high-density metallic flakes and liquid mirror chrome finishes for undeniable presence.</p>
+            <div class="card-footer">
+              <a href="service-details.html?service=chrome-metallic-wrap" class="link-arrow">Inspect Details <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn btn-sm btn-primary" data-add-cart data-id="wrap-metallic" data-name="Chrome & Metallic Full Wrap" data-price="3400" data-tier="Metallic Tier" data-image="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=400&q=80">
+                <i class="fa-solid fa-cart-plus"></i> <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Custom Graphics -->
+        <div class="service-card hover-glow-card">
+          <div class="card-thumb img-reveal-wrap">
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80" alt="Custom Graphics Wrap">
+            <span class="badge badge-primary card-badge"><i class="fa-solid fa-palette"></i> CUSTOM GRAPHICS</span>
+            <span class="card-price">From $1,450</span>
+          </div>
+          <div class="card-body">
+            <h4 class="mb-2">Custom Graphics & Liveries</h4>
+            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.55;">Motorsport-inspired race liveries, precision centerline stripes, and bespoke printed vector artwork designed in-house.</p>
+            <div class="card-footer">
+              <a href="service-details.html?service=custom-graphic-wrap" class="link-arrow">Inspect Details <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn btn-sm btn-primary" data-add-cart data-id="wrap-graphics" data-name="Custom Graphic Livery" data-price="1450" data-tier="Custom Graphics" data-image="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=400&q=80">
+                <i class="fa-solid fa-cart-plus"></i> <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       5. FEATURED CUSTOM BUILDS
+       ========================================================================= -->
+  <section class="section-padding" id="featured-builds">
+    <div class="container">
+      <div class="section-header text-center reveal active">
+        <span class="badge badge-primary"><i class="fa-solid fa-camera"></i> VERIFIED BUILDS</span>
+        <h2>FEATURED CUSTOM BUILDS</h2>
+        <p>Explore recent completed transformations executed inside our Beverly Hills cleanroom studio.</p>
+      </div>
+
+      <!-- 4 Impressive Completed Vehicles -->
+      <div class="featured-builds-grid reveal active">
+        
+        <!-- Build 1: Stealth Black BMW M4 -->
+        <div class="gallery-card hover-glow-card">
+          <div class="gallery-media">
+            <span class="badge badge-primary gallery-status-badge"><i class="fa-solid fa-award"></i> FEATURED BUILD</span>
+            <span class="gallery-category-tag">Vehicle Wrap</span>
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Stealth Black BMW M4">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> 4K Showcase</span>
+            </div>
+          </div>
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> BMW M4 Competition</span>
+              <span class="gallery-service-type">Satin Wrap</span>
+            </div>
+            <h3 class="gallery-card-title">Stealth Black BMW M4</h3>
+            <p class="gallery-card-desc">Complete body transformation in Avery Satin Nero Black with gloss carbon fiber roof and mirror accents.</p>
+            <div class="gallery-card-actions">
+              <a href="gallery.html" class="btn btn-primary btn-sm"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Build 2: Midnight Blue Audi RS5 -->
+        <div class="gallery-card hover-glow-card">
+          <div class="gallery-media">
+            <span class="badge badge-cyan gallery-status-badge"><i class="fa-solid fa-award"></i> COMPLETED BUILD</span>
+            <span class="gallery-category-tag">Color Change</span>
+            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Midnight Blue Audi RS5">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> 4K Showcase</span>
+            </div>
+          </div>
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> Audi RS5 Sportback</span>
+              <span class="gallery-service-type">Gloss Wrap</span>
+            </div>
+            <h3 class="gallery-card-title">Midnight Blue Audi RS5</h3>
+            <p class="gallery-card-desc">Deep gloss midnight metallic blue color change wrap with ceramic top-seal and blackout trim package.</p>
+            <div class="gallery-card-actions">
+              <a href="gallery.html" class="btn btn-primary btn-sm"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Build 3: Performance Red Toyota Supra -->
+        <div class="gallery-card hover-glow-card">
+          <div class="gallery-media">
+            <span class="badge badge-primary gallery-status-badge"><i class="fa-solid fa-award"></i> FEATURED BUILD</span>
+            <span class="gallery-category-tag">Graphic Wrap</span>
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80" alt="Performance Red Toyota Supra">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> 4K Showcase</span>
+            </div>
+          </div>
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> Toyota GR Supra A90</span>
+              <span class="gallery-service-type">Livery Wrap</span>
+            </div>
+            <h3 class="gallery-card-title">Performance Red Toyota Supra</h3>
+            <p class="gallery-card-desc">High-impact motorsport racing livery with matte & gloss contrast vinyl stripes and sponsorship die-cuts.</p>
+            <div class="gallery-card-actions">
+              <a href="gallery.html" class="btn btn-primary btn-sm"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Build 4: Gloss Black Porsche 911 -->
+        <div class="gallery-card hover-glow-card">
+          <div class="gallery-media">
+            <span class="badge badge-emerald gallery-status-badge"><i class="fa-solid fa-award"></i> COMPLETED BUILD</span>
+            <span class="gallery-category-tag">XPEL PPF</span>
+            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" alt="Gloss Black Porsche 911">
+            <div class="gallery-media-overlay">
+              <span class="gallery-quick-zoom"><i class="fa-solid fa-expand"></i> 4K Showcase</span>
+            </div>
+          </div>
+          <div class="gallery-card-body">
+            <div class="gallery-vehicle-subhead">
+              <span class="gallery-vehicle-name"><i class="fa-solid fa-car-side"></i> Porsche 911 Carrera GTS</span>
+              <span class="gallery-service-type">PPF Armor</span>
+            </div>
+            <h3 class="gallery-card-title">Gloss Black Porsche 911</h3>
+            <p class="gallery-card-desc">Full-body XPEL Ultimate Plus 10-mil self-healing armor with custom rolled edges for invisible protection.</p>
+            <div class="gallery-card-actions">
+              <a href="gallery.html" class="btn btn-primary btn-sm"><span>View Project</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-5 reveal active">
+        <a href="gallery.html" class="btn btn-secondary btn-lg hover-glow">
+          <span>View All 10 Completed Builds</span> <i class="fa-solid fa-images"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       6. BEFORE → AFTER TRANSFORMATION
+       ========================================================================= -->
+  <section class="section-padding bg-alt" id="transformation">
+    <div class="container">
+      <div class="section-header text-center reveal active">
+        <span class="badge badge-primary"><i class="fa-solid fa-wand-magic-sparkles"></i> METAMORPHOSIS SLIDER</span>
+        <h2>BEFORE → AFTER TRANSFORMATION</h2>
+        <p>Drag the comparison slider or tap the preset controls to see the visual shift from factory gloss to custom wrapped perfection.</p>
+      </div>
+
+      <!-- Before / After Interactive Wrapper -->
+      <div class="before-after-wrapper reveal active">
+        
+        <!-- Telemetry Control Bar -->
+        <div class="ba-control-bar">
+          <div class="d-flex align-center gap-2">
+            <span class="badge badge-spec"><i class="fa-solid fa-car-side"></i> MCLAREN 720S SPIDER</span>
+            <div class="ba-status-pill"><i class="fa-solid fa-sliders"></i> SPLIT: <span class="ba-split-val">50%</span></div>
+          </div>
+
+          <!-- Quick Switch Presets -->
+          <div class="ba-presets">
+            <button type="button" class="ba-preset-btn" data-ba-preset="0"><i class="fa-solid fa-arrow-left"></i> 100% OEM Gloss</button>
+            <button type="button" class="ba-preset-btn active" data-ba-preset="50"><i class="fa-solid fa-arrows-left-right"></i> 50% Split</button>
+            <button type="button" class="ba-preset-btn" data-ba-preset="100">100% Emerald Wrap <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Interactive Slider Container -->
+        <div class="before-after-container">
+          <div class="ba-corner-badge top-left"><i class="fa-solid fa-shield-halved" style="color:var(--secondary); margin-right:0.3rem;"></i> STAGE 3 CUSTOM AERO</div>
+          <div class="ba-corner-badge top-right"><i class="fa-solid fa-certificate" style="color:var(--accent-gold); margin-right:0.3rem;"></i> 7-YR INOZETEK WARRANTY</div>
+
+          <!-- Before Image (McLaren in Factory Gloss) -->
+          <div class="before-after-img before-img" style="background-image: url('https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=1400&q=80');">
+            <span class="before-after-label label-before"><i class="fa-solid fa-arrow-left"></i> BEFORE: FACTORY GLOSS CHALK</span>
+          </div>
+
+          <!-- After Image (McLaren in Liquid Satin Emerald) -->
+          <div class="before-after-img after-img" style="background-image: url('https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1400&q=80');">
+            <span class="before-after-label label-after">AFTER: APEX BESPOKE LIQUID EMERALD <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+
+          <!-- Draggable Handle with Glowing Bloom -->
+          <div class="slider-handle">
+            <div class="handle-bar"></div>
+            <div class="handle-circle animate-pulse-slow">
+              <i class="fa-solid fa-arrows-left-right"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spec Chips -->
+        <div class="ba-spec-chips">
+          <div class="ba-chip"><i class="fa-solid fa-wind" style="color:var(--primary);"></i> Pre-Preg Carbon Fiber Aero</div>
+          <div class="ba-chip"><i class="fa-solid fa-circle-dot" style="color:var(--secondary);"></i> HRE Monoblock Forged Wheels</div>
+          <div class="ba-chip"><i class="fa-solid fa-temperature-arrow-up" style="color:var(--accent-gold);"></i> 90°C Thermo-Post Cured</div>
+          <div class="ba-chip"><i class="fa-solid fa-shield-virus" style="color:#10B981;"></i> 100% Paint Protection Safe</div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-4 reveal active" style="font-size:0.92rem; color:var(--text-dim);">
+        <i class="fa-solid fa-hand-pointer" style="color:var(--primary);"></i> Drag slider horizontally or tap presets above to compare seamless edge tucking and surface reflection.
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       7. WHY CHOOSE OUR STUDIO
+       ========================================================================= -->
+  <section class="section-padding" id="why-choose-us">
+    <div class="container">
+      <div class="section-header text-center reveal active">
+        <span class="badge badge-primary"><i class="fa-solid fa-medal"></i> STUDIO EXCELLENCE</span>
+        <h2>WHY CHOOSE OUR STUDIO</h2>
+        <p>Uncompromising standards of craftsmanship, cleanroom precision, and dedicated client care.</p>
+      </div>
+
+      <!-- 6 Key Pillars Grid -->
+      <div class="grid-3 reveal active" style="gap:2rem;">
+        
+        <!-- Pillar 1: Expert Installation -->
+        <div class="card p-4 hover-glow-card" style="border-color:var(--border-card);">
+          <div class="d-flex align-center gap-3 mb-3">
+            <div class="btn-icon" style="width:52px; height:52px; font-size:1.3rem; background:rgba(255,42,84,0.12); color:var(--primary); border:1px solid rgba(255,42,84,0.3); border-radius:var(--radius-md); flex-shrink:0;">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <h4 style="margin:0; font-size:1.2rem;">Expert Installation</h4>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin:0;">
+            Master certified technicians with over a decade of supercar experience utilizing zero-blade cutting and edge-tucking techniques.
+          </p>
+        </div>
+
+        <!-- Pillar 2: Premium Materials -->
+        <div class="card p-4 hover-glow-card" style="border-color:var(--border-card);">
+          <div class="d-flex align-center gap-3 mb-3">
+            <div class="btn-icon" style="width:52px; height:52px; font-size:1.3rem; background:rgba(0,229,255,0.12); color:var(--secondary); border:1px solid rgba(0,229,255,0.3); border-radius:var(--radius-md); flex-shrink:0;">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <h4 style="margin:0; font-size:1.2rem;">Premium Materials</h4>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin:0;">
+            Exclusively authorized cast vinyl and films from top tier brands including 3M, Inozetek, XPEL, and Avery Dennison.
+          </p>
+        </div>
+
+        <!-- Pillar 3: Precision Finish -->
+        <div class="card p-4 hover-glow-card" style="border-color:var(--border-card);">
+          <div class="d-flex align-center gap-3 mb-3">
+            <div class="btn-icon" style="width:52px; height:52px; font-size:1.3rem; background:rgba(212,175,55,0.12); color:var(--accent-gold); border:1px solid rgba(212,175,55,0.3); border-radius:var(--radius-md); flex-shrink:0;">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h4 style="margin:0; font-size:1.2rem;">Precision Finish</h4>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin:0;">
+            Sub-millimeter panel alignment, zero orange peel, and hidden returns inside door shuts for an undetectable factory finish.
+          </p>
+        </div>
+
+        <!-- Pillar 4: Professional Workshop -->
+        <div class="card p-4 hover-glow-card" style="border-color:var(--border-card);">
+          <div class="d-flex align-center gap-3 mb-3">
+            <div class="btn-icon" style="width:52px; height:52px; font-size:1.3rem; background:rgba(16,185,129,0.12); color:#10B981; border:1px solid rgba(16,185,129,0.3); border-radius:var(--radius-md); flex-shrink:0;">
+              <i class="fa-solid fa-fan"></i>
+            </div>
+            <h4 style="margin:0; font-size:1.2rem;">Professional Workshop</h4>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin:0;">
+            Climate-controlled positive-pressure cleanroom suites with active HEPA air filtration and constant 21°C/45% humidity.
+          </p>
+        </div>
+
+        <!-- Pillar 5: Custom Design -->
+        <div class="card p-4 hover-glow-card" style="border-color:var(--border-card);">
+          <div class="d-flex align-center gap-3 mb-3">
+            <div class="btn-icon" style="width:52px; height:52px; font-size:1.3rem; background:rgba(255,42,84,0.12); color:var(--primary); border:1px solid rgba(255,42,84,0.3); border-radius:var(--radius-md); flex-shrink:0;">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+            <h4 style="margin:0; font-size:1.2rem;">Custom Design</h4>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin:0;">
+            In-house 3D CAD visualization, aerodynamic simulation, bespoke livery styling, and physical color swatch sampling.
+          </p>
+        </div>
+
+        <!-- Pillar 6: Quality Guarantee -->
+        <div class="card p-4 hover-glow-card" style="border-color:var(--border-card);">
+          <div class="d-flex align-center gap-3 mb-3">
+            <div class="btn-icon" style="width:52px; height:52px; font-size:1.3rem; background:rgba(0,229,255,0.12); color:var(--secondary); border:1px solid rgba(0,229,255,0.3); border-radius:var(--radius-md); flex-shrink:0;">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <h4 style="margin:0; font-size:1.2rem;">Quality Guarantee</h4>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin:0;">
+            Up to 7-year comprehensive studio warranty charter covering film integrity, peeling, bubbling, and UV colorfastness.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       8. OUR PROCESS (6-STEP PROTOCOL)
+       ========================================================================= -->
+  <section class="section-padding bg-alt" id="process">
+    <div class="container">
+      <div class="section-header text-center reveal active">
+        <span class="badge badge-primary"><i class="fa-solid fa-list-ol"></i> STEP-BY-STEP</span>
+        <h2>OUR 6-STAGE BESPOKE PROCESS</h2>
+        <p>From initial design consultation to cleanroom execution and final VIP handover.</p>
+      </div>
+
+      <!-- 6-Stage Process Protocol Grid -->
+      <div class="grid-3 reveal active" style="gap:2rem;">
+        
+        <!-- Step 1: Consult -->
+        <div class="card text-center step-protocol-card hover-glow-card" style="padding:2.25rem 1.5rem;">
+          <div class="step-num-badge mb-3">01</div>
+          <h4 class="mb-2">Consult</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0; line-height:1.55;">
+            VIP discovery session to discuss your aesthetic vision, inspect vehicle paint condition, and select material swatches.
+          </p>
+        </div>
+
+        <!-- Step 2: Design -->
+        <div class="card text-center step-protocol-card hover-glow-card" style="padding:2.25rem 1.5rem;">
+          <div class="step-num-badge mb-3" style="color:var(--secondary); background:rgba(0,229,255,0.12); border-color:rgba(0,229,255,0.3);">02</div>
+          <h4 class="mb-2">Design</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0; line-height:1.55;">
+            3D photorealistic CAD rendering, aerodynamic aero mapping, and custom livery vector artwork approval.
+          </p>
+        </div>
+
+        <!-- Step 3: Prepare -->
+        <div class="card text-center step-protocol-card hover-glow-card" style="padding:2.25rem 1.5rem;">
+          <div class="step-num-badge mb-3" style="color:var(--accent-gold); background:rgba(212,175,55,0.12); border-color:rgba(212,175,55,0.3);">03</div>
+          <h4 class="mb-2">Prepare</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0; line-height:1.55;">
+            Multi-stage decontamination wash, clay bar, panel trim removal, and cleanroom isopropanol surface prep.
+          </p>
+        </div>
+
+        <!-- Step 4: Install -->
+        <div class="card text-center step-protocol-card hover-glow-card" style="padding:2.25rem 1.5rem;">
+          <div class="step-num-badge mb-3" style="color:#10B981; background:rgba(16,185,129,0.12); border-color:rgba(16,185,129,0.3);">04</div>
+          <h4 class="mb-2">Install</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0; line-height:1.55;">
+            Tension-free cast vinyl application, deep corner edge-tucking, and 90°C post-heat thermo curing.
+          </p>
+        </div>
+
+        <!-- Step 5: Inspect -->
+        <div class="card text-center step-protocol-card hover-glow-card" style="padding:2.25rem 1.5rem;">
+          <div class="step-num-badge mb-3" style="color:var(--primary); background:rgba(255,42,84,0.12); border-color:rgba(255,42,84,0.3);">05</div>
+          <h4 class="mb-2">Inspect</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0; line-height:1.55;">
+            100-point inspection under high-CRI light tunnel for optical clarity, seam integrity, and zero trapped particles.
+          </p>
+        </div>
+
+        <!-- Step 6: Deliver -->
+        <div class="card text-center step-protocol-card hover-glow-card" style="padding:2.25rem 1.5rem;">
+          <div class="step-num-badge mb-3" style="color:var(--secondary); background:rgba(0,229,255,0.12); border-color:rgba(0,229,255,0.3);">06</div>
+          <h4 class="mb-2">Deliver</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0; line-height:1.55;">
+            Final ceramic sealant topcoat application, warranty certificate handover, and executive vehicle unveiling.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Process CTA -->
+      <div class="card card-glass text-center mt-5 reveal active hover-glow-card" style="padding:3rem 2rem; border-color:var(--primary);">
+        <h3 class="process-cta-title" style="margin-bottom:0.75rem;">Ready to Begin Your Transformation?</h3>
+        <p style="color:var(--text-muted); max-width:620px; margin:0 auto 1.75rem auto;">
+          Contact our bespoke automotive studio today for a personalized consultation and tailored quote.
+        </p>
+        <div class="d-flex justify-center gap-3" style="flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary btn-lg hover-pulse">
+            <i class="fa-solid fa-calendar-check"></i> <span>Book Consultation</span>
+          </a>
+          <a href="pricing.html" class="btn btn-secondary btn-lg hover-glow">
+            <i class="fa-solid fa-sliders"></i> <span>Calculate Pricing</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== SITE FOOTER / CONCIERGE HUB ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand, Bio & Trust Chips -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo mb-3">
+            <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+          </a>
+          <p>The pinnacle of bespoke vehicle wraps, self-healing paint protection armor, carbon aerodynamic coachwork, and luxury automotive styling executed in ISO-7 cleanroom laboratories.</p>
+          
+          <div class="footer-trust-chips">
+            <span class="footer-trust-chip"><i class="fa-solid fa-certificate"></i> XPEL & 3M Certified</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-fan"></i> ISO-7 Cleanroom</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-shield-heart"></i> 100% Paint-Safe</span>
+          </div>
+
+          <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/18005559827" target="_blank" rel="noopener" class="footer-social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-widget">
+          <h5>Studio Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Flagship Studio</a></li>
+            <li><a href="home-2.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Wrap & Mod Studio</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cleanroom Facility</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 4K Portfolio Gallery</a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pricing & Calculator</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Automotive Journal</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> VIP Consultation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Specialties -->
+        <div class="footer-widget">
+          <h5>Disciplines</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=color-change-wrap"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cast Color Change Wraps</a></li>
+            <li><a href="service-details.html?service=paint-protection-film"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> XPEL Paint Protection</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 9H Ceramic Matrix</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pre-Preg Carbon Aero</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Starlight Headliners</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 25 Bespoke Disciplines</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge & Newsletter -->
+        <div class="footer-widget">
+          <h5>Studio Concierge</h5>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>742 Motor Enclave Blvd,<br>Beverly Hills, CA 90210</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <a href="tel:+18005559827" style="color:inherit; font-weight:700;">+1 (800) 555-WRAP</a>
+              <div>
+                <span class="footer-live-badge"><span class="footer-live-dot"></span> LIVE CONCIERGE ACTIVE</span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:bespoke@apexveloce.com" style="color:inherit;">bespoke@apexveloce.com</a>
+          </div>
+
+          <!-- VIP Newsletter Box -->
+          <div class="footer-newsletter-box">
+            <small>VIP Studio Drops & Finish Alerts</small>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showApexToast) window.showApexToast('Subscribed to VIP Studio Drops!', 'success'); this.reset();">
+              <input type="email" class="footer-newsletter-input" placeholder="Enter your email..." required>
+              <button type="submit" class="footer-newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© <span class="current-year">2026</span> APEX VELOCE BESPOKE MOTORSTUDIO. ALL RIGHTS RESERVED.</span>
+          <span class="badge-spec" style="margin-left:0.75rem; font-size:0.7rem;"><i class="fa-solid fa-lock" style="color:#10B981;"></i> 256-BIT SSL SECURED</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="contact.html">Privacy Policy</a>
+          <a href="contact.html">Terms of Service</a>
+          <a href="pricing.html">Warranty Charter</a>
+          <a href="contact.html">Client Support</a>
+        </div>
+        <button type="button" class="footer-back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+          <i class="fa-solid fa-arrow-up"></i> <span>Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING STICKY CONCIERGE BAR ==================== -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+18005559827" class="sticky-bar-pill">
+      <i class="fa-solid fa-phone" style="color:var(--primary);"></i> <span>+1 (800) 555-WRAP</span>
+    </a>
+    <a href="contact.html" class="sticky-bar-pill sticky-bar-cta">
+      <i class="fa-solid fa-calendar-check"></i> <span>Book Studio Bay</span>
+    </a>
+    <button type="button" class="sticky-bar-cart cart-toggle-btn" aria-label="Open Cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-badge" style="display:none; position:absolute; top:-4px; right:-4px;">0</span>
+    </button>
+  </div>
+
+  <!-- Cart Drawer Component -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h4><i class="fa-solid fa-cart-shopping" style="color:var(--primary);"></i> Studio Cart</h4>
+      <button class="cart-drawer-close" id="cartDrawerClose" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <div class="cart-drawer-body">
+      <div class="cart-empty-state" id="cartDrawerEmpty" style="display:none;">
+        <div class="cart-empty-icon"><i class="fa-solid fa-cart-arrow-down"></i></div>
+        <h5>Your Cart is Empty</h5>
+        <p class="text-muted">Explore our bespoke vehicle wraps, paint protection, and custom styling packages.</p>
+        <a href="services.html" class="btn btn-primary btn-sm cart-continue-btn" id="cartEmptyBrowseBtn" data-cart-close><span>Browse Services</span> <i class="fa-solid fa-layer-group"></i></a>
+      </div>
+      <div id="cartDrawerItems"></div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-summary-row">
+        <span>Estimated Subtotal</span>
+        <span id="cartDrawerSubtotal" class="mono" style="font-weight:700;">$0</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Cleanroom Prep & Inspection</span>
+        <span class="badge badge-cyan" style="font-size:0.7rem;">INCLUDED</span>
+      </div>
+      <div class="cart-summary-row total">
+        <span>Estimated Total</span>
+        <span id="cartDrawerTotal" class="total-amount">$0</span>
+      </div>
+      <div class="d-flex flex-column gap-2">
+        <a href="payment.html" class="btn btn-primary" style="width:100%; justify-content:center;">
+          <span>Proceed to Studio Checkout</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button type="button" class="btn btn-secondary btn-sm cart-continue-btn" id="cartContinueCustomizing" data-cart-close style="width:100%;">
+          <span>Continue Customizing</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

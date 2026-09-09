@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>Automotive Journal | APEX VELOCE Studio News & Guides</title>
+  <meta name="description" content="Read expert automotive wrap guides, XPEL paint protection film insights, ceramic coating maintenance tips, and exclusive behind-the-scenes build stories.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/light-mode.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="dark-mode">
+
+  <!-- ==================== SITE HEADER / NAVBAR ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
+            <div class="dropdown-menu">
+              <a href="index.html" class="dropdown-item"><i class="fa-solid fa-gauge-high"></i> Home 1 — Flagship Studio</a>
+              <a href="home-2.html" class="dropdown-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Home 2 — Wrap & Custom Builds</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Theme"><i class="fa-solid fa-sun"></i></button>
+          <button class="dir-toggle-btn" aria-label="Toggle LTR / RTL Direction" title="Switch to RTL (Right-to-Left)"><span class="dir-badge">LTR</span> <i class="fa-solid fa-right-left"></i></button>
+          <button class="cart-toggle-btn" aria-label="View Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" style="display:none;">0</span>
+          </button>
+          <div class="nav-auth-group">
+            <a href="register.html" class="btn btn-primary btn-sm nav-signup-btn">
+              <span>Register</span> <i class="fa-solid fa-user-plus"></i>
+            </a>
+          </div>
+          <button class="mobile-toggle-btn" aria-label="Open Mobile Menu"><i class="fa-solid fa-bars-staggered"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE DRAWER ==================== -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">MOTORSTUDIO</span></div>
+      </a>
+      <button class="drawer-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="drawer-menu">
+      <li><a href="index.html" class="drawer-link"><span>Home 1 — Flagship</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="home-2.html" class="drawer-link"><span>Home 2 — Wrap Studio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="about.html" class="drawer-link"><span>About Studio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="services.html" class="drawer-link"><span>Services Directory</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="service-details.html" class="drawer-link"><span>Service Details</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="gallery.html" class="drawer-link"><span>Showcase Portfolio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="pricing.html" class="drawer-link"><span>Pricing & Packages</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="blog.html" class="drawer-link active"><span>Automotive Journal</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="contact.html" class="drawer-link"><span>Design Consultation</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+    </ul>
+    <div class="drawer-footer drawer-auth-group">
+      <div class="mb-2">
+        <button type="button" class="btn btn-secondary dir-toggle-btn drawer-dir-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem; justify-content:center;">
+          <span class="dir-badge">LTR</span> <span>Switch to RTL</span> <i class="fa-solid fa-right-left"></i>
+        </button>
+      </div>
+      <div class="mb-2">
+        <button type="button" class="btn btn-secondary cart-toggle-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem;">
+          <i class="fa-solid fa-cart-shopping"></i> <span>View Cart</span>
+          <span class="cart-badge" style="display:none; position:static; margin-left:0.4rem;">0</span>
+        </button>
+      </div>
+      <a href="register.html" class="btn btn-primary mb-2"><span>Register VIP</span> <i class="fa-solid fa-user-plus"></i></a>
+      <a href="contact.html" class="btn btn-secondary" style="border-color:var(--primary); color:var(--primary);"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </aside>
+
+  <!-- ==================== BLOG HERO BANNER ==================== -->
+  <section class="hero-section section-padding bg-alt" style="position:relative; overflow:hidden; padding-top:4.5rem; padding-bottom:5rem;">
+    <!-- Subtle Background Ambient Glow -->
+    <div style="position:absolute; top:-120px; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle, rgba(255,42,84,0.1) 0%, rgba(0,0,0,0) 70%); pointer-events:none;"></div>
+
+    <div class="container text-center reveal" style="position:relative; z-index:1;">
+      <div class="stickers-cluster mb-3">
+        <div class="apex-sticker sticker-neon-red float-sticker-1"><i class="fa-solid fa-newspaper"></i> AUTOMOTIVE JOURNAL</div>
+        <div class="apex-sticker sticker-cyan float-sticker-2"><i class="fa-solid fa-fire"></i> TRENDING 2026 BUILDS</div>
+        <div class="apex-sticker sticker-gold float-sticker-3"><i class="fa-solid fa-screwdriver-wrench"></i> MASTER TECH GUIDES</div>
+        <div class="apex-sticker sticker-emerald float-sticker-1"><i class="fa-solid fa-shield-halved"></i> PPF CARE SECRETS</div>
+      </div>
+      <div class="d-flex justify-center align-center gap-2 mb-3" style="flex-wrap:wrap;">
+        <span class="badge badge-primary"><i class="fa-solid fa-newspaper"></i> INSIGHTS & GUIDES</span>
+        <span class="badge-spec"><i class="fa-solid fa-book-open" style="color:var(--secondary);"></i> MASTER ARTICLES</span>
+        <span class="badge-spec"><i class="fa-solid fa-sparkles" style="color:var(--accent-gold);"></i> CARE SECRETS</span>
+      </div>
+
+      <h1 style="max-width:900px; margin:0 auto 1.5rem auto; font-size:clamp(2.4rem, 4.5vw, 3.8rem); line-height:1.15;">
+        THE APEX <span class="text-gradient">AUTOMOTIVE JOURNAL</span>
+      </h1>
+
+      <p style="max-width:720px; margin:0 auto 2.5rem auto; font-size:1.15rem; color:var(--text-muted); line-height:1.7;">
+        Expert technical guides, paint protection analysis, car care secrets, and build spotlights written by our master installers.
+      </p>
+
+
+
+    </div>
+  </section>
+
+  <!-- ==================== BLOG GRID ==================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="grid-3 reveal">
+        
+        <!-- Post 1: Wrap Guide -->
+        <div class="service-card">
+          <div class="card-thumb">
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="Matte Wrap Maintenance">
+            <span class="badge badge-primary card-badge">WRAP GUIDE</span>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-center gap-2 mb-2" style="font-size:0.8rem; color:var(--text-dim);">
+              <i class="fa-solid fa-calendar"></i> September 5, 2026 • <i class="fa-solid fa-clock"></i> 6 min read
+            </div>
+            <h4>How to Maintain Your Matte Wrap: 7 Pro Secrets</h4>
+            <p>Discover the exact pH-neutral washing regimens and ceramic sealants required to keep matte and satin vinyl free of glossy spots and oil stains.</p>
+            <div class="card-footer">
+              <a href="blog-details.html" class="link-arrow">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 2: PPF Guide -->
+        <div class="service-card">
+          <div class="card-thumb">
+            <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=800&q=80" alt="PPF vs Ceramic Coating">
+            <span class="badge badge-cyan card-badge">PPF GUIDE</span>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-center gap-2 mb-2" style="font-size:0.8rem; color:var(--text-dim);">
+              <i class="fa-solid fa-calendar"></i> August 28, 2026 • <i class="fa-solid fa-clock"></i> 8 min read
+            </div>
+            <h4>PPF vs. Ceramic Coating: Which Protection Do You Need?</h4>
+            <p>An in-depth breakdown comparing impact rock chip resistance, self-healing polymers, hydrophobic clarity, and long-term investment return.</p>
+            <div class="card-footer">
+              <a href="blog-details.html" class="link-arrow">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 3: Build Story -->
+        <div class="service-card">
+          <div class="card-thumb">
+            <img src="https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?auto=format&fit=crop&w=800&q=80" alt="G63 Widebody Build Story">
+            <span class="badge badge-gold card-badge">PROJECT STORY</span>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-center gap-2 mb-2" style="font-size:0.8rem; color:var(--text-dim);">
+              <i class="fa-solid fa-calendar"></i> August 14, 2026 • <i class="fa-solid fa-clock"></i> 5 min read
+            </div>
+            <h4>Behind the Build: 2025 AMG G63 Carbon Edition</h4>
+            <p>Step inside our cleanroom to follow the 120-hour teardown, custom Matte Military Olive wrap, carbon fiber body kit installation, and Alcantara re-trim.</p>
+            <div class="card-footer">
+              <a href="blog-details.html" class="link-arrow">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 4: Trend Report -->
+        <div class="service-card">
+          <div class="card-thumb">
+            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800&q=80" alt="Automotive Wrap Trends 2026">
+            <span class="badge badge-primary card-badge">TRENDS</span>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-center gap-2 mb-2" style="font-size:0.8rem; color:var(--text-dim);">
+              <i class="fa-solid fa-calendar"></i> August 2, 2026 • <i class="fa-solid fa-clock"></i> 7 min read
+            </div>
+            <h4>The Rise of Super-Gloss PET Films and Frozen Satin</h4>
+            <p>Why modern supercar collectors are choosing ultra-smooth PET liners over traditional calendared films for true zero-orange-peel factory reflections.</p>
+            <div class="card-footer">
+              <a href="blog-details.html" class="link-arrow">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 5: Car Care -->
+        <div class="service-card">
+          <div class="card-thumb">
+            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80" alt="Ceramic Coating Care">
+            <span class="badge badge-cyan card-badge">CAR CARE</span>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-center gap-2 mb-2" style="font-size:0.8rem; color:var(--text-dim);">
+              <i class="fa-solid fa-calendar"></i> July 20, 2026 • <i class="fa-solid fa-clock"></i> 4 min read
+            </div>
+            <h4>Two-Bucket Wash Method: Protecting Ceramic Coatings</h4>
+            <p>How grit guards, plush microfiber wash mitts, and warm deionized water rinses prevent swirl marks on high-gloss and ceramic-coated vehicles.</p>
+            <div class="card-footer">
+              <a href="blog-details.html" class="link-arrow">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 6: Studio News -->
+        <div class="service-card">
+          <div class="card-thumb">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Studio Cleanroom Expansion">
+            <span class="badge badge-gold card-badge">STUDIO NEWS</span>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-center gap-2 mb-2" style="font-size:0.8rem; color:var(--text-dim);">
+              <i class="fa-solid fa-calendar"></i> July 10, 2026 • <i class="fa-solid fa-clock"></i> 3 min read
+            </div>
+            <h4>Apex Expands Cleanroom Capacity with Dual Light Tunnels</h4>
+            <p>We’ve doubled our cleanroom lab footprint with next-generation medical-grade HEPA air filtration and CRI 98+ full-spectrum inspection tunnels.</p>
+            <div class="card-footer">
+              <a href="blog-details.html" class="link-arrow">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CART DRAWER ==================== -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-drawer-header">
+      <div class="d-flex align-center gap-2">
+        <i class="fa-solid fa-cart-shopping" style="color:var(--primary); font-size:1.2rem;"></i>
+        <h4 style="margin:0;">Studio Cart</h4>
+      </div>
+      <button class="cart-drawer-close" id="cartDrawerClose" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="cart-drawer-body">
+      <div class="cart-empty-state" id="cartDrawerEmpty" style="display:none;">
+        <div class="cart-empty-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i></div>
+        <h4>Your Cart is Empty</h4>
+        <p>Explore our bespoke wraps, PPF armor packages, and customization upgrades.</p>
+        <a href="services.html" class="btn btn-secondary btn-sm" id="cartEmptyBrowseBtn">Browse Services</a>
+      </div>
+
+      <div class="cart-items-list" id="cartDrawerItems">
+        <!-- Rendered dynamically by cart.js -->
+      </div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-summary-row">
+        <span>Estimated Subtotal</span>
+        <span class="cart-summary-val" id="cartDrawerSubtotal">$0</span>
+      </div>
+      <div class="cart-summary-row total">
+        <span>Total Due</span>
+        <span class="cart-summary-val" id="cartDrawerTotal">$0</span>
+      </div>
+      <div class="d-flex flex-column gap-2 mt-3">
+        <a href="payment.html" class="btn btn-primary" style="width:100%; justify-content:center;">
+          <span>Proceed to Studio Checkout</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button type="button" class="btn btn-secondary cart-continue-btn" id="cartContinueCustomizing" data-cart-close style="width:100%; justify-content:center;">
+          <span>Continue Shopping</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== SITE FOOTER / CONCIERGE HUB ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand, Bio & Trust Chips -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo mb-3">
+            <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+          </a>
+          <p>The pinnacle of bespoke vehicle wraps, self-healing paint protection armor, carbon aerodynamic coachwork, and luxury automotive styling executed in ISO-7 cleanroom laboratories.</p>
+          
+          <div class="footer-trust-chips">
+            <span class="footer-trust-chip"><i class="fa-solid fa-certificate"></i> XPEL & 3M Certified</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-fan"></i> ISO-7 Cleanroom</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-shield-heart"></i> 100% Paint-Safe</span>
+          </div>
+
+          <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/18005559827" target="_blank" rel="noopener" class="footer-social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-widget">
+          <h5>Studio Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Flagship Studio</a></li>
+            <li><a href="home-2.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Wrap & Mod Studio</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cleanroom Facility</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 4K Portfolio Gallery</a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pricing & Calculator</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Automotive Journal</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> VIP Consultation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Specialties -->
+        <div class="footer-widget">
+          <h5>Disciplines</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cast Color Change Wraps</a></li>
+            <li><a href="service-details.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> XPEL Paint Protection</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 9H Ceramic Matrix</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pre-Preg Carbon Aero</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Starlight Headliners</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Track PPF Armor</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge & Newsletter -->
+        <div class="footer-widget">
+          <h5>Studio Concierge</h5>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>742 Motor Enclave Blvd,<br>Beverly Hills, CA 90210</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <a href="tel:+18005559827" style="color:inherit; font-weight:700;">+1 (800) 555-WRAP</a>
+              <div>
+                <span class="footer-live-badge"><span class="footer-live-dot"></span> LIVE CONCIERGE ACTIVE</span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:bespoke@apexveloce.com" style="color:inherit;">bespoke@apexveloce.com</a>
+          </div>
+
+          <!-- VIP Newsletter Box -->
+          <div class="footer-newsletter-box">
+            <small>VIP Studio Drops & Finish Alerts</small>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showApexToast) window.showApexToast('Subscribed to VIP Studio Drops!', 'success'); this.reset();">
+              <input type="email" class="footer-newsletter-input" placeholder="Enter your email..." required>
+              <button type="submit" class="footer-newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© <span class="current-year">2026</span> APEX VELOCE BESPOKE MOTORSTUDIO. ALL RIGHTS RESERVED.</span>
+          <span class="badge-spec" style="margin-left:0.75rem; font-size:0.7rem;"><i class="fa-solid fa-lock" style="color:#10B981;"></i> 256-BIT SSL SECURED</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="contact.html">Privacy Policy</a>
+          <a href="contact.html">Terms of Service</a>
+          <a href="pricing.html">Warranty Charter</a>
+          <a href="contact.html">Client Support</a>
+        </div>
+        <button type="button" class="footer-back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+          <i class="fa-solid fa-arrow-up"></i> <span>Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING STICKY CONCIERGE BAR ==================== -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+18005559827" class="sticky-bar-pill">
+      <i class="fa-solid fa-phone" style="color:var(--primary);"></i> <span>+1 (800) 555-WRAP</span>
+    </a>
+    <a href="contact.html" class="sticky-bar-pill sticky-bar-cta">
+      <i class="fa-solid fa-calendar-check"></i> <span>Book Studio Bay</span>
+    </a>
+    <button type="button" class="sticky-bar-cart cart-toggle-btn" aria-label="Open Cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-badge" style="display:none; position:absolute; top:-4px; right:-4px;">0</span>
+    </button>
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

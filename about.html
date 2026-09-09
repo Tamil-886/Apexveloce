@@ -1,0 +1,546 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>About Us | APEX VELOCE Luxury Automotive Customization</title>
+  <meta name="description" content="Discover the philosophy, master craftsmen, certified cleanroom facilities, and relentless pursuit of automotive perfection behind Apex Veloce Studio.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/light-mode.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="dark-mode">
+
+  <!-- ==================== SITE HEADER / NAVBAR ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="logo-text">
+            <span class="title">APEX VELOCE</span>
+            <span class="subtitle">BESPOKE MOTORSTUDIO</span>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
+            <div class="dropdown-menu">
+              <a href="index.html" class="dropdown-item"><i class="fa-solid fa-gauge-high"></i> Home 1 — Flagship Studio</a>
+              <a href="home-2.html" class="dropdown-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Home 2 — Wrap & Custom Builds</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link active">About Us</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Theme"><i class="fa-solid fa-sun"></i></button>
+          <button class="dir-toggle-btn" aria-label="Toggle LTR / RTL Direction" title="Switch to RTL (Right-to-Left)"><span class="dir-badge">LTR</span> <i class="fa-solid fa-right-left"></i></button>
+          <button class="cart-toggle-btn" aria-label="View Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" style="display:none;">0</span>
+          </button>
+          <div class="nav-auth-group">
+            <a href="register.html" class="btn btn-primary btn-sm nav-signup-btn">
+              <span>Register</span> <i class="fa-solid fa-user-plus"></i>
+            </a>
+          </div>
+          <button class="mobile-toggle-btn" aria-label="Open Mobile Menu"><i class="fa-solid fa-bars-staggered"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE DRAWER ==================== -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">MOTORSTUDIO</span></div>
+      </a>
+      <button class="drawer-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="drawer-menu">
+      <li><a href="index.html" class="drawer-link"><span>Home 1 — Flagship</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="home-2.html" class="drawer-link"><span>Home 2 — Wrap Studio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="about.html" class="drawer-link active"><span>About Studio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="services.html" class="drawer-link"><span>Services Directory</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="service-details.html" class="drawer-link"><span>Service Details</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="gallery.html" class="drawer-link"><span>Showcase Portfolio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="pricing.html" class="drawer-link"><span>Pricing & Packages</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="blog.html" class="drawer-link"><span>Automotive Journal</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="contact.html" class="drawer-link"><span>Design Consultation</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+    </ul>
+    <div class="drawer-footer drawer-auth-group">
+      <div class="mb-2">
+        <button type="button" class="btn btn-secondary dir-toggle-btn drawer-dir-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem; justify-content:center;">
+          <span class="dir-badge">LTR</span> <span>Switch to RTL</span> <i class="fa-solid fa-right-left"></i>
+        </button>
+      </div>
+      <div class="mb-2">
+        <button type="button" class="btn btn-secondary cart-toggle-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem;">
+          <i class="fa-solid fa-cart-shopping"></i> <span>View Cart</span>
+          <span class="cart-badge" style="display:none; position:static; margin-left:0.4rem;">0</span>
+        </button>
+      </div>
+      <a href="register.html" class="btn btn-primary mb-2"><span>Register VIP</span> <i class="fa-solid fa-user-plus"></i></a>
+      <a href="contact.html" class="btn btn-secondary" style="border-color:var(--primary); color:var(--primary);"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </aside>
+
+  <!-- ==================== ABOUT HERO BANNER ==================== -->
+  <section class="hero-section section-padding bg-alt" style="position:relative; overflow:hidden; padding-top:4.5rem; padding-bottom:5rem;">
+    <!-- Subtle Background Ambient Glow -->
+    <div style="position:absolute; top:-120px; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle, rgba(255,42,84,0.1) 0%, rgba(0,0,0,0) 70%); pointer-events:none;"></div>
+
+    <div class="container text-center reveal" style="position:relative; z-index:1;">
+      <div class="stickers-cluster mb-3">
+        <div class="apex-sticker sticker-gold float-sticker-1"><i class="fa-solid fa-award"></i> BEVERLY HILLS HQ</div>
+        <div class="apex-sticker sticker-cyan float-sticker-2"><i class="fa-solid fa-fan"></i> ISO-7 DUST-FREE LAB</div>
+        <div class="apex-sticker sticker-neon-red float-sticker-3"><i class="fa-solid fa-trophy"></i> 10+ YRS HERITAGE</div>
+        <div class="apex-sticker sticker-emerald float-sticker-1"><i class="fa-solid fa-shield-halved"></i> <div class="container text-center reveal" style="position:relative; z-index:1;">0M VAULT INSURANCE</div>
+        <div class="apex-sticker sticker-hologram float-sticker-2"><i class="fa-solid fa-user-secret"></i> 100% PRIVATE & NDA</div>
+      </div>
+      <div class="d-flex justify-center align-center gap-2 mb-3" style="flex-wrap:wrap;">
+        <span class="badge badge-primary"><i class="fa-solid fa-flag-checkered"></i> SINCE 2014</span>
+        <span class="badge-spec"><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> BEVERLY HILLS MOTORSTUDIO</span>
+        <span class="badge-spec"><i class="fa-solid fa-award" style="color:var(--accent-gold);"></i> TOP RATED LUXURY STUDIO</span>
+      </div>
+
+      <h1 style="max-width:900px; margin:0 auto 1.5rem auto; font-size:clamp(2.4rem, 4.5vw, 3.8rem); line-height:1.15;">
+        THE PURSUIT OF <span class="text-gradient">AUTOMOTIVE PERFECTION</span>
+      </h1>
+
+      <p style="max-width:720px; margin:0 auto 2.5rem auto; font-size:1.15rem; color:var(--text-muted); line-height:1.7;">
+        Founded on the uncompromising principle that bespoke vehicle wraps and surface protection armor should meet or exceed original factory coachwork standards.
+      </p>
+
+
+    </div>
+  </section>
+
+  <!-- ==================== STUDIO STORY & PHILOSOPHY ==================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="grid-2 align-center" style="gap:4rem;">
+        
+        <div class="reveal-left">
+          <span class="badge badge-primary mb-3">OUR ORIGIN & VISION</span>
+          <h2 class="mb-3">WHERE SURGICAL DISCIPLINE MEETS COACHWORK ARTISTRY</h2>
+          <p class="mb-3" style="color:var(--text-muted); line-height:1.7;">
+            Apex Veloce was established in Beverly Hills by master coachbuilder Julian Vance and motorsport aerodynamicist Liam Cross. Frustrated by generic restyling shops using razor blades directly on OEM paint and cutting corners on edge tucking, they set out to establish a state-of-the-art laboratory dedicated to zero-compromise vehicle transformations.
+          </p>
+          <p class="mb-4" style="color:var(--text-muted); line-height:1.7;">
+            Today, our 15,000 sq.ft facility features positive-pressure HEPA cleanrooms, an engineered 100-point LED light tunnel, and computerized plotting suites to guarantee every exotic vehicle leaves in showroom condition.
+          </p>
+          
+          <div class="grid-2 gap-3 mb-4">
+            <div class="card" style="padding:1.25rem; border-left:3px solid var(--primary);">
+              <h5 style="margin-bottom:0.25rem;"><i class="fa-solid fa-shield-xmark" style="color:var(--primary);"></i> Zero Blade-to-Paint</h5>
+              <p style="font-size:0.85rem; margin:0; color:var(--text-muted);">Computerized digital CAD templates and precision knifeless tape execution.</p>
+            </div>
+            <div class="card" style="padding:1.25rem; border-left:3px solid var(--secondary);">
+              <h5 style="margin-bottom:0.25rem;"><i class="fa-solid fa-screwdriver-wrench" style="color:var(--secondary);"></i> OEM-Level Teardown</h5>
+              <p style="font-size:0.85rem; margin:0; color:var(--text-muted);">Factory-certified trim removal for seamless, edge-to-edge deep tucks.</p>
+            </div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary btn-lg">
+            <span>Schedule Studio Consultation</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="reveal-right reveal-delay-2">
+          <!-- Styled Studio Image Card -->
+          <div style="position:relative;">
+
+            <!-- Glowing image frame -->
+            <div class="img-reveal-wrap" style="position:relative; border-radius:var(--radius-xl); border:1px solid rgba(255,42,84,0.35); box-shadow:0 30px 70px -15px rgba(0,0,0,0.85), 0 0 40px rgba(255,42,84,0.2), inset 0 0 0 1px rgba(255,42,84,0.1); overflow:hidden;">
+
+              <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" alt="Master Craftsman at Work" style="width:100%; height:480px; object-fit:cover; display:block;">
+
+              <!-- Bottom gradient -->
+              <div style="position:absolute; bottom:0; left:0; right:0; height:55%; background:linear-gradient(to top, rgba(11,13,18,0.92) 0%, rgba(11,13,18,0.4) 60%, transparent 100%); pointer-events:none;"></div>
+
+              <!-- Top-left corner glow accent -->
+              <div style="position:absolute; top:0; left:0; width:160px; height:160px; background:radial-gradient(circle at top left, rgba(255,42,84,0.25) 0%, transparent 70%); pointer-events:none;"></div>
+
+              <!-- Corner ribbon: BEVERLY HILLS -->
+              <div style="position:absolute; top:18px; left:-28px; background:linear-gradient(90deg,var(--primary),#ff6b35); color:#fff; font-size:0.62rem; font-weight:800; letter-spacing:0.12em; padding:0.3rem 2.8rem; transform:rotate(-38deg); box-shadow:0 4px 12px rgba(255,42,84,0.5); z-index:5; text-transform:uppercase;">BEVERLY HILLS</div>
+
+              <!-- Scan-line texture overlay -->
+              <div style="position:absolute; inset:0; background:repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 4px); pointer-events:none; z-index:1;"></div>
+
+              <!-- Bottom content row -->
+              <div style="position:absolute; bottom:1.25rem; left:1.25rem; right:1.25rem; display:flex; justify-content:space-between; align-items:flex-end; gap:0.75rem; flex-wrap:wrap; z-index:4;">
+                <div>
+                  <span class="badge badge-emerald mb-1" style="font-size:0.68rem;"><i class="fa-solid fa-shield-halved"></i> ISO-7 CLEANROOM</span>
+                  <div style="font-size:0.82rem; font-weight:700; color:rgba(255,255,255,0.95); letter-spacing:0.02em;">15,000 SQ.FT PRECISION FACILITY</div>
+                </div>
+                <!-- CRI badge -->
+                <div style="background:rgba(15,23,42,0.75); backdrop-filter:blur(12px); border:1px solid rgba(16,185,129,0.4); padding:0.6rem 1rem; border-radius:var(--radius-md);">
+                  <div class="d-flex align-center gap-2">
+                    <i class="fa-solid fa-circle-check" style="color:#10B981; font-size:1rem;"></i>
+                    <span style="font-size:0.82rem; font-weight:700; color:#FFFFFF;">CRI 98+ Inspection Tunnel</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Top-right live indicator -->
+              <div style="position:absolute; top:1rem; right:1rem; background:rgba(15,23,42,0.7); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-md); padding:0.4rem 0.75rem; display:flex; align-items:center; gap:0.5rem; z-index:4;">
+                <span style="width:7px; height:7px; border-radius:50%; background:#10B981; box-shadow:0 0 8px #10B981; animation:pulse 2s infinite;"></span>
+                <span style="font-size:0.7rem; font-weight:700; color:#fff; letter-spacing:0.08em;">LIVE STUDIO</span>
+              </div>
+            </div>
+
+            <!-- Floating badge: Zero Blade -->
+            <div class="floating-badge animate-float" style="top:-18px; left:-18px; z-index:10;">
+              <div class="icon-box" style="background:rgba(255,42,84,0.15); color:var(--primary);"><i class="fa-solid fa-xmark"></i></div>
+              <div class="badge-text" style="text-align:left;">
+                <h6>ZERO BLADE</h6>
+                <p>No Razor on OEM Paint</p>
+              </div>
+            </div>
+
+            <!-- Floating badge: OEM Certified -->
+            <div class="floating-badge animate-float-reverse" style="bottom:-18px; right:-18px; z-index:10;">
+              <div class="icon-box" style="background:rgba(212,175,55,0.15); color:var(--accent-gold);"><i class="fa-solid fa-certificate"></i></div>
+              <div class="badge-text" style="text-align:left;">
+                <h6>OEM CERTIFIED</h6>
+                <p>Factory-Level Teardown</p>
+              </div>
+            </div>
+
+            <!-- Side stat pill -->
+            <div style="position:absolute; top:50%; right:-14px; transform:translateY(-50%); background:var(--primary); color:#fff; border-radius:var(--radius-sm); padding:0.5rem 0.65rem; font-size:0.7rem; font-weight:800; letter-spacing:0.08em; writing-mode:vertical-lr; text-orientation:mixed; box-shadow:0 4px 20px rgba(255,42,84,0.5); z-index:8;">APEX STUDIO</div>
+
+          </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STUDIO STATS ==================== -->
+  <section class="section-padding bg-alt">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat-item card" style="padding:2.25rem 1.5rem; text-align:center;">
+          <div class="stat-number mono" data-target="2500" data-suffix="+" style="font-size:2.5rem; font-weight:800; color:var(--primary);">0</div>
+          <div class="stat-label" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-weight:600; margin-top:0.4rem;">Exotic Vehicles Transformed</div>
+        </div>
+        <div class="stat-item card" style="padding:2.25rem 1.5rem; text-align:center;">
+          <div class="stat-number mono" data-target="15" data-suffix=" Yrs" style="font-size:2.5rem; font-weight:800; color:var(--accent-gold);">0</div>
+          <div class="stat-label" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-weight:600; margin-top:0.4rem;">Warranty Protection</div>
+        </div>
+        <div class="stat-item card" style="padding:2.25rem 1.5rem; text-align:center;">
+          <div class="stat-number mono" data-target="100" data-suffix="%" style="font-size:2.5rem; font-weight:800; color:var(--secondary);">0</div>
+          <div class="stat-label" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-weight:600; margin-top:0.4rem;">Zero Blade-to-Paint</div>
+        </div>
+        <div class="stat-item card" style="padding:2.25rem 1.5rem; text-align:center;">
+          <div class="stat-number mono" data-target="38" data-suffix="+" style="font-size:2.5rem; font-weight:800; color:#10B981;">0</div>
+          <div class="stat-label" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-weight:600; margin-top:0.4rem;">SEMA & Concours Awards</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MASTER CRAFTSMEN TEAM ==================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge badge-primary">MASTER CRAFTSMEN</span>
+        <h2>MEET OUR EXPERT TEAM</h2>
+        <p>Every vehicle is assigned to factory-certified technicians with deep specialization in luxury and exotic coachwork.</p>
+      </div>
+
+      <div class="grid-4 reveal">
+        <!-- Team Member 1 -->
+        <div class="card text-center" style="padding:2rem 1.5rem; border-color:var(--border-card);">
+          <div style="width:130px; height:130px; margin:0 auto 1.25rem auto; border-radius:50%; overflow:hidden; border:3px solid var(--primary); box-shadow:0 0 20px var(--primary-glow);">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Julian Vance" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <h4 style="margin-bottom:0.35rem;">Julian Vance</h4>
+          <span class="badge badge-primary mb-3" style="font-size:0.7rem;">MASTER INSTALLER</span>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">14+ years wrapping hypercars. 3M & Avery Dennison Global Certified Trainer with over 1,200 builds completed.</p>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="card text-center" style="padding:2rem 1.5rem; border-color:var(--border-card);">
+          <div style="width:130px; height:130px; margin:0 auto 1.25rem auto; border-radius:50%; overflow:hidden; border:3px solid var(--secondary); box-shadow:0 0 20px var(--secondary-glow);">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Liam Cross" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <h4 style="margin-bottom:0.35rem;">Liam Cross</h4>
+          <span class="badge badge-cyan mb-3" style="font-size:0.7rem;">PPF & AERO LEAD</span>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">Former GT3 race team engineer specializing in high-speed aero kits, track armor, and XPEL stealth precision plotting.</p>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="card text-center" style="padding:2rem 1.5rem; border-color:var(--border-card);">
+          <div style="width:130px; height:130px; margin:0 auto 1.25rem auto; border-radius:50%; overflow:hidden; border:3px solid var(--accent-gold); box-shadow:0 0 20px var(--accent-gold-glow);">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Elena Morales" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <h4 style="margin-bottom:0.35rem;">Elena Morales</h4>
+          <span class="badge badge-gold mb-3" style="font-size:0.7rem;">BESPOKE INTERIORS</span>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">Artisan saddler trained in Milan. Crafts custom Alcantara upholstery, hand-stitched leather panels, and starlight ceilings.</p>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="card text-center" style="padding:2rem 1.5rem; border-color:var(--border-card);">
+          <div style="width:130px; height:130px; margin:0 auto 1.25rem auto; border-radius:50%; overflow:hidden; border:3px solid #10B981; box-shadow:0 0 20px rgba(16,185,129,0.3);">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" alt="Marcus King" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <h4 style="margin-bottom:0.35rem;">Marcus King</h4>
+          <span class="badge badge-emerald mb-3" style="font-size:0.7rem;">QC TUNNEL LEAD</span>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">Lead optical technician overseeing 100-point inspection tunnel, infrared thermal curing, and warranty certification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== QUALITY STANDARDS & CERTIFICATIONS ==================== -->
+  <section class="section-padding bg-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge badge-primary">BENCHMARK STANDARDS</span>
+        <h2>OUR QUALITY ASSURANCE CHARTER</h2>
+        <p>We uphold strict manufacturing tolerances to ensure complete satisfaction on every build.</p>
+      </div>
+
+      <div class="grid-4 reveal">
+        <div class="card" style="padding:2rem 1.5rem;">
+          <div class="card-icon" style="color:var(--primary); background:rgba(255,42,84,0.1);"><i class="fa-solid fa-temperature-arrow-up"></i></div>
+          <h4>Post-Heat Thermo Setting</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Every edge is thermo-cured to 90°C with digital infrared sensors, locking the vinyl memory to eliminate lifting or peeling.</p>
+        </div>
+
+        <div class="card" style="padding:2rem 1.5rem;">
+          <div class="card-icon" style="color:var(--secondary); background:rgba(0,229,255,0.1);"><i class="fa-solid fa-lightbulb"></i></div>
+          <h4>100-Point Light Tunnel</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Vehicles pass through our CRI 98+ high-intensity inspection bay to expose any micro-bubbles, dust, or edge imperfections.</p>
+        </div>
+
+        <div class="card" style="padding:2rem 1.5rem;">
+          <div class="card-icon" style="color:var(--accent-gold); background:rgba(212,175,55,0.1);"><i class="fa-solid fa-compass-drafting"></i></div>
+          <h4>Computerized CAD Plotting</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Pre-cut precision film templates designed specifically for each vehicle VIN to eliminate blades touching paintwork.</p>
+        </div>
+
+        <div class="card" style="padding:2rem 1.5rem;">
+          <div class="card-icon" style="color:#10B981; background:rgba(16,185,129,0.1);"><i class="fa-solid fa-file-contract"></i></div>
+          <h4>Transferable Warranty</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">All wraps and PPF packages come registered with direct manufacturer warranties, transferable if you sell your vehicle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CALL TO ACTION BANNER ==================== -->
+  <section class="section-padding" style="position:relative; overflow:hidden;">
+    <div class="container">
+      <div class="card card-glass text-center reveal" style="padding:4.5rem 2rem; border-color:var(--primary); background:linear-gradient(135deg, rgba(255, 42, 84, 0.1) 0%, var(--bg-card) 60%); box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 35px rgba(255,42,84,0.15);">
+        <span class="badge badge-primary mb-3">EXPERIENCE THE APEX STANDARD</span>
+        <h2 class="mb-3">SCHEDULE A PRIVATE STUDIO VISIT</h2>
+        <p class="mb-4" style="max-width:650px; margin-left:auto; margin-right:auto; color:var(--text-muted);">
+          Visit our Beverly Hills cleanroom facility, inspect physical sample swatches under true-color lighting, and consult directly with our master installers.
+        </p>
+        <div class="d-flex gap-3 justify-center" style="flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary btn-lg">
+            <span>Book Studio Consultation</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="pricing.html" class="btn btn-secondary btn-lg">
+            <i class="fa-solid fa-calculator"></i> <span>Explore Pricing Guide</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <!-- ==================== SITE FOOTER / CONCIERGE HUB ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand, Bio & Trust Chips -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo mb-3">
+            <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+          </a>
+          <p>The pinnacle of bespoke vehicle wraps, self-healing paint protection armor, carbon aerodynamic coachwork, and luxury automotive styling executed in ISO-7 cleanroom laboratories.</p>
+          
+          <div class="footer-trust-chips">
+            <span class="footer-trust-chip"><i class="fa-solid fa-certificate"></i> XPEL & 3M Certified</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-fan"></i> ISO-7 Cleanroom</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-shield-heart"></i> 100% Paint-Safe</span>
+          </div>
+
+          <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/18005559827" target="_blank" rel="noopener" class="footer-social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-widget">
+          <h5>Studio Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Flagship Studio</a></li>
+            <li><a href="home-2.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Wrap & Mod Studio</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cleanroom Facility</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 4K Portfolio Gallery</a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pricing & Calculator</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Automotive Journal</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> VIP Consultation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Specialties -->
+        <div class="footer-widget">
+          <h5>Disciplines</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cast Color Change Wraps</a></li>
+            <li><a href="service-details.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> XPEL Paint Protection</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 9H Ceramic Matrix</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pre-Preg Carbon Aero</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Starlight Headliners</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Track PPF Armor</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge & Newsletter -->
+        <div class="footer-widget">
+          <h5>Studio Concierge</h5>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>742 Motor Enclave Blvd,<br>Beverly Hills, CA 90210</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <a href="tel:+18005559827" style="color:inherit; font-weight:700;">+1 (800) 555-WRAP</a>
+              <div>
+                <span class="footer-live-badge"><span class="footer-live-dot"></span> LIVE CONCIERGE ACTIVE</span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:bespoke@apexveloce.com" style="color:inherit;">bespoke@apexveloce.com</a>
+          </div>
+
+          <!-- VIP Newsletter Box -->
+          <div class="footer-newsletter-box">
+            <small>VIP Studio Drops & Finish Alerts</small>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showApexToast) window.showApexToast('Subscribed to VIP Studio Drops!', 'success'); this.reset();">
+              <input type="email" class="footer-newsletter-input" placeholder="Enter your email..." required>
+              <button type="submit" class="footer-newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© <span class="current-year">2026</span> APEX VELOCE BESPOKE MOTORSTUDIO. ALL RIGHTS RESERVED.</span>
+          <span class="badge-spec" style="margin-left:0.75rem; font-size:0.7rem;"><i class="fa-solid fa-lock" style="color:#10B981;"></i> 256-BIT SSL SECURED</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="contact.html">Privacy Policy</a>
+          <a href="contact.html">Terms of Service</a>
+          <a href="pricing.html">Warranty Charter</a>
+          <a href="contact.html">Client Support</a>
+        </div>
+        <button type="button" class="footer-back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+          <i class="fa-solid fa-arrow-up"></i> <span>Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING STICKY CONCIERGE BAR ==================== -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+18005559827" class="sticky-bar-pill">
+      <i class="fa-solid fa-phone" style="color:var(--primary);"></i> <span>+1 (800) 555-WRAP</span>
+    </a>
+    <a href="contact.html" class="sticky-bar-pill sticky-bar-cta">
+      <i class="fa-solid fa-calendar-check"></i> <span>Book Studio Bay</span>
+    </a>
+    <button type="button" class="sticky-bar-cart cart-toggle-btn" aria-label="Open Cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-badge" style="display:none; position:absolute; top:-4px; right:-4px;">0</span>
+    </button>
+  </div>
+
+  <!-- Cart Drawer Component -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h4><i class="fa-solid fa-cart-shopping" style="color:var(--primary);"></i> Studio Cart</h4>
+      <button class="cart-drawer-close" id="cartDrawerClose" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <div class="cart-drawer-body">
+      <!-- Empty Cart State -->
+      <div class="cart-empty-state" id="cartDrawerEmpty" style="display:none;">
+        <div class="cart-empty-icon"><i class="fa-solid fa-cart-arrow-down"></i></div>
+        <h5>Your Cart is Empty</h5>
+        <p class="text-muted">Explore our bespoke vehicle wraps, paint protection, and custom styling packages.</p>
+        <a href="services.html" class="btn btn-primary btn-sm cart-continue-btn" id="cartEmptyBrowseBtn" data-cart-close><span>Browse Services</span> <i class="fa-solid fa-layer-group"></i></a>
+      </div>
+
+      <!-- Items List -->
+      <div id="cartDrawerItems"></div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-summary-row">
+        <span>Estimated Subtotal</span>
+        <span id="cartDrawerSubtotal" class="mono" style="font-weight:700;">$0</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Cleanroom Prep & Inspection</span>
+        <span class="badge badge-cyan" style="font-size:0.7rem;">INCLUDED</span>
+      </div>
+      <div class="cart-summary-row total">
+        <span>Estimated Total</span>
+        <span id="cartDrawerTotal" class="total-amount">$0</span>
+      </div>
+      <div class="d-flex flex-column gap-2">
+        <a href="payment.html" class="btn btn-primary" style="width:100%; justify-content:center;">
+          <span>Proceed to Studio Checkout</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button type="button" class="btn btn-secondary btn-sm cart-continue-btn" id="cartContinueCustomizing" data-cart-close style="width:100%;">
+          <span>Continue Customizing</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* ===================================================================
+   APEX VELOCE | Vehicle Wrap & Custom Studio
+   Dark Mode Theme System (dark-mode.css)
+   =================================================================== */
+
+[data-theme="dark"], body.dark-mode {
+  --bg-main: #0B0D12;
+  --bg-surface: #12151D;
+  --bg-card: #181C26;
+  --bg-card-hover: #202634;
+  --bg-glass: rgba(18, 21, 29, 0.75);
+  --bg-glass-strong: rgba(18, 21, 29, 0.92);
+  --bg-alt: #080A0E;
+  --bg-input: #10131B;
+
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
+  --text-inverse: #0B0D12;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.12);
+  --border-focus: var(--primary);
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 35px var(--primary-glow);
+  --shadow-card: 0 12px 35px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* Glow effects and ambient accents in dark mode */
+[data-theme="dark"] .glow-element, 
+body.dark-mode .glow-element {
+  box-shadow: 0 0 35px var(--primary-glow);
+}
+
+[data-theme="dark"] .hero-section::before,
+body.dark-mode .hero-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 42, 84, 0.15) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}

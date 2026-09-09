@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>Client Login | APEX VELOCE Bespoke Motorstudio</title>
+  <meta name="description" content="Log in to your Apex Veloce account to manage vehicle customization orders, design consultations, and wrap build specifications.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/light-mode.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      background: linear-gradient(180deg, rgba(11, 13, 18, 0.94) 0%, rgba(11, 13, 18, 0.82) 100%),
+                  url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 1.5rem 1rem;
+    }
+
+    .auth-nav {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+    }
+
+    .login-card {
+      max-width: 480px;
+      width: 100%;
+      margin: 0 auto 2rem auto;
+      padding: 2.75rem 2.5rem;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-card);
+      box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 42, 84, 0.12);
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .input-icon-wrap {
+      position: relative;
+    }
+
+    .input-icon-wrap .form-control {
+      padding-left: 2.75rem;
+      padding-right: 2.75rem;
+    }
+
+    .input-icon-wrap .field-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      pointer-events: none;
+      transition: color var(--transition-fast);
+    }
+
+    .input-icon-wrap .toggle-pwd-btn {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      cursor: pointer;
+      font-size: 0.95rem;
+      padding: 0;
+      transition: color var(--transition-fast);
+    }
+
+    .input-icon-wrap .toggle-pwd-btn:hover {
+      color: var(--primary);
+    }
+
+    .input-icon-wrap .form-control:focus ~ .field-icon {
+      color: var(--primary);
+    }
+
+    /* ==================== LIGHT MODE OVERRIDES ==================== */
+    [data-theme="light"] .auth-page,
+    body.light-mode.auth-page {
+      background: linear-gradient(180deg, rgba(241, 245, 249, 0.94) 0%, rgba(248, 250, 252, 0.88) 100%),
+                  url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+
+    [data-theme="light"] .login-card,
+    body.light-mode .login-card {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.12);
+      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.12), 0 0 30px rgba(255, 42, 84, 0.08);
+    }
+
+    [data-theme="light"] .login-card h3,
+    body.light-mode .login-card h3 {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .login-card p,
+    body.light-mode .login-card p {
+      color: #475569;
+    }
+
+    [data-theme="light"] .form-label,
+    body.light-mode .form-label {
+      color: #0F172A;
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .form-control,
+    body.light-mode .form-control {
+      background: #F8FAFC;
+      border: 1px solid rgba(15, 23, 42, 0.16);
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .form-control:focus,
+    body.light-mode .form-control:focus {
+      background: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(255, 42, 84, 0.15);
+    }
+
+    [data-theme="light"] .field-icon,
+    body.light-mode .field-icon,
+    [data-theme="light"] .toggle-pwd-btn,
+    body.light-mode .toggle-pwd-btn {
+      color: #64748B;
+    }
+
+    [data-theme="light"] .brand-logo .title,
+    body.light-mode .brand-logo .title {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .brand-logo .subtitle,
+    body.light-mode .brand-logo .subtitle {
+      color: #64748B;
+    }
+
+    [data-theme="light"] .btn-secondary,
+    body.light-mode .btn-secondary {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.15);
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .theme-toggle-btn,
+    body.light-mode .theme-toggle-btn {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.15);
+      color: #0F172A;
+    }
+  </style>
+</head>
+<body class="dark-mode auth-page">
+
+  <!-- ==================== TOP BAR ==================== -->
+  <header class="auth-nav reveal">
+    <a href="index.html" class="brand-logo">
+      <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="logo-text">
+        <span class="title">APEX VELOCE</span>
+        <span class="subtitle">CLIENT ACCESS</span>
+      </div>
+    </a>
+    
+    <div class="d-flex align-center gap-2">
+      <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Theme">
+        <i class="fa-solid fa-sun"></i>
+      </button>
+      <button class="dir-toggle-btn" aria-label="Toggle LTR / RTL Direction" title="Switch to RTL (Right-to-Left)"><span class="dir-badge">LTR</span> <i class="fa-solid fa-right-left"></i></button>
+      <a href="index.html" class="btn btn-secondary btn-sm" style="font-size:0.85rem;">
+        <i class="fa-solid fa-arrow-left"></i> <span>Home</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== LOGIN CARD CONTAINER ==================== -->
+  <main class="login-card reveal">
+    <div class="stickers-cluster mb-3">
+      <div class="apex-sticker sticker-gold float-sticker-1"><i class="fa-solid fa-crown"></i> VIP PORTAL</div>
+      <div class="apex-sticker sticker-cyan float-sticker-2"><i class="fa-solid fa-shield-halved"></i> 256-BIT SSL</div>
+      <div class="apex-sticker sticker-neon-red float-sticker-3"><i class="fa-solid fa-bolt"></i> FAST LOGIN</div>
+    </div>
+    <div class="text-center mb-4">
+      <span class="badge badge-primary mb-2"><i class="fa-solid fa-shield-check"></i> VIP CLIENT PORTAL</span>
+      <h3 style="font-size:1.65rem; margin-bottom:0.35rem;">Welcome Back</h3>
+      <p style="font-size:0.88rem; margin:0; color:var(--text-muted);">Access your studio build telemetry & vehicle orders.</p>
+    </div>
+
+    <!-- Alert / Status Notification Box -->
+    <div id="loginAlert" style="display:none; padding:0.85rem 1rem; border-radius:var(--radius-sm); font-size:0.88rem; margin-bottom:1.25rem;"></div>
+
+    <form id="loginForm" novalidate>
+      <div class="form-group mb-3">
+        <label class="form-label" style="font-size:0.85rem; font-weight:600;">Email Address *</label>
+        <div class="input-icon-wrap">
+          <input type="email" id="loginEmail" class="form-control" placeholder="client@apexveloce.com" required value="tamil@apexveloce.com" autocomplete="email">
+          <i class="fa-solid fa-envelope field-icon"></i>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <div class="d-flex justify-between align-center mb-1">
+          <label class="form-label" style="font-size:0.85rem; font-weight:600; margin:0;">Password *</label>
+          <a href="#" id="forgotPasswordLink" style="font-size:0.8rem; color:var(--primary); text-decoration:underline;">Forgot key?</a>
+        </div>
+        <div class="input-icon-wrap">
+          <input type="password" id="loginPassword" class="form-control" placeholder="••••••••••••" required value="password123" autocomplete="current-password">
+          <i class="fa-solid fa-lock field-icon"></i>
+          <button type="button" class="toggle-pwd-btn" data-target="#loginPassword" aria-label="Toggle Password Visibility">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="d-flex align-center justify-between mb-4" style="font-size:0.85rem;">
+        <label class="d-flex align-center gap-2" style="cursor:pointer; color:var(--text-muted);">
+          <input type="checkbox" id="rememberSession" checked style="accent-color:var(--primary); width:16px; height:16px;">
+          <span>Remember session</span>
+        </label>
+      </div>
+
+      <button type="submit" id="loginSubmitBtn" class="btn btn-primary" style="width:100%; justify-content:center; padding:0.85rem 1.5rem; font-size:0.95rem;">
+        <span>Log In to Account</span> <i class="fa-solid fa-arrow-right-to-bracket"></i>
+      </button>
+    </form>
+
+    <div class="text-center mt-4" style="font-size:0.88rem; color:var(--text-muted);">
+      Don't have an account? <a href="register.html" style="color:var(--primary); font-weight:700; margin-left:0.25rem;">Register VIP access here</a>
+    </div>
+
+    <div class="text-center mt-3 pt-3" style="border-top:1px solid var(--border-subtle); font-size:0.82rem; color:var(--text-dim);">
+      <a href="index.html" style="color:var(--text-muted);"><i class="fa-solid fa-arrow-left"></i> Return to Main Website</a>
+    </div>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="text-center pb-2" style="font-size:0.8rem; color:var(--text-dim);">
+    &copy; 2026 APEX VELOCE BESPOKE MOTORSTUDIO. All Rights Reserved. • Positive-Pressure Cleanroom Facility
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginForm = document.querySelector('#loginForm');
+      const emailInput = document.querySelector('#loginEmail');
+      const passwordInput = document.querySelector('#loginPassword');
+      const alertBox = document.querySelector('#loginAlert');
+      const forgotLink = document.querySelector('#forgotPasswordLink');
+      const submitBtn = document.querySelector('#loginSubmitBtn');
+
+      // Password Visibility Toggle
+      document.querySelectorAll('.toggle-pwd-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetSelector = btn.getAttribute('data-target');
+          const input = document.querySelector(targetSelector);
+          if (!input) return;
+          const icon = btn.querySelector('i');
+          if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+          } else {
+            input.type = 'password';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+          }
+        });
+      });
+
+      if (forgotLink) {
+        forgotLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          showAlert('Demo credentials: password123 (or use any password you registered with).', 'info');
+        });
+      }
+
+      function showAlert(msg, type) {
+        if (!alertBox) return;
+        alertBox.style.display = 'block';
+        alertBox.innerText = msg;
+        if (type === 'error') {
+          alertBox.style.background = 'rgba(255, 42, 84, 0.15)';
+          alertBox.style.border = '1px solid var(--primary)';
+          alertBox.style.color = '#FFA4B4';
+        } else if (type === 'success') {
+          alertBox.style.background = 'rgba(16, 185, 129, 0.15)';
+          alertBox.style.border = '1px solid #10B981';
+          alertBox.style.color = '#A7F3D0';
+        } else {
+          alertBox.style.background = 'rgba(0, 229, 255, 0.12)';
+          alertBox.style.border = '1px solid var(--secondary)';
+          alertBox.style.color = '#BAF7FF';
+        }
+      }
+
+      if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const email = emailInput.value.trim();
+          const password = passwordInput.value;
+
+          if (!email) {
+            showAlert('Please enter your email address.', 'error');
+            emailInput.focus();
+            return;
+          }
+
+          if (!password) {
+            showAlert('Please enter your password.', 'error');
+            passwordInput.focus();
+            return;
+          }
+
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Authenticating...</span> <i class="fa-solid fa-circle-notch fa-spin"></i>`;
+          }
+
+          if (!window.ApexAuth) return;
+          const result = window.ApexAuth.login(email, password);
+
+          if (result.success) {
+            showAlert(result.message + ' Redirecting to Home...', 'success');
+            setTimeout(() => {
+              window.location.href = 'index.html';
+            }, 800);
+          } else {
+            showAlert(result.message, 'error');
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = `<span>Log In to Account</span> <i class="fa-solid fa-arrow-right-to-bracket"></i>`;
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

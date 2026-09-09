@@ -1,0 +1,839 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>VIP Concierge & Bespoke Consultation | APEX VELOCE</title>
+  <meta name="description" content="Direct VIP concierge and bespoke design consultation for exotic vehicle wraps, XPEL paint protection film, ceramic coatings, and carbon coachwork at Apex Veloce Beverly Hills.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/light-mode.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="dark-mode">
+
+  <!-- ==================== SITE HEADER / NAVBAR ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
+            <div class="dropdown-menu">
+              <a href="index.html" class="dropdown-item"><i class="fa-solid fa-gauge-high"></i> Home 1 — Flagship Studio</a>
+              <a href="home-2.html" class="dropdown-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Home 2 — Wrap & Custom Builds</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Theme"><i class="fa-solid fa-sun"></i></button>
+          <button class="dir-toggle-btn" aria-label="Toggle LTR / RTL Direction" title="Switch to RTL (Right-to-Left)"><span class="dir-badge">LTR</span> <i class="fa-solid fa-right-left"></i></button>
+          <button class="cart-toggle-btn" aria-label="View Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" style="display:none;">0</span>
+          </button>
+          <div class="nav-auth-group">
+            <a href="register.html" class="btn btn-primary btn-sm nav-signup-btn">
+              <span>Register</span> <i class="fa-solid fa-user-plus"></i>
+            </a>
+          </div>
+          <button class="mobile-toggle-btn" aria-label="Open Mobile Menu"><i class="fa-solid fa-bars-staggered"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE DRAWER ==================== -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">MOTORSTUDIO</span></div>
+      </a>
+      <button class="drawer-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="drawer-menu">
+      <li><a href="index.html" class="drawer-link"><span>Home 1 — Flagship</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="home-2.html" class="drawer-link"><span>Home 2 — Wrap Studio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="about.html" class="drawer-link"><span>About Studio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="services.html" class="drawer-link"><span>Services Directory</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="service-details.html" class="drawer-link"><span>Service Details</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="gallery.html" class="drawer-link"><span>Showcase Portfolio</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="pricing.html" class="drawer-link"><span>Pricing & Packages</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="blog.html" class="drawer-link"><span>Automotive Journal</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="contact.html" class="drawer-link active"><span>VIP Consultation</span> <i class="fa-solid fa-chevron-right"></i></a></li>
+    </ul>
+    <div class="drawer-footer drawer-auth-group">
+      <div class="mb-2">
+        <button type="button" class="btn btn-secondary dir-toggle-btn drawer-dir-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem; justify-content:center;">
+          <span class="dir-badge">LTR</span> <span>Switch to RTL</span> <i class="fa-solid fa-right-left"></i>
+        </button>
+      </div>
+      <div class="mb-2">
+        <button type="button" class="btn btn-secondary cart-toggle-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem;">
+          <i class="fa-solid fa-cart-shopping"></i> <span>View Cart</span>
+          <span class="cart-badge" style="display:none; position:static; margin-left:0.4rem;">0</span>
+        </button>
+      </div>
+      <a href="register.html" class="btn btn-primary mb-2"><span>Register VIP</span> <i class="fa-solid fa-user-plus"></i></a>
+      <a href="contact.html" class="btn btn-secondary" style="border-color:var(--primary); color:var(--primary);"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </aside>
+
+  <!-- ==================== HERO SECTION 2.0 (STICKERS & FAST JUMP) ==================== -->
+  <section class="hero-section section-padding bg-alt" style="position:relative; overflow:hidden; padding-top:4.5rem; padding-bottom:3.5rem;">
+    <div style="position:absolute; top:-100px; left:20%; width:500px; height:500px; background:radial-gradient(circle, rgba(255,42,84,0.12) 0%, rgba(0,0,0,0) 70%); pointer-events:none;"></div>
+    <div style="position:absolute; bottom:-100px; right:20%; width:500px; height:500px; background:radial-gradient(circle, rgba(0,229,255,0.08) 0%, rgba(0,0,0,0) 70%); pointer-events:none;"></div>
+
+    <div class="container text-center reveal" style="position:relative; z-index:2;">
+      <div class="stickers-cluster contact-stickers-cluster">
+        <div class="apex-sticker sticker-neon-red float-sticker-1"><i class="fa-solid fa-headset"></i> 24/7 VIP DIRECT CONCIERGE</div>
+        <div class="apex-sticker sticker-cyan float-sticker-2"><i class="fa-solid fa-bolt"></i> 60-SEC FAST CALLBACK</div>
+        <div class="apex-sticker sticker-gold float-sticker-3"><i class="fa-solid fa-location-dot"></i> BEVERLY HILLS CLEANROOM</div>
+        <div class="apex-sticker sticker-emerald float-sticker-1"><i class="fa-solid fa-user-shield"></i> 100% NDA PROTECTED</div>
+        <div class="apex-sticker sticker-hologram float-sticker-2"><i class="fa-solid fa-certificate"></i> XPEL & 3M MASTER LAB</div>
+      </div>
+
+      <h1 style="max-width:980px; margin:0 auto 1.5rem auto; font-size:clamp(2.3rem, 4.5vw, 3.8rem); line-height:1.15; font-weight:900;">
+        DIRECT VIP STUDIO CONCIERGE & <span class="text-gradient">BESPOKE CONSULTATION</span>
+      </h1>
+
+      <p style="max-width:760px; margin:0 auto; font-size:1.15rem; color:var(--text-muted); line-height:1.75;">
+        Collaborate directly with senior master technicians, reserve private ISO-7 cleanroom bay time, arrange white-glove enclosed transport, or configure your bespoke customization proposal.
+      </p>
+
+      <div class="contact-quick-pills">
+        <a href="#wizardSection" class="contact-pill-btn"><i class="fa-solid fa-wand-magic-sparkles" style="color:var(--primary);"></i> <span>Consultation Wizard</span></a>
+        <a href="#channelsSection" class="contact-pill-btn"><i class="fa-solid fa-phone" style="color:var(--secondary);"></i> <span>Direct Studio Lines</span></a>
+        <a href="#cleanroomSection" class="contact-pill-btn"><i class="fa-solid fa-fan" style="color:var(--accent-gold);"></i> <span>Cleanroom Tour</span></a>
+        <a href="#perksSection" class="contact-pill-btn"><i class="fa-solid fa-shield-halved" style="color:#10B981;"></i> <span>VIP Guarantees</span></a>
+        <a href="#faqSection" class="contact-pill-btn"><i class="fa-solid fa-circle-question" style="color:var(--primary);"></i> <span>Discovery FAQs</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 1: 4 VIP COMMUNICATION HUBS ==================== -->
+  <section class="section-padding" id="channelsSection" style="padding-top:3.5rem; padding-bottom:3.5rem;">
+    <div class="container">
+      <div class="section-header text-center mb-5 reveal">
+        <span class="badge badge-primary"><i class="fa-solid fa-tower-broadcast"></i> MULTI-CHANNEL CONCIERGE</span>
+        <h2 style="font-size:clamp(1.9rem, 3.5vw, 2.7rem);">Direct Access to Master Technicians</h2>
+        <p style="max-width:650px; margin:0 auto; color:var(--text-muted);">Choose your preferred channel for instant estimates, live material swatch advice, or enclosed transport bookings.</p>
+      </div>
+
+      <div class="contact-channel-grid">
+        <!-- Channel 1: Hotline -->
+        <div class="contact-channel-card reveal">
+          <div class="pricing-sticker sticker-neon-red" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-fire"></i> DIRECT HOTLINE</div>
+          <div>
+            <div class="channel-icon-wrap"><i class="fa-solid fa-phone-volume"></i></div>
+            <div class="channel-status-pill"><span class="status-dot-active"></span> OPERATORS ONLINE</div>
+            <h4 style="margin-bottom:0.4rem;">Direct Studio Phone</h4>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">Immediate connection to lead project managers for urgent bookings & inquiries.</p>
+            <div style="font-family:var(--font-mono); font-size:1.15rem; font-weight:800; color:var(--text-main); margin-bottom:1.5rem;">+1 (800) 555-WRAP</div>
+          </div>
+          <div class="d-flex flex-column gap-2">
+            <a href="tel:+18005559827" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;"><i class="fa-solid fa-phone"></i> <span>Call Studio Now</span></a>
+            <button type="button" class="btn btn-secondary btn-sm" data-instant-callback style="width:100%; justify-content:center;"><i class="fa-solid fa-bolt"></i> <span>Request 60s Callback</span></button>
+          </div>
+        </div>
+
+        <!-- Channel 2: WhatsApp -->
+        <div class="contact-channel-card reveal reveal-delay-1">
+          <div class="pricing-sticker sticker-emerald" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-comment-dots"></i> FAST QUOTES</div>
+          <div>
+            <div class="channel-icon-wrap" style="color:#10B981; background:rgba(16,185,129,0.1); border-color:rgba(16,185,129,0.25);"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="channel-status-pill" style="color:#10B981; background:rgba(16,185,129,0.1); border-color:rgba(16,185,129,0.25);"><span class="status-dot-active"></span> AVG RESPONSE &lt; 5 MINS</div>
+            <h4 style="margin-bottom:0.4rem;">VIP WhatsApp Desk</h4>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">Send walkaround videos, color swatches, or scratch damage photos for immediate pricing.</p>
+            <div style="font-family:var(--font-mono); font-size:1.15rem; font-weight:800; color:var(--text-main); margin-bottom:1.5rem;">+1 (800) 555-9827</div>
+          </div>
+          <div>
+            <a href="https://wa.me/18005559827" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="width:100%; justify-content:center; border-color:#10B981; color:#10B981;"><i class="fa-brands fa-whatsapp"></i> <span>Open WhatsApp Chat</span></a>
+          </div>
+        </div>
+
+        <!-- Channel 3: CAD & RFP Desk -->
+        <div class="contact-channel-card reveal reveal-delay-2">
+          <div class="pricing-sticker sticker-cyan" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-bezier-curve"></i> 3D CAD PROPOSALS</div>
+          <div>
+            <div class="channel-icon-wrap" style="color:var(--secondary); background:rgba(0,229,255,0.1); border-color:rgba(0,229,255,0.25);"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <div class="channel-status-pill" style="color:var(--secondary); background:rgba(0,229,255,0.1); border-color:rgba(0,229,255,0.25);"><span class="status-dot-active" style="background:var(--secondary);"></span> SAME-DAY PROPOSALS</div>
+            <h4 style="margin-bottom:0.4rem;">Digital Proposal Desk</h4>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">Send livery design briefs, corporate fleet tenders, or CAD files for technical appraisal.</p>
+            <div style="font-family:var(--font-mono); font-size:1.05rem; font-weight:800; color:var(--text-main); margin-bottom:1.5rem; word-break:break-all;">bespoke@apexveloce.com</div>
+          </div>
+          <div>
+            <a href="mailto:bespoke@apexveloce.com" class="btn btn-secondary btn-sm" style="width:100%; justify-content:center; border-color:var(--secondary); color:var(--secondary);"><i class="fa-solid fa-paper-plane"></i> <span>Send Email Brief</span></a>
+          </div>
+        </div>
+
+        <!-- Channel 4: Beverly Hills Cleanroom -->
+        <div class="contact-channel-card reveal reveal-delay-3">
+          <div class="pricing-sticker sticker-gold" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-truck-ramp-box"></i> WHITE-GLOVE</div>
+          <div>
+            <div class="channel-icon-wrap" style="color:var(--accent-gold); background:rgba(212,175,55,0.1); border-color:rgba(212,175,55,0.25);"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="channel-status-pill" style="color:var(--accent-gold); background:rgba(212,175,55,0.1); border-color:rgba(212,175,55,0.25);"><span class="status-dot-active" style="background:var(--accent-gold);"></span> 50 STATES ACTIVE</div>
+            <h4 style="margin-bottom:0.4rem;">Beverly Hills Studio</h4>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">742 Motor Enclave Blvd, Beverly Hills, CA. Climate-controlled cleanrooms & lounge.</p>
+            <div style="font-family:var(--font-mono); font-size:0.95rem; font-weight:700; color:var(--text-main); margin-bottom:1.5rem;">Mon–Fri: 8am–7pm | Sat: 9am–5pm</div>
+          </div>
+          <div>
+            <a href="#cleanroomSection" class="btn btn-secondary btn-sm" style="width:100%; justify-content:center; border-color:var(--accent-gold); color:var(--accent-gold);"><i class="fa-solid fa-calendar-check"></i> <span>Book Cleanroom Tour</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 2: 4-STEP INTERACTIVE CONSULTATION WIZARD ==================== -->
+  <section class="section-padding bg-alt" id="wizardSection" style="padding-top:4rem; padding-bottom:4rem;">
+    <div class="container">
+      <div class="section-header text-center mb-5 reveal">
+        <span class="badge badge-primary"><i class="fa-solid fa-wand-magic-sparkles"></i> INTERACTIVE 4-STEP CONFIGURATOR</span>
+        <h2 style="font-size:clamp(2rem, 3.8vw, 2.9rem);">Bespoke Customization Brief</h2>
+        <p style="max-width:700px; margin:0 auto; color:var(--text-muted);">Configure your vehicle transformation scope, receive an instant itemized summary, and reserve master technician bay hours.</p>
+      </div>
+
+      <div class="wizard-main-container">
+        <!-- Left: Interactive Wizard Card -->
+        <div class="consultation-wizard-card reveal">
+          <!-- Step Progress Bar -->
+          <div class="wizard-progress-bar">
+            <div class="wizard-progress-line-fill"></div>
+            <button type="button" class="wizard-step-node active" data-step-target="1" aria-label="Step 1: VIP Identity">
+              <div class="wizard-step-circle">01</div>
+              <span class="wizard-step-title">VIP Identity</span>
+            </button>
+            <button type="button" class="wizard-step-node" data-step-target="2" aria-label="Step 2: Vehicle Specs">
+              <div class="wizard-step-circle">02</div>
+              <span class="wizard-step-title">Vehicle Specs</span>
+            </button>
+            <button type="button" class="wizard-step-node" data-step-target="3" aria-label="Step 3: Disciplines">
+              <div class="wizard-step-circle">03</div>
+              <span class="wizard-step-title">Disciplines</span>
+            </button>
+            <button type="button" class="wizard-step-node" data-step-target="4" aria-label="Step 4: Schedule & Photos">
+              <div class="wizard-step-circle">04</div>
+              <span class="wizard-step-title">Schedule & Photos</span>
+            </button>
+          </div>
+
+          <form id="consultationForm">
+            <!-- STEP 1: VIP Identity -->
+            <div class="wizard-pane active" data-step="1">
+              <div class="d-flex align-center justify-between mb-3">
+                <div>
+                  <span class="badge badge-primary mb-1">STAGE 01 OF 04</span>
+                  <h3 style="margin:0;">Client & Contact Identity</h3>
+                </div>
+                <span class="badge-spec"><i class="fa-solid fa-lock" style="color:#10B981;"></i> 256-Bit Encrypted</span>
+              </div>
+              <p class="mb-4" style="font-size:0.92rem; color:var(--text-muted);">Please provide your primary contact details so our concierge team can route your brief to the appropriate specialist.</p>
+              <div class="grid-2 gap-3 mb-3">
+                <div class="form-group mb-2">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" name="client_name" class="form-control" placeholder="e.g. Alexander Sterling" required>
+                </div>
+                <div class="form-group mb-2">
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" name="client_email" class="form-control" placeholder="alexander@domain.com" required>
+                </div>
+              </div>
+              <div class="grid-2 gap-3 mb-4">
+                <div class="form-group mb-2">
+                  <label class="form-label">Phone / WhatsApp *</label>
+                  <input type="tel" name="client_phone" class="form-control" placeholder="+1 (555) 392-8812" required>
+                </div>
+                <div class="form-group mb-2">
+                  <label class="form-label">Preferred Contact Method</label>
+                  <select name="contact_preference" class="form-control">
+                    <option value="WhatsApp">VIP WhatsApp (Fastest)</option>
+                    <option value="Phone Call">Direct Phone Call</option>
+                    <option value="Email">Email Proposal</option>
+                    <option value="Cleanroom Meeting">In-Person Studio Meeting</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex justify-end mt-4">
+                <button type="button" class="btn btn-primary" data-wizard-next><span>Continue to Vehicle Specs</span> <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- STEP 2: Vehicle Specs -->
+            <div class="wizard-pane" data-step="2">
+              <div class="d-flex align-center justify-between mb-3">
+                <div>
+                  <span class="badge badge-primary mb-1">STAGE 02 OF 04</span>
+                  <h3 style="margin:0;">Vehicle Portfolio & Condition</h3>
+                </div>
+                <span class="badge-spec"><i class="fa-solid fa-car"></i> Exotic & Luxury Ready</span>
+              </div>
+              <p class="mb-4" style="font-size:0.92rem; color:var(--text-muted);">Specify your vehicle details to allow precise panel measurements and CAD pattern indexing.</p>
+              <div class="grid-3 gap-2 mb-3">
+                <div class="form-group mb-2">
+                  <label class="form-label">Vehicle Make *</label>
+                  <input type="text" name="vehicle_make" class="form-control" placeholder="e.g. Porsche, Ferrari, BMW" required>
+                </div>
+                <div class="form-group mb-2">
+                  <label class="form-label">Vehicle Model *</label>
+                  <input type="text" name="vehicle_model" class="form-control" placeholder="e.g. 911 GT3 RS, Huracán" required>
+                </div>
+                <div class="form-group mb-2">
+                  <label class="form-label">Model Year</label>
+                  <input type="number" name="vehicle_year" class="form-control" placeholder="2025" min="1960" max="2027">
+                </div>
+              </div>
+              <div class="grid-2 gap-3 mb-4">
+                <div class="form-group mb-2">
+                  <label class="form-label">Current Factory Paint Condition</label>
+                  <select name="paint_condition" class="form-control">
+                    <option value="Brand New Factory Delivery">Brand New (Delivery Miles / Factory Fresh)</option>
+                    <option value="Excellent Condition">Excellent (Minor swirls, no deep scratches)</option>
+                    <option value="Requires Paint Correction">Requires Multi-Stage Paint Correction</option>
+                    <option value="Repainted / Custom Panels">Repainted / Aftermarket Body Panels</option>
+                  </select>
+                </div>
+                <div class="form-group mb-2">
+                  <label class="form-label">Primary Vehicle Use Case</label>
+                  <select name="vehicle_usage" class="form-control">
+                    <option value="Daily Luxury Driver">Daily Luxury Driver</option>
+                    <option value="Weekend & Track Day Circuit">Weekend Spirited & Track Circuit</option>
+                    <option value="Concours & Private Collection">Concours / Private Collection Vault</option>
+                    <option value="Promotional & Commercial Show car">Promotional / Brand Show Vehicle</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex justify-between align-center mt-4">
+                <button type="button" class="btn btn-secondary" data-wizard-prev><i class="fa-solid fa-arrow-left"></i> <span>Back</span></button>
+                <button type="button" class="btn btn-primary" data-wizard-next><span>Select Disciplines</span> <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- STEP 3: Disciplines -->
+            <div class="wizard-pane" data-step="3">
+              <div class="d-flex align-center justify-between mb-3">
+                <div>
+                  <span class="badge badge-primary mb-1">STAGE 03 OF 04</span>
+                  <h3 style="margin:0;">Customization Scope & Disciplines</h3>
+                </div>
+                <span class="badge-spec"><i class="fa-solid fa-wand-magic-sparkles"></i> Multi-Select</span>
+              </div>
+              <p class="mb-4" style="font-size:0.92rem; color:var(--text-muted);">Select one or more services to combine into a seamless multi-craft transformation package.</p>
+              <div class="service-discipline-grid">
+                <div class="discipline-card selected" data-discipline="Color Change Wrap">
+                  <div class="discipline-icon-box"><i class="fa-solid fa-palette"></i></div>
+                  <div>
+                    <h5 style="margin-bottom:0.25rem;">Cast Color Change Wrap</h5>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin:0;">Satin, Matte, Gloss Metallic, or bespoke printed liveries.</p>
+                  </div>
+                  <div class="discipline-check-indicator"><i class="fa-solid fa-check"></i></div>
+                  <input type="checkbox" name="disciplines[]" value="Color Change Wrap" checked style="display:none;">
+                </div>
+                <div class="discipline-card selected" data-discipline="XPEL PPF Armor">
+                  <div class="discipline-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                  <div>
+                    <h5 style="margin-bottom:0.25rem;">XPEL PPF Paint Protection</h5>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin:0;">10-Mil self-healing polyurethane full or track pack.</p>
+                  </div>
+                  <div class="discipline-check-indicator"><i class="fa-solid fa-check"></i></div>
+                  <input type="checkbox" name="disciplines[]" value="XPEL PPF Armor" checked style="display:none;">
+                </div>
+                <div class="discipline-card" data-discipline="Ceramic 9H Coating">
+                  <div class="discipline-icon-box"><i class="fa-solid fa-gem"></i></div>
+                  <div>
+                    <h5 style="margin-bottom:0.25rem;">9H Ceramic Hydrophobic Matrix</h5>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin:0;">Multi-layer nanotech topcoat over wrap or bare clearcoat.</p>
+                  </div>
+                  <div class="discipline-check-indicator"><i class="fa-solid fa-check"></i></div>
+                  <input type="checkbox" name="disciplines[]" value="Ceramic 9H Coating" style="display:none;">
+                </div>
+                <div class="discipline-card" data-discipline="Carbon Aero Coachwork">
+                  <div class="discipline-icon-box"><i class="fa-solid fa-wind"></i></div>
+                  <div>
+                    <h5 style="margin-bottom:0.25rem;">Carbon Aero & Body Kit Fitment</h5>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin:0;">Splitters, rear wings, widebody flares & diffusers.</p>
+                  </div>
+                  <div class="discipline-check-indicator"><i class="fa-solid fa-check"></i></div>
+                  <input type="checkbox" name="disciplines[]" value="Carbon Aero Coachwork" style="display:none;">
+                </div>
+                <div class="discipline-card" data-discipline="Bespoke Interior & Starlight">
+                  <div class="discipline-icon-box"><i class="fa-solid fa-star"></i></div>
+                  <div>
+                    <h5 style="margin-bottom:0.25rem;">Starlight Ceiling & Alcantara</h5>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin:0;">Fiber-optic shooting stars, custom leather & trim retrim.</p>
+                  </div>
+                  <div class="discipline-check-indicator"><i class="fa-solid fa-check"></i></div>
+                  <input type="checkbox" name="disciplines[]" value="Bespoke Interior & Starlight" style="display:none;">
+                </div>
+                <div class="discipline-card" data-discipline="Full Bespoke Overhaul">
+                  <div class="discipline-icon-box"><i class="fa-solid fa-crown"></i></div>
+                  <div>
+                    <h5 style="margin-bottom:0.25rem;">Complete Signature Build</h5>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin:0;">Full wrap + PPF + wheels + suspension + interior.</p>
+                  </div>
+                  <div class="discipline-check-indicator"><i class="fa-solid fa-check"></i></div>
+                  <input type="checkbox" name="disciplines[]" value="Full Bespoke Overhaul" style="display:none;">
+                </div>
+              </div>
+              <div class="d-flex justify-between align-center mt-4">
+                <button type="button" class="btn btn-secondary" data-wizard-prev><i class="fa-solid fa-arrow-left"></i> <span>Back</span></button>
+                <button type="button" class="btn btn-primary" data-wizard-next><span>Select Budget & Schedule</span> <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- STEP 4: Budget & Schedule -->
+            <div class="wizard-pane" data-step="4">
+              <div class="d-flex align-center justify-between mb-3">
+                <div>
+                  <span class="badge badge-primary mb-1">STAGE 04 OF 04</span>
+                  <h3 style="margin:0;">Budget, Schedule & Photo Upload</h3>
+                </div>
+                <span class="badge-spec"><i class="fa-solid fa-cloud-arrow-up"></i> Photo Inspection</span>
+              </div>
+              <p class="mb-4" style="font-size:0.92rem; color:var(--text-muted);">Select your target investment bracket and attach photos of your car for millimetric estimation.</p>
+              <label class="form-label mb-2">Estimated Investment Tier</label>
+              <div class="budget-tier-grid mb-4">
+                <div class="budget-tier-card" data-tier="Enthusiast">
+                  <div class="budget-tier-price">$1,500 – $3,000</div>
+                  <h5 style="margin-bottom:0.2rem;">Enthusiast Tier</h5>
+                  <p style="font-size:0.78rem; color:var(--text-muted); margin:0;">Front Track PPF, Partial Accents, or Ceramic Guard.</p>
+                  <input type="radio" name="budget_tier" value="$1,500 - $3,000" style="display:none;">
+                </div>
+                <div class="budget-tier-card selected" data-tier="Signature">
+                  <div class="budget-tier-price">$3,000 – $6,000</div>
+                  <h5 style="margin-bottom:0.2rem;">Signature Tier</h5>
+                  <p style="font-size:0.78rem; color:var(--text-muted); margin:0;">Full Cast Color Change Wrap or Full Front PPF Armor.</p>
+                  <input type="radio" name="budget_tier" value="$3,000 - $6,000" checked style="display:none;">
+                </div>
+                <div class="budget-tier-card" data-tier="Masterpiece">
+                  <div class="budget-tier-price">$6,000 – $12,000</div>
+                  <h5 style="margin-bottom:0.2rem;">Masterpiece Tier</h5>
+                  <p style="font-size:0.78rem; color:var(--text-muted); margin:0;">Full Body XPEL PPF + 9H Ceramic Matrix + Carbon Aero.</p>
+                  <input type="radio" name="budget_tier" value="$6,000 - $12,000" style="display:none;">
+                </div>
+                <div class="budget-tier-card" data-tier="Unlimited Bespoke">
+                  <div class="budget-tier-price">$12,000+ Unlimited</div>
+                  <h5 style="margin-bottom:0.2rem;">Unlimited Bespoke</h5>
+                  <p style="font-size:0.78rem; color:var(--text-muted); margin:0;">Full Ground-Up Custom Coachwork & Starlight Interior.</p>
+                  <input type="radio" name="budget_tier" value="$12,000+ Unlimited" style="display:none;">
+                </div>
+              </div>
+              <div class="grid-2 gap-3 mb-3">
+                <div class="form-group mb-2">
+                  <label class="form-label">Target Completion Date / Bay Booking</label>
+                  <input type="date" name="preferred_date" class="form-control">
+                </div>
+                <div class="form-group mb-2">
+                  <label class="form-label">Enclosed Transport Required?</label>
+                  <select name="transport_needed" class="form-control">
+                    <option value="No - Client Dropping Off">No — I will drive to Beverly Hills Studio</option>
+                    <option value="Yes - Southern California Pickup">Yes — SoCal Enclosed Pickup</option>
+                    <option value="Yes - Nationwide White-Glove">Yes — Nationwide 50-State White-Glove</option>
+                    <option value="Yes - Airport Transfer">Yes — Private Jet Terminal Transfer (VNY/LAX)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group mb-4">
+                <label class="form-label">Project Details & Special Finish Desires</label>
+                <textarea name="project_notes" class="form-control" rows="3" placeholder="Describe desired vinyl color swatch (e.g. Satin Nardo Grey, Metallic Midnight Purple), door jamb coverage, carbon weave pattern, or custom design thoughts..."></textarea>
+              </div>
+              <div class="form-group mb-4">
+                <label class="form-label">Attach Vehicle Photos (Up to 6 images for visual quote)</label>
+                <div class="file-dropzone" style="cursor:pointer;">
+                  <i class="fa-solid fa-cloud-arrow-up" style="font-size:1.8rem; color:var(--primary); margin-bottom:0.5rem;"></i>
+                  <h5 style="margin-bottom:0.2rem;">Drag & drop vehicle photos here or click to browse</h5>
+                  <p style="font-size:0.82rem; margin:0; color:var(--text-muted);">Supported formats: JPG, PNG, WEBP (Up to 20MB each)</p>
+                  <input type="file" class="file-dropzone-input" style="display:none;" multiple accept="image/*">
+                </div>
+                <div class="upload-preview-container d-flex flex-wrap"></div>
+              </div>
+              <div class="d-flex justify-between align-center mt-4">
+                <button type="button" class="btn btn-secondary" data-wizard-prev><i class="fa-solid fa-arrow-left"></i> <span>Back</span></button>
+                <button type="submit" class="btn btn-primary btn-lg"><span>Submit Consultation Brief</span> <i class="fa-solid fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Live Summary Card -->
+        <aside class="live-summary-card reveal reveal-delay-2">
+          <div class="summary-header-badge"><i class="fa-solid fa-gauge-high"></i> LIVE PROPOSAL SUMMARY</div>
+          <h3 style="font-size:1.4rem; margin-bottom:0.5rem;">Bespoke Project Estimate</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.25rem;">Real-time brief configuration synchronized with Beverly Hills Cleanroom capacity.</p>
+          <div class="summary-row">
+            <span class="summary-label"><i class="fa-solid fa-user"></i> Client</span>
+            <span class="summary-val" id="summaryClient">VIP Client (Unspecified)</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label"><i class="fa-solid fa-car-side"></i> Vehicle</span>
+            <span class="summary-val" id="summaryVehicle">Awaiting Vehicle Info</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label"><i class="fa-solid fa-layer-group"></i> Disciplines</span>
+            <div class="summary-chips-wrap" id="summaryDisciplines">
+              <span class="summary-chip">Color Change Wrap</span>
+              <span class="summary-chip">XPEL PPF Armor</span>
+            </div>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label"><i class="fa-solid fa-coins"></i> Budget Tier</span>
+            <span class="summary-val" id="summaryBudget" style="color:var(--secondary);">$3,000 - $6,000 (Signature)</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label"><i class="fa-solid fa-clock-rotate-left"></i> Est. Turnaround</span>
+            <span class="summary-val" id="summaryTimeline" style="color:#10B981;">4 - 6 Studio Days</span>
+          </div>
+          <div class="assigned-tech-box">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Master Technician" class="tech-avatar">
+            <div>
+              <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Assigned Lead Master</div>
+              <strong style="font-size:0.92rem; color:var(--text-main);">Marcus Vance</strong>
+              <div style="font-size:0.78rem; color:var(--primary);">Master Certified XPEL & Avery</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:0.6rem; font-size:0.82rem; color:var(--text-muted);">
+            <div class="d-flex align-center gap-2"><i class="fa-solid fa-circle-check" style="color:#10B981;"></i> <span>Guaranteed Response within 60 Minutes</span></div>
+            <div class="d-flex align-center gap-2"><i class="fa-solid fa-circle-check" style="color:#10B981;"></i> <span>Strict Non-Disclosure (NDA) Protection</span></div>
+            <div class="d-flex align-center gap-2"><i class="fa-solid fa-circle-check" style="color:#10B981;"></i> <span>10-Year Material & Craftsmanship Warranty</span></div>
+          </div>
+          <div class="mt-4 pt-3" style="border-top:1px solid var(--border-subtle);">
+            <a href="tel:+18005559827" class="btn btn-secondary btn-sm" style="width:100%; justify-content:center;"><i class="fa-solid fa-phone"></i> <span>Direct Hotline: (800) 555-WRAP</span></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3: CLEANROOM FACILITY & VIP VISIT SCHEDULER ==================== -->
+  <section class="section-padding" id="cleanroomSection" style="padding-top:4.5rem; padding-bottom:4.5rem;">
+    <div class="container">
+      <div class="section-header text-center mb-5 reveal">
+        <span class="badge badge-primary"><i class="fa-solid fa-building-shield"></i> PRIVATE STUDIO LABORATORY</span>
+        <h2 style="font-size:clamp(1.9rem, 3.5vw, 2.8rem);">Tour Our ISO-7 Cleanroom Bays</h2>
+        <p style="max-width:680px; margin:0 auto; color:var(--text-muted);">Experience hospital-grade dust extraction, temperature-controlled application suites, and our private VIP client design lounge.</p>
+      </div>
+
+      <div class="cleanroom-facility-grid">
+        <!-- Left: Facility Visual & Specs -->
+        <div class="card reveal" style="padding:0; overflow:hidden; border-color:var(--border-card);">
+          <div style="position:relative; height:320px; overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80" alt="Apex Cleanroom Laboratory" style="width:100%; height:100%; object-fit:cover;">
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,13,18,0.2) 0%, rgba(11,13,18,0.85) 100%);"></div>
+            <div class="pricing-sticker sticker-gold" style="top:1.5rem; left:1.5rem;"><i class="fa-solid fa-award"></i> BEVERLY HILLS FLAGSHIP</div>
+            <div style="position:absolute; bottom:1.5rem; left:1.5rem; right:1.5rem;">
+              <span class="badge badge-primary mb-2">AIR-PURIFIED LABORATORY</span>
+              <h3 style="color:#FFFFFF; margin:0;">ISO-7 Dust-Free Cleanroom Bays</h3>
+            </div>
+          </div>
+          <div style="padding:2rem;">
+            <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;">
+              Our bespoke studio features hospital-grade HEPA positive-pressure air filtration and dedicated 21°C constant climate control to ensure zero contaminants trapped beneath PPF or vinyl films.
+            </p>
+            <div class="facility-spec-chips">
+              <div class="facility-spec-card"><i class="fa-solid fa-fan"></i> <span>HEPA 0.3 Micron Air Filtration</span></div>
+              <div class="facility-spec-card"><i class="fa-solid fa-temperature-arrow-down"></i> <span>Constant 21°C Climate Regulated</span></div>
+              <div class="facility-spec-card"><i class="fa-solid fa-lightbulb"></i> <span>5,000K Lutron High-CRI Lighting</span></div>
+              <div class="facility-spec-card"><i class="fa-solid fa-shield-halved"></i> <span>Anti-Static Grounded Epoxy Floor</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Bay Reservation -->
+        <div class="card reveal reveal-delay-1" style="padding:2.5rem; border-color:var(--border-card);">
+          <div class="pricing-sticker sticker-cyan" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-calendar-check"></i> VIP ACCESS</div>
+          <span class="badge badge-primary mb-2">STUDIO VISIT SCHEDULER</span>
+          <h3 class="mb-3">Reserve an In-Person Design Session</h3>
+          <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:1.75rem;">Inspect physical color swatches against your vehicle's paint, review live wrap installations in progress, and enjoy our private lounge.</p>
+          <label class="form-label mb-2">Select Preferred Visit Window</label>
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <button type="button" class="btn btn-secondary btn-sm bay-slot-btn active" data-slot="Morning 9:00 AM"><i class="fa-regular fa-sun"></i> Morning: 9:00 AM</button>
+            <button type="button" class="btn btn-secondary btn-sm bay-slot-btn" data-slot="Midday 1:00 PM"><i class="fa-solid fa-sun"></i> Midday: 1:00 PM</button>
+            <button type="button" class="btn btn-secondary btn-sm bay-slot-btn" data-slot="Afternoon 4:30 PM"><i class="fa-solid fa-cloud-sun"></i> Afternoon: 4:30 PM</button>
+            <button type="button" class="btn btn-secondary btn-sm bay-slot-btn" data-slot="VIP Private Evening"><i class="fa-solid fa-moon"></i> Private VIP Evening</button>
+          </div>
+          <div class="mb-4 p-3" style="background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-lg);">
+            <div class="d-flex align-center gap-3 mb-2">
+              <i class="fa-solid fa-location-dot" style="color:var(--primary); font-size:1.3rem;"></i>
+              <div>
+                <strong>Apex Veloce Flagship Cleanroom</strong><br>
+                <span style="font-size:0.88rem; color:var(--text-muted);">742 Motor Enclave Boulevard, Suite 100, Beverly Hills, CA 90210</span>
+              </div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--text-dim); margin-top:0.5rem;">
+              <i class="fa-solid fa-plane"></i> 18 Mins from Van Nuys Airport (VNY) • 25 Mins from LAX (Private Jet Pickup Available)
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <a href="https://maps.google.com/?q=Beverly+Hills+CA" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1; justify-content:center;"><i class="fa-solid fa-diamond-turn-right"></i> <span>Get GPS Directions</span></a>
+            <a href="tel:+18005559827" class="btn btn-secondary" style="justify-content:center;" aria-label="Call for directions"><i class="fa-solid fa-phone"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: VIP STUDIO PERKS & GUARANTEES ==================== -->
+  <section class="section-padding bg-alt" id="perksSection" style="padding-top:4rem; padding-bottom:4rem;">
+    <div class="container">
+      <div class="section-header text-center mb-5 reveal">
+        <span class="badge badge-primary"><i class="fa-solid fa-shield-heart"></i> THE APEX STANDARD</span>
+        <h2 style="font-size:clamp(1.9rem, 3.5vw, 2.8rem);">Studio Perks & Quality Guarantees</h2>
+        <p style="max-width:680px; margin:0 auto; color:var(--text-muted);">Every vehicle entrusted to Apex Veloce is handled with the highest level of craftsmanship, insurance, and precision.</p>
+      </div>
+
+      <div class="vip-perks-grid">
+        <div class="vip-perk-card reveal">
+          <div class="pricing-sticker sticker-neon-red" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-shield"></i> 10-YR BACKED</div>
+          <div class="vip-perk-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>10-Year Global Warranty</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Guaranteed against yellowing, peeling, lifting, bubbling, or cracking backed directly by manufacturer warranties.</p>
+        </div>
+        <div class="vip-perk-card reveal reveal-delay-1">
+          <div class="pricing-sticker sticker-emerald" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-bullseye"></i> 100% PAINT SAFE</div>
+          <div class="vip-perk-icon" style="color:#10B981;"><i class="fa-solid fa-scissors"></i></div>
+          <h4>Zero-Blade Cut Guarantee</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">We utilize knifeless tape and precision CAD plotter patterns. No razor blades ever touch your factory clearcoat.</p>
+        </div>
+        <div class="vip-perk-card reveal reveal-delay-2">
+          <div class="pricing-sticker sticker-cyan" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-truck-fast"></i> DOOR-TO-DOOR</div>
+          <div class="vip-perk-icon" style="color:var(--secondary);"><i class="fa-solid fa-truck-ramp-box"></i></div>
+          <h4>Enclosed Exotic Transport</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Climate-controlled enclosed carriers with live GPS telemetry available across all 50 states and international airfreight.</p>
+        </div>
+        <div class="vip-perk-card reveal">
+          <div class="pricing-sticker sticker-gold" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-user-secret"></i> 100% PRIVATE</div>
+          <div class="vip-perk-icon" style="color:var(--accent-gold);"><i class="fa-solid fa-lock"></i></div>
+          <h4>Strict NDA & Confidentiality</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Complete discretion for high-profile collectors, celebrities, and unreleased prototype vehicles with private bays.</p>
+        </div>
+        <div class="vip-perk-card reveal reveal-delay-1">
+          <div class="pricing-sticker sticker-hologram" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-award"></i> MASTER LAB</div>
+          <div class="vip-perk-icon" style="color:#A855F7;"><i class="fa-solid fa-medal"></i></div>
+          <h4>XPEL & 3M Master Certified</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Every technician holds elite master installer credentials with a minimum of 8 years exclusive exotic experience.</p>
+        </div>
+        <div class="vip-perk-card reveal reveal-delay-2">
+          <div class="pricing-sticker sticker-neon-red" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-stopwatch"></i> ON-TIME SLA</div>
+          <div class="vip-perk-icon" style="color:var(--primary);"><i class="fa-solid fa-hourglass-half"></i></div>
+          <h4>Strict Turnaround SLA</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Clear delivery deadlines agreed upon upfront. We honor your time with exact scheduled vehicle release windows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 5: STYLIST DISCOVERY FAQS ==================== -->
+  <section class="section-padding" id="faqSection" style="padding-top:4rem; padding-bottom:4rem;">
+    <div class="container" style="max-width:920px;">
+      <div class="section-header text-center mb-5 reveal">
+        <span class="badge badge-primary"><i class="fa-solid fa-circle-question"></i> FREQUENTLY ASKED QUESTIONS</span>
+        <h2 style="font-size:clamp(1.9rem, 3.5vw, 2.7rem);">Consultation & Studio Discovery</h2>
+        <p style="color:var(--text-muted);">Everything you need to know about booking, paint inspection, and vehicle handover.</p>
+      </div>
+
+      <div class="faq-accordion reveal">
+        <div class="faq-item active">
+          <div class="faq-header">
+            <h4 class="faq-question">How does the bespoke design consultation work?</h4>
+            <div class="faq-toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            <p>You can start by submitting our online 4-step wizard or calling our direct hotline. A dedicated master stylist will review your vehicle specs, discuss vinyl swatch samples, prepare digital CAD mockups, and provide a binding fixed-cost proposal before scheduling cleanroom bay time.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <h4 class="faq-question">Can I inspect physical vinyl swatches & PPF finishes in person?</h4>
+            <div class="faq-toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            <p>Yes! We invite clients to our Beverly Hills Studio design lounge where you can hold physical swatches from 3M, Avery Dennison, Inozetek, KPMF, and XPEL against your car under high-CRI Lutron studio lights to evaluate true depth, metallic flake, and gloss levels.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <h4 class="faq-question">What is the typical studio turnaround time for a full wrap or PPF?</h4>
+            <div class="faq-toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            <p>A full color change wrap or track-pack PPF installation typically requires 4 to 6 studio business days. This includes multi-stage chemical decontamination, edge disassemblies, precision knifeless application, edge post-heating at 90°C, and 24-hour climate curing.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <h4 class="faq-question">Do you offer white-glove transport and airport concierge?</h4>
+            <div class="faq-toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            <p>Yes. We operate a dedicated fleet of hydraulic-lift enclosed trailers serving Southern California and nationwide collection across the continental US. For fly-in clients, our chauffeur provides private transfers to/from Van Nuys (VNY) and LAX.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <h4 class="faq-question">Is my vehicle fully insured while at the studio?</h4>
+            <div class="faq-toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            <p>Apex Veloce carries comprehensive garage-keeper and exotic vehicle coverage up to $10,000,000 per bay. Our facility is secured by 24/7 biometric access controls, armed response telemetry, and high-definition cleanroom surveillance.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <h4 class="faq-question">Do you sign NDAs for confidential prototype or celebrity builds?</h4>
+            <div class="faq-toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-body">
+            <p>Yes. We regularly execute legal Non-Disclosure Agreements (NDAs) for pre-production automotive manufacturer prototypes, SEMA show concepts, and high-profile private collectors. Photography in our cleanroom is strictly controlled upon request.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 6: EMERGENCY TRACKSIDE & URGENT LINE ==================== -->
+  <section class="section-padding" style="padding-top:1rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="emergency-trackside-box text-center reveal">
+        <div class="pricing-sticker sticker-neon-red" style="top:1.5rem; right:1.5rem;"><i class="fa-solid fa-bolt"></i> PRIORITY RESPONSE</div>
+        <span class="badge badge-primary mb-2"><i class="fa-solid fa-flag-checkered"></i> TRACKSIDE & URGENT SUPPORT</span>
+        <h2 style="font-size:clamp(1.8rem, 3.2vw, 2.5rem); margin-bottom:1rem;">Urgent Track Protection or Fast-Turnaround Build?</h2>
+        <p style="max-width:680px; margin:0 auto 2rem auto; color:var(--text-muted); font-size:1.05rem;">Racing this weekend or preparing for an upcoming rally, rallye, or concours? Our rapid-response cleanroom team offers expedited 48-hour track armor application.</p>
+        <div class="d-flex justify-center align-center gap-3" style="flex-wrap:wrap;">
+          <a href="tel:+18005559827" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> <span>Direct Emergency Line: (800) 555-WRAP</span></a>
+          <a href="https://wa.me/18005559827" target="_blank" rel="noopener" class="btn btn-secondary btn-lg" style="border-color:#10B981; color:#10B981;"><i class="fa-brands fa-whatsapp"></i> <span>Instant WhatsApp Dispatch</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CART DRAWER ==================== -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-drawer-header">
+      <div class="d-flex align-center gap-2">
+        <i class="fa-solid fa-cart-shopping" style="color:var(--primary); font-size:1.2rem;"></i>
+        <h4 style="margin:0;">Studio Cart</h4>
+      </div>
+      <button class="cart-drawer-close" id="cartDrawerClose" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-drawer-body">
+      <div class="cart-empty-state" id="cartDrawerEmpty" style="display:none;">
+        <div class="cart-empty-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i></div>
+        <h4>Your Cart is Empty</h4>
+        <p>Explore our bespoke wraps, PPF armor packages, and customization upgrades.</p>
+        <a href="services.html" class="btn btn-secondary btn-sm" id="cartEmptyBrowseBtn">Browse Services</a>
+      </div>
+      <div class="cart-items-list" id="cartDrawerItems"></div>
+    </div>
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-summary-row"><span>Estimated Subtotal</span><span class="cart-summary-val" id="cartDrawerSubtotal">$0</span></div>
+      <div class="cart-summary-row total"><span>Total Due</span><span class="cart-summary-val" id="cartDrawerTotal">$0</span></div>
+      <div class="d-flex flex-column gap-2 mt-3">
+        <a href="payment.html" class="btn btn-primary" style="width:100%; justify-content:center;"><span>Proceed to Studio Checkout</span> <i class="fa-solid fa-arrow-right"></i></a>
+        <button type="button" class="btn btn-secondary cart-continue-btn" id="cartContinueCustomizing" data-cart-close style="width:100%; justify-content:center;"><span>Continue Shopping</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== SITE FOOTER / CONCIERGE HUB ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo mb-3">
+            <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+          </a>
+          <p>The pinnacle of bespoke vehicle wraps, self-healing paint protection armor, carbon aerodynamic coachwork, and luxury automotive styling executed in ISO-7 cleanroom laboratories.</p>
+          <div class="footer-trust-chips">
+            <span class="footer-trust-chip"><i class="fa-solid fa-certificate"></i> XPEL & 3M Certified</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-fan"></i> ISO-7 Cleanroom</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-shield-heart"></i> 100% Paint-Safe</span>
+          </div>
+          <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/18005559827" target="_blank" rel="noopener" class="footer-social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-widget">
+          <h5>Studio Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Flagship Studio</a></li>
+            <li><a href="home-2.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Wrap & Mod Studio</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cleanroom Facility</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 4K Portfolio Gallery</a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pricing & Calculator</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Automotive Journal</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> VIP Consultation</a></li>
+          </ul>
+        </div>
+        <div class="footer-widget">
+          <h5>Disciplines</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cast Color Change Wraps</a></li>
+            <li><a href="service-details.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> XPEL Paint Protection</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 9H Ceramic Matrix</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pre-Preg Carbon Aero</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Starlight Headliners</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Track PPF Armor</a></li>
+          </ul>
+        </div>
+        <div class="footer-widget">
+          <h5>Studio Concierge</h5>
+          <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i> <span>742 Motor Enclave Blvd,<br>Beverly Hills, CA 90210</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-phone"></i> <div><a href="tel:+18005559827" style="color:inherit; font-weight:700;">+1 (800) 555-WRAP</a><div><span class="footer-live-badge"><span class="footer-live-dot"></span> LIVE CONCIERGE ACTIVE</span></div></div></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:bespoke@apexveloce.com" style="color:inherit;">bespoke@apexveloce.com</a></div>
+          <div class="footer-newsletter-box">
+            <small>VIP Studio Drops & Finish Alerts</small>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showApexToast) window.showApexToast('Subscribed to VIP Studio Drops!', 'success'); this.reset();">
+              <input type="email" class="footer-newsletter-input" placeholder="Enter your email..." required>
+              <button type="submit" class="footer-newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div><span>© <span class="current-year">2026</span> APEX VELOCE BESPOKE MOTORSTUDIO. ALL RIGHTS RESERVED.</span><span class="badge-spec" style="margin-left:0.75rem; font-size:0.7rem;"><i class="fa-solid fa-lock" style="color:#10B981;"></i> 256-BIT SSL SECURED</span></div>
+        <div class="footer-bottom-links"><a href="contact.html">Privacy Policy</a><a href="contact.html">Terms of Service</a><a href="pricing.html">Warranty Charter</a><a href="contact.html">Client Support</a></div>
+        <button type="button" class="footer-back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});"><i class="fa-solid fa-arrow-up"></i> <span>Back to Top</span></button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING STICKY CONCIERGE BAR ==================== -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+18005559827" class="sticky-bar-pill"><i class="fa-solid fa-phone" style="color:var(--primary);"></i> <span>+1 (800) 555-WRAP</span></a>
+    <a href="#wizardSection" class="sticky-bar-pill sticky-bar-cta"><i class="fa-solid fa-calendar-check"></i> <span>Book Studio Bay</span></a>
+    <button type="button" class="sticky-bar-cart cart-toggle-btn" aria-label="Open Cart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" style="display:none; position:absolute; top:-4px; right:-4px;">0</span></button>
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+/* ===================================================================
+   APEX VELOCE | Vehicle Wrap & Custom Studio
+   Animations, Transitions & Micro-Interactions (animations.css)
+   =================================================================== */
+
+/* Keyframe Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(255, 42, 84, 0.4);
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.7;
+    box-shadow: 0 0 25px rgba(255, 42, 84, 0.8);
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-0.5deg);
+  }
+}
+
+@keyframes shimmerEffect {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes borderGlowPulse {
+  0%, 100% {
+    border-color: rgba(255, 42, 84, 0.4);
+    box-shadow: 0 0 15px rgba(255, 42, 84, 0.2);
+  }
+  50% {
+    border-color: rgba(255, 42, 84, 0.85);
+    box-shadow: 0 0 30px rgba(255, 42, 84, 0.45);
+  }
+}
+
+@keyframes badgePulseSlow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes countUpGlow {
+  0% { text-shadow: 0 0 0 rgba(255, 42, 84, 0); }
+  50% { text-shadow: 0 0 20px rgba(255, 42, 84, 0.6); }
+  100% { text-shadow: 0 0 0 rgba(255, 42, 84, 0); }
+}
+
+/* Utility Animation Classes */
+.animate-float {
+  animation: floatAnimation 4.5s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 5s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulseGlow 2.8s ease-in-out infinite;
+}
+
+.animate-badge-pulse {
+  animation: badgePulseSlow 3s ease-in-out infinite;
+}
+
+.animate-border-glow {
+  animation: borderGlowPulse 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+/* ===================================================================
+   Scroll Reveal Classes (IntersectionObserver)
+   =================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger Delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* Image Reveal & Zoom Containers */
+.img-reveal-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+.img-reveal-wrap img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  will-change: transform;
+}
+
+.img-reveal-wrap:hover img {
+  transform: scale(1.04);
+}
+
+/* Button Micro-Interactions */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn i {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:hover i.fa-arrow-right,
+.btn:hover i.fa-chevron-right {
+  transform: translateX(4px);
+}
+
+.btn:hover i.fa-cart-plus {
+  transform: scale(1.15);
+}
+
+/* Sheen effect on hover */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: rotate(30deg);
+  transition: all 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.btn-primary:hover::after {
+  left: 200%;
+}
+
+/* Service Card & Gallery Hover Polish */
+.service-card, .card, .gallery-item {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 42, 84, 0.15);
+  border-color: rgba(255, 42, 84, 0.45);
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+}
+
+/* Badge hover transition */
+.badge {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+}
+
+
+/* ===================================================================
+   High-Octane Home 2 Hover & Micro-Animations
+   =================================================================== */
+.hover-glow-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.hover-glow-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 229, 255, 0.22);
+  border-color: var(--secondary) !important;
+}
+
+.hover-pulse:hover {
+  animation: pulseGlow 1.5s infinite;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 25px var(--secondary-glow);
+}
+
+.step-num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  background: rgba(255, 42, 84, 0.12);
+  border: 1px solid rgba(255, 42, 84, 0.3);
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-protocol-card:hover .step-num-badge {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 0 25px rgba(255, 42, 84, 0.4);
+}
+
+.mod-discipline-card .btn-icon {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.mod-discipline-card:hover .btn-icon {
+  transform: scale(1.18);
+  box-shadow: 0 0 25px currentColor;
+}

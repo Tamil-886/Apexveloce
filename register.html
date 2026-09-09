@@ -1,0 +1,699 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>VIP Client Registration | APEX VELOCE Bespoke Motorstudio</title>
+  <meta name="description" content="Create an Apex Veloce VIP client account to reserve positive-pressure cleanroom build slots, track custom vehicle wrap telemetry, and access exclusive vinyl swatches.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/light-mode.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    /* Custom Registration Page Styles */
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      background: linear-gradient(180deg, rgba(11, 13, 18, 0.94) 0%, rgba(11, 13, 18, 0.82) 100%),
+                  url('https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 1.5rem 1rem;
+    }
+
+    .auth-nav {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+    }
+
+    .auth-wrapper {
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto 2rem auto;
+      display: grid;
+      grid-template-columns: 1.05fr 1.25fr;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 42, 84, 0.12);
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    /* Left Showcase Panel - Always Dark Luxury Obsidian Theme */
+    .auth-showcase {
+      position: relative;
+      background: linear-gradient(145deg, #0B0E14 0%, #151A24 100%);
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      color: #FFFFFF;
+    }
+
+    .auth-showcase h2 {
+      color: #FFFFFF !important;
+    }
+
+    .auth-showcase p,
+    .auth-showcase .vip-perk-item p {
+      color: #94A3B8 !important;
+    }
+
+    .auth-showcase .vip-perk-item h5 {
+      color: #FFFFFF !important;
+    }
+
+    .auth-showcase .badge-spec {
+      background: rgba(255, 255, 255, 0.08) !important;
+      color: #FFFFFF !important;
+      border-color: rgba(255, 255, 255, 0.18) !important;
+    }
+
+    .auth-showcase-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+      opacity: 0.18;
+      pointer-events: none;
+      mix-blend-mode: luminosity;
+    }
+
+    .vip-perk-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .vip-perk-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 42, 84, 0.12);
+      border: 1px solid rgba(255, 42, 84, 0.25);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    /* Right Form Panel */
+    .auth-form-panel {
+      padding: 3rem 2.75rem;
+      background: var(--bg-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .input-icon-wrap {
+      position: relative;
+    }
+
+    .input-icon-wrap .form-control {
+      padding-left: 2.75rem;
+      padding-right: 2.75rem;
+    }
+
+    .input-icon-wrap .field-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      pointer-events: none;
+      transition: color var(--transition-fast);
+    }
+
+    .input-icon-wrap .toggle-pwd-btn {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      cursor: pointer;
+      font-size: 0.95rem;
+      padding: 0;
+      transition: color var(--transition-fast);
+    }
+
+    .input-icon-wrap .toggle-pwd-btn:hover {
+      color: var(--primary);
+    }
+
+    .input-icon-wrap .form-control:focus ~ .field-icon {
+      color: var(--primary);
+    }
+
+    /* Password Strength Meter */
+    .strength-meter {
+      height: 4px;
+      width: 100%;
+      background: var(--border-subtle);
+      border-radius: 2px;
+      margin-top: 0.4rem;
+      overflow: hidden;
+      display: flex;
+      gap: 3px;
+    }
+
+    .strength-bar {
+      flex: 1;
+      height: 100%;
+      background: transparent;
+      transition: background 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .strength-text {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 0.25rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* ==================== LIGHT MODE OVERRIDES ==================== */
+    [data-theme="light"] .auth-page,
+    body.light-mode.auth-page {
+      background: linear-gradient(180deg, rgba(241, 245, 249, 0.94) 0%, rgba(248, 250, 252, 0.88) 100%),
+                  url('https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+
+    [data-theme="light"] .auth-wrapper,
+    body.light-mode .auth-wrapper {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.12);
+      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.12), 0 0 30px rgba(255, 42, 84, 0.08);
+    }
+
+    [data-theme="light"] .auth-form-panel,
+    body.light-mode .auth-form-panel {
+      background: #FFFFFF;
+    }
+
+    [data-theme="light"] .auth-form-panel h3,
+    body.light-mode .auth-form-panel h3 {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .auth-form-panel p,
+    body.light-mode .auth-form-panel p {
+      color: #475569;
+    }
+
+    [data-theme="light"] .form-label,
+    body.light-mode .form-label {
+      color: #0F172A;
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .form-control,
+    body.light-mode .form-control {
+      background: #F8FAFC;
+      border: 1px solid rgba(15, 23, 42, 0.16);
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .form-control:focus,
+    body.light-mode .form-control:focus {
+      background: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(255, 42, 84, 0.15);
+    }
+
+    [data-theme="light"] .field-icon,
+    body.light-mode .field-icon,
+    [data-theme="light"] .toggle-pwd-btn,
+    body.light-mode .toggle-pwd-btn {
+      color: #64748B;
+    }
+
+    [data-theme="light"] .strength-meter,
+    body.light-mode .strength-meter {
+      background: rgba(15, 23, 42, 0.1);
+    }
+
+    [data-theme="light"] .strength-text,
+    body.light-mode .strength-text {
+      color: #64748B;
+    }
+
+    [data-theme="light"] .brand-logo .title,
+    body.light-mode .brand-logo .title {
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .brand-logo .subtitle,
+    body.light-mode .brand-logo .subtitle {
+      color: #64748B;
+    }
+
+    [data-theme="light"] .btn-secondary,
+    body.light-mode .btn-secondary {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.15);
+      color: #0F172A;
+    }
+
+    [data-theme="light"] .theme-toggle-btn,
+    body.light-mode .theme-toggle-btn {
+      background: #FFFFFF;
+      border-color: rgba(15, 23, 42, 0.15);
+      color: #0F172A;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .auth-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .auth-showcase {
+        padding: 2.25rem 2rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .auth-form-panel {
+        padding: 2.25rem 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .auth-showcase {
+        padding: 1.75rem 1.25rem;
+      }
+      .auth-form-panel {
+        padding: 1.75rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body class="dark-mode auth-page">
+
+  <!-- ==================== TOP BAR ==================== -->
+  <header class="auth-nav reveal">
+    <a href="index.html" class="brand-logo">
+      <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="logo-text">
+        <span class="title">APEX VELOCE</span>
+        <span class="subtitle">BESPOKE MOTORSTUDIO</span>
+      </div>
+    </a>
+    
+    <div class="d-flex align-center gap-2">
+      <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Theme">
+        <i class="fa-solid fa-sun"></i>
+      </button>
+      <button class="dir-toggle-btn" aria-label="Toggle LTR / RTL Direction" title="Switch to RTL (Right-to-Left)"><span class="dir-badge">LTR</span> <i class="fa-solid fa-right-left"></i></button>
+      <a href="index.html" class="btn btn-secondary btn-sm" style="font-size:0.85rem;">
+        <i class="fa-solid fa-arrow-left"></i> <span>Return Home</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== REGISTRATION CARD CONTAINER ==================== -->
+  <main class="auth-wrapper reveal">
+    
+    <!-- LEFT PANEL: VIP STUDIO PRIVILEGES -->
+    <div class="auth-showcase">
+      <div class="auth-showcase-bg"></div>
+      
+      <div style="position:relative; z-index:2;">
+        <div class="stickers-cluster mb-3" style="justify-content:flex-start;">
+          <div class="apex-sticker sticker-gold float-sticker-1"><i class="fa-solid fa-crown"></i> VIP ACCESS</div>
+          <div class="apex-sticker sticker-cyan float-sticker-2"><i class="fa-solid fa-cube"></i> 3D CAD CONFIGURATOR</div>
+          <div class="apex-sticker sticker-neon-red float-sticker-3"><i class="fa-solid fa-lock"></i> 256-BIT ENCRYPTED</div>
+        </div>
+        <div class="d-flex align-center gap-2 mb-3">
+          <span class="badge badge-primary"><i class="fa-solid fa-crown"></i> VIP ACCESS</span>
+          <span class="badge-spec"><i class="fa-solid fa-shield-halved" style="color:var(--secondary);"></i> CLEANROOM PRIVILEGE</span>
+        </div>
+
+        <h2 style="font-size:clamp(1.6rem, 2.5vw, 2.1rem); line-height:1.2; margin-bottom:1rem;">
+          JOIN THE <span class="text-gradient">APEX VELOCE</span> COLLECTIVE
+        </h2>
+
+        <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.65; margin-bottom:2rem;">
+          Register as an Apex VIP client to unlock exclusive cleanroom reservation slots, photo-documented build telemetry, and bespoke customization priority.
+        </p>
+
+        <!-- Perks List -->
+        <div class="vip-perks">
+          <div class="vip-perk-item">
+            <div class="vip-perk-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div>
+              <h5 style="margin:0 0 0.2rem 0; font-size:0.95rem;">Priority Cleanroom Slots</h5>
+              <p style="margin:0; font-size:0.82rem; color:var(--text-muted);">Direct scheduling in climate-controlled positive pressure bays with zero waitlist.</p>
+            </div>
+          </div>
+
+          <div class="vip-perk-item">
+            <div class="vip-perk-icon" style="background:rgba(0,229,255,0.12); border-color:rgba(0,229,255,0.25); color:var(--secondary);"><i class="fa-solid fa-satellite-dish"></i></div>
+            <div>
+              <h5 style="margin:0 0 0.2rem 0; font-size:0.95rem;">Live Build Telemetry</h5>
+              <p style="margin:0; font-size:0.82rem; color:var(--text-muted);">Photo-documented 100-point vehicle inspection and stage-by-stage wrap tracking.</p>
+            </div>
+          </div>
+
+          <div class="vip-perk-item">
+            <div class="vip-perk-icon" style="background:rgba(212,175,55,0.12); border-color:rgba(212,175,55,0.25); color:var(--accent-gold);"><i class="fa-solid fa-layer-group"></i></div>
+            <div>
+              <h5 style="margin:0 0 0.2rem 0; font-size:0.95rem;">Exclusive Finish Drops</h5>
+              <p style="margin:0; font-size:0.82rem; color:var(--text-muted);">First access to limited-run Inozetek cast vinyls, XPEL Stealth PPF, and autoclaved dry carbon.</p>
+            </div>
+          </div>
+
+          <div class="vip-perk-item" style="margin-bottom:0;">
+            <div class="vip-perk-icon" style="background:rgba(16,185,129,0.12); border-color:rgba(16,185,129,0.25); color:var(--emerald);"><i class="fa-solid fa-shield-check"></i></div>
+            <div>
+              <h5 style="margin:0 0 0.2rem 0; font-size:0.95rem;">Concours Warranty & Care</h5>
+              <p style="margin:0; font-size:0.82rem; color:var(--text-muted);">Nationwide multi-year film warranty with complimentary annual ceramic checkups.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Footer Banner -->
+      <div style="position:relative; z-index:2; margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.08);">
+        <div class="d-flex align-center justify-between" style="flex-wrap:wrap; gap:0.5rem;">
+          <div style="font-size:0.85rem; color:#fff; font-weight:600;">
+            <i class="fa-solid fa-star" style="color:var(--accent-gold);"></i>
+            <i class="fa-solid fa-star" style="color:var(--accent-gold);"></i>
+            <i class="fa-solid fa-star" style="color:var(--accent-gold);"></i>
+            <i class="fa-solid fa-star" style="color:var(--accent-gold);"></i>
+            <i class="fa-solid fa-star" style="color:var(--accent-gold);"></i>
+            <span style="margin-left:0.35rem;">4.9 / 5.0 RATING</span>
+          </div>
+          <span style="font-size:0.78rem; color:var(--text-dim);">Over 2,500+ Supercars Wrapped</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT PANEL: REGISTRATION FORM -->
+    <div class="auth-form-panel">
+      
+      <div class="mb-4">
+        <span class="badge badge-primary mb-2"><i class="fa-solid fa-user-plus"></i> NEW VIP CLIENT</span>
+        <h3 style="font-size:1.65rem; margin-bottom:0.35rem;">Create VIP Account</h3>
+        <p style="font-size:0.88rem; margin:0; color:var(--text-muted);">
+          Register your credentials to reserve studio packages and manage bespoke vehicle orders.
+        </p>
+      </div>
+
+      <!-- Alert / Status Notification Box -->
+      <div id="registerAlert" style="display:none; padding:0.85rem 1rem; border-radius:var(--radius-sm); font-size:0.88rem; margin-bottom:1.25rem;"></div>
+
+      <form id="registerForm" novalidate>
+        
+        <!-- Full Name -->
+        <div class="form-group mb-3">
+          <label class="form-label" style="font-size:0.85rem; font-weight:600;">Full Name *</label>
+          <div class="input-icon-wrap">
+            <input type="text" id="regName" class="form-control" placeholder="e.g. Marcus Vance" required autocomplete="name">
+            <i class="fa-solid fa-user field-icon"></i>
+          </div>
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group mb-3">
+          <label class="form-label" style="font-size:0.85rem; font-weight:600;">Email Address *</label>
+          <div class="input-icon-wrap">
+            <input type="email" id="regEmail" class="form-control" placeholder="marcus@example.com" required autocomplete="email">
+            <i class="fa-solid fa-envelope field-icon"></i>
+          </div>
+        </div>
+
+        <!-- Primary Vehicle (Optional) -->
+        <div class="form-group mb-3">
+          <label class="form-label" style="font-size:0.85rem; font-weight:600;">
+            Primary Vehicle <span style="font-weight:400; color:var(--text-dim);">(Optional)</span>
+          </label>
+          <div class="input-icon-wrap">
+            <input type="text" id="regVehicle" class="form-control" placeholder="e.g. Porsche 911 GT3 RS / BMW M4">
+            <i class="fa-solid fa-car field-icon"></i>
+          </div>
+        </div>
+
+        <!-- Passwords Grid -->
+        <div class="grid-2 gap-2 mb-2">
+          <!-- Password -->
+          <div class="form-group mb-0">
+            <label class="form-label" style="font-size:0.85rem; font-weight:600;">Password *</label>
+            <div class="input-icon-wrap">
+              <input type="password" id="regPassword" class="form-control" placeholder="••••••••••••" required minlength="4" autocomplete="new-password">
+              <i class="fa-solid fa-lock field-icon"></i>
+              <button type="button" class="toggle-pwd-btn" data-target="#regPassword" aria-label="Toggle Password Visibility">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group mb-0">
+            <label class="form-label" style="font-size:0.85rem; font-weight:600;">Confirm Password *</label>
+            <div class="input-icon-wrap">
+              <input type="password" id="regConfirmPassword" class="form-control" placeholder="••••••••••••" required minlength="4" autocomplete="new-password">
+              <i class="fa-solid fa-shield field-icon"></i>
+              <button type="button" class="toggle-pwd-btn" data-target="#regConfirmPassword" aria-label="Toggle Password Visibility">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Password Strength Meter -->
+        <div class="mb-3">
+          <div class="strength-meter">
+            <div class="strength-bar" id="bar1"></div>
+            <div class="strength-bar" id="bar2"></div>
+            <div class="strength-bar" id="bar3"></div>
+            <div class="strength-bar" id="bar4"></div>
+          </div>
+          <div class="strength-text">
+            <span>Password Security: <strong id="strengthLabel" style="color:var(--text-dim);">Minimum 4 characters</strong></span>
+            <span id="matchStatus" style="color:var(--text-dim);"></span>
+          </div>
+        </div>
+
+        <!-- Terms Agreement -->
+        <div class="form-group mb-4">
+          <label class="d-flex align-center gap-2" style="font-size:0.84rem; color:var(--text-muted); cursor:pointer; line-height:1.4;">
+            <input type="checkbox" id="termsCheck" required checked style="accent-color:var(--primary); width:16px; height:16px;">
+            <span>I agree to the <a href="about.html" style="color:var(--primary); text-decoration:underline;">Studio Service Terms</a> and Studio Privacy Charter.</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="registerSubmitBtn" class="btn btn-primary" style="width:100%; justify-content:center; padding:0.85rem 1.5rem; font-size:0.95rem;">
+          <span>Create VIP Account & Enter Studio</span> <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+
+      <!-- Already Registered -->
+      <div class="text-center mt-4" style="font-size:0.88rem; color:var(--text-muted);">
+        Already registered with Apex Veloce? 
+        <a href="login.html" style="color:var(--primary); font-weight:700; margin-left:0.25rem;">Sign in here</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="text-center pb-2" style="font-size:0.8rem; color:var(--text-dim);">
+    &copy; 2026 APEX VELOCE BESPOKE MOTORSTUDIO. All Rights Reserved. • Positive-Pressure Cleanroom Facility
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const regForm = document.querySelector('#registerForm');
+      const nameInput = document.querySelector('#regName');
+      const emailInput = document.querySelector('#regEmail');
+      const vehicleInput = document.querySelector('#regVehicle');
+      const passwordInput = document.querySelector('#regPassword');
+      const confirmInput = document.querySelector('#regConfirmPassword');
+      const termsCheck = document.querySelector('#termsCheck');
+      const alertBox = document.querySelector('#registerAlert');
+      const submitBtn = document.querySelector('#registerSubmitBtn');
+      
+      const bar1 = document.querySelector('#bar1');
+      const bar2 = document.querySelector('#bar2');
+      const bar3 = document.querySelector('#bar3');
+      const bar4 = document.querySelector('#bar4');
+      const strengthLabel = document.querySelector('#strengthLabel');
+      const matchStatus = document.querySelector('#matchStatus');
+
+      // 1. Password Visibility Toggle
+      document.querySelectorAll('.toggle-pwd-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetSelector = btn.getAttribute('data-target');
+          const input = document.querySelector(targetSelector);
+          if (!input) return;
+          const icon = btn.querySelector('i');
+          if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+          } else {
+            input.type = 'password';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+          }
+        });
+      });
+
+      // 2. Real-Time Password Strength Calculation
+      function updatePasswordStrength() {
+        const val = passwordInput.value;
+        const confirmVal = confirmInput.value;
+
+        // Reset bars
+        [bar1, bar2, bar3, bar4].forEach((b) => {
+          b.style.background = 'transparent';
+        });
+
+        if (!val) {
+          strengthLabel.innerText = 'Minimum 4 characters';
+          strengthLabel.style.color = 'var(--text-dim)';
+        } else if (val.length < 4) {
+          bar1.style.background = '#EF4444';
+          strengthLabel.innerText = 'Too Short';
+          strengthLabel.style.color = '#EF4444';
+        } else if (val.length < 6) {
+          bar1.style.background = '#F59E0B';
+          bar2.style.background = '#F59E0B';
+          strengthLabel.innerText = 'Fair';
+          strengthLabel.style.color = '#F59E0B';
+        } else if (val.length < 9) {
+          bar1.style.background = '#10B981';
+          bar2.style.background = '#10B981';
+          bar3.style.background = '#10B981';
+          strengthLabel.innerText = 'Strong';
+          strengthLabel.style.color = '#10B981';
+        } else {
+          bar1.style.background = '#00E5FF';
+          bar2.style.background = '#00E5FF';
+          bar3.style.background = '#00E5FF';
+          bar4.style.background = '#00E5FF';
+          strengthLabel.innerText = 'VIP Armor Grade (Excellent)';
+          strengthLabel.style.color = '#00E5FF';
+        }
+
+        // Match status
+        if (confirmVal) {
+          if (val === confirmVal) {
+            matchStatus.innerText = '✓ Passwords Match';
+            matchStatus.style.color = '#10B981';
+          } else {
+            matchStatus.innerText = '✕ Does Not Match';
+            matchStatus.style.color = '#EF4444';
+          }
+        } else {
+          matchStatus.innerText = '';
+        }
+      }
+
+      if (passwordInput) passwordInput.addEventListener('input', updatePasswordStrength);
+      if (confirmInput) confirmInput.addEventListener('input', updatePasswordStrength);
+
+      // 3. Show Alert Helper
+      function showAlert(msg, type) {
+        if (!alertBox) return;
+        alertBox.style.display = 'block';
+        alertBox.innerText = msg;
+        if (type === 'error') {
+          alertBox.style.background = 'rgba(255, 42, 84, 0.15)';
+          alertBox.style.border = '1px solid var(--primary)';
+          alertBox.style.color = '#FFA4B4';
+        } else if (type === 'success') {
+          alertBox.style.background = 'rgba(16, 185, 129, 0.15)';
+          alertBox.style.border = '1px solid #10B981';
+          alertBox.style.color = '#A7F3D0';
+        } else {
+          alertBox.style.background = 'rgba(0, 229, 255, 0.12)';
+          alertBox.style.border = '1px solid var(--secondary)';
+          alertBox.style.color = '#BAF7FF';
+        }
+      }
+
+      // 4. Form Submit Handler
+      if (regForm) {
+        regForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = nameInput.value.trim();
+          const email = emailInput.value.trim();
+          const password = passwordInput.value;
+          const confirmPassword = confirmInput.value;
+
+          if (!name) {
+            showAlert('Please enter your full name.', 'error');
+            nameInput.focus();
+            return;
+          }
+
+          if (!email) {
+            showAlert('Please enter a valid email address.', 'error');
+            emailInput.focus();
+            return;
+          }
+
+          if (termsCheck && !termsCheck.checked) {
+            showAlert('Please accept the Studio Service Terms to continue.', 'error');
+            return;
+          }
+
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Securing VIP Access...</span> <i class="fa-solid fa-circle-notch fa-spin"></i>`;
+          }
+
+          if (!window.ApexAuth) return;
+          const result = window.ApexAuth.register(name, email, password, confirmPassword);
+
+          if (result.success) {
+            showAlert(result.message + ' Redirecting to Home...', 'success');
+            setTimeout(() => {
+              window.location.href = 'index.html';
+            }, 800);
+          } else {
+            showAlert(result.message, 'error');
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = `<span>Create VIP Account & Enter Studio</span> <i class="fa-solid fa-arrow-right"></i>`;
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

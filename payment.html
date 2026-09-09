@@ -1,0 +1,512 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>Checkout & Studio Reservation | APEX VELOCE Bespoke Motorstudio</title>
+  <meta name="description" content="Authorize your bespoke vehicle customization order and reserve a positive-pressure cleanroom bay slot at Apex Veloce.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/light-mode.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="dark-mode">
+
+  <!-- ==================== SITE HEADER ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+        </a>
+
+        <div class="header-actions">
+          <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Theme"><i class="fa-solid fa-sun"></i></button>
+          <button class="dir-toggle-btn" aria-label="Toggle LTR / RTL Direction" title="Switch to RTL (Right-to-Left)"><span class="dir-badge">LTR</span> <i class="fa-solid fa-right-left"></i></button>
+          <a href="services.html" class="btn btn-secondary btn-sm" style="font-size:0.85rem;">
+            <i class="fa-solid fa-arrow-left"></i> <span>Add More Services</span>
+          </a>
+          <a href="index.html" class="btn btn-primary btn-sm" style="font-size:0.85rem;">
+            <i class="fa-solid fa-house"></i> <span>Home</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== CHECKOUT HERO ==================== -->
+  <section class="section-padding-sm bg-alt" style="border-bottom:1px solid var(--border-card);">
+    <div class="container text-center reveal">
+      <div class="stickers-cluster mb-3">
+        <div class="apex-sticker sticker-gold float-sticker-1"><i class="fa-solid fa-percent"></i> 0% APR FINANCING</div>
+        <div class="apex-sticker sticker-cyan float-sticker-2"><i class="fa-solid fa-lock"></i> 256-BIT SSL ESCROW</div>
+        <div class="apex-sticker sticker-neon-red float-sticker-3"><i class="fa-solid fa-credit-card"></i> APPLE PAY & STRIPE</div>
+        <div class="apex-sticker sticker-emerald float-sticker-1"><i class="fa-solid fa-shield-heart"></i> 100% MONEY-BACK GUARANTEE</div>
+      </div>
+      <div class="d-flex justify-center align-center gap-2 mb-2" style="flex-wrap:wrap;">
+        <span class="badge badge-primary"><i class="fa-solid fa-shield-halved"></i> SECURE STUDIO CHECKOUT</span>
+        <span class="badge-spec"><i class="fa-solid fa-lock" style="color:var(--emerald);"></i> 256-BIT ENCRYPTION</span>
+        <span class="badge-spec"><i class="fa-solid fa-award" style="color:var(--accent-gold);"></i> GUARANTEED QUOTE</span>
+      </div>
+      <h1 style="font-size:clamp(1.8rem, 3.2vw, 2.6rem); margin-bottom:0.4rem;">
+        COMPLETE YOUR <span class="text-gradient">STUDIO RESERVATION</span>
+      </h1>
+      <p style="color:var(--text-muted); max-width:640px; margin:0 auto; font-size:0.95rem;">
+        Review your bespoke customization services, select your preferred cleanroom appointment slot, and authorize payment.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== MAIN CHECKOUT PORTAL ==================== -->
+  <main class="section-padding">
+    <div class="container">
+      
+      <!-- Status / Alert Notification -->
+      <div id="paymentAlert" style="display:none; padding:1rem 1.25rem; border-radius:var(--radius-sm); font-size:0.92rem; margin-bottom:2rem;"></div>
+
+      <div class="payment-layout">
+        
+        <!-- LEFT COLUMN: CUSTOMER & PAYMENT FORM -->
+        <div class="reveal">
+          <form id="paymentForm" novalidate>
+            
+            <!-- SECTION 1: CUSTOMER & VEHICLE DETAILS -->
+            <div class="payment-card mb-4">
+              <h3 class="payment-section-title">
+                <i class="fa-solid fa-user-gear"></i> 1. Client & Vehicle Details
+              </h3>
+              
+              <div class="grid-2 gap-2 mb-3">
+                <div class="form-group mb-0">
+                  <label class="form-label" style="font-size:0.85rem; font-weight:600;">Full Name *</label>
+                  <input type="text" id="custName" class="form-control" placeholder="e.g. Tamil Vance" required autocomplete="name">
+                </div>
+                <div class="form-group mb-0">
+                  <label class="form-label" style="font-size:0.85rem; font-weight:600;">Email Address *</label>
+                  <input type="email" id="custEmail" class="form-control" placeholder="client@example.com" required autocomplete="email">
+                </div>
+              </div>
+
+              <div class="grid-2 gap-2 mb-3">
+                <div class="form-group mb-0">
+                  <label class="form-label" style="font-size:0.85rem; font-weight:600;">Phone Number *</label>
+                  <input type="tel" id="custPhone" class="form-control" placeholder="+1 (555) 019-2834" required autocomplete="tel">
+                </div>
+                <div class="form-group mb-0">
+                  <label class="form-label" style="font-size:0.85rem; font-weight:600;">Vehicle (Year, Make & Model) *</label>
+                  <input type="text" id="custVehicle" class="form-control" placeholder="e.g. 2024 Porsche 911 GT3 RS" required>
+                </div>
+              </div>
+
+              <div class="grid-2 gap-2 mb-3">
+                <div class="form-group mb-0">
+                  <label class="form-label" style="font-size:0.85rem; font-weight:600;">Preferred Bay Drop-Off Date</label>
+                  <input type="date" id="slotDate" class="form-control">
+                </div>
+                <div class="form-group mb-0">
+                  <label class="form-label" style="font-size:0.85rem; font-weight:600;">Cleanroom Time Slot</label>
+                  <select id="slotTime" class="form-control" style="cursor:pointer;">
+                    <option value="Morning Bay (9:00 AM)">Morning Bay Slot (9:00 AM)</option>
+                    <option value="Midday Bay (1:00 PM)">Midday Bay Slot (1:00 PM)</option>
+                    <option value="Afternoon Bay (4:00 PM)">Afternoon Bay Slot (4:00 PM)</option>
+                    <option value="Enclosed Transport Concierge">Enclosed Transport Pick-up (VIP)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group mb-0">
+                <label class="form-label" style="font-size:0.85rem; font-weight:600;">Special Instructions / Custom Notes (Optional)</label>
+                <textarea id="custNotes" class="form-control" rows="2" placeholder="e.g. Please perform extra PPF wrap around carbon side sills and apply ceramic coat over wheels."></textarea>
+              </div>
+            </div>
+
+            <!-- SECTION 2: PAYMENT METHOD SELECTION -->
+            <div class="payment-card">
+              <h3 class="payment-section-title">
+                <i class="fa-solid fa-credit-card"></i> 2. Select Payment Method
+              </h3>
+
+              <!-- Method Switcher Grid -->
+              <div class="payment-method-grid">
+                
+                <!-- Option 1: Credit / Debit Card (Default) -->
+                <div class="payment-method-btn active" data-method="card">
+                  <div class="payment-method-icon"><i class="fa-regular fa-credit-card"></i></div>
+                  <div class="payment-method-text">
+                    <h5>Credit / Debit Card</h5>
+                    <p>Visa, MasterCard, Amex, RuPay</p>
+                  </div>
+                  <div class="payment-method-radio"></div>
+                </div>
+
+                <!-- Option 2: UPI / QR Code -->
+                <div class="payment-method-btn" data-method="upi">
+                  <div class="payment-method-icon"><i class="fa-solid fa-qrcode"></i></div>
+                  <div class="payment-method-text">
+                    <h5>UPI & QR Code</h5>
+                    <p>GPay, PhonePe, Paytm, BHIM</p>
+                  </div>
+                  <div class="payment-method-radio"></div>
+                </div>
+
+                <!-- Option 3: Net Banking -->
+                <div class="payment-method-btn" data-method="netbanking">
+                  <div class="payment-method-icon"><i class="fa-solid fa-building-columns"></i></div>
+                  <div class="payment-method-text">
+                    <h5>Net Banking</h5>
+                    <p>All Major National Banks</p>
+                  </div>
+                  <div class="payment-method-radio"></div>
+                </div>
+
+                <!-- Option 4: Pay at Studio -->
+                <div class="payment-method-btn" data-method="studio">
+                  <div class="payment-method-icon"><i class="fa-solid fa-warehouse"></i></div>
+                  <div class="payment-method-text">
+                    <h5>Pay at Studio</h5>
+                    <p>Pay on Vehicle Drop-Off</p>
+                  </div>
+                  <div class="payment-method-radio"></div>
+                </div>
+
+              </div>
+
+              <!-- PANEL 1: CREDIT / DEBIT CARD -->
+              <div class="payment-method-panel active" data-method="card">
+                <div class="d-flex justify-between align-center mb-3">
+                  <span style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">Card Payment Details</span>
+                  <div class="card-logos-row">
+                    <i class="fa-brands fa-cc-visa" style="color:#1A1F71;"></i>
+                    <i class="fa-brands fa-cc-mastercard" style="color:#EB001B;"></i>
+                    <i class="fa-brands fa-cc-amex" style="color:#2E77BC;"></i>
+                  </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="form-label" style="font-size:0.82rem; font-weight:600;">Card Number *</label>
+                  <div class="input-icon-wrap" style="position:relative;">
+                    <input type="text" id="cardNum" class="form-control" placeholder="4532 8901 2345 6789" maxlength="19">
+                    <i class="fa-solid fa-credit-card" style="position:absolute; right:1rem; top:50%; transform:translateY(-50%); color:var(--text-dim);"></i>
+                  </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="form-label" style="font-size:0.82rem; font-weight:600;">Cardholder Name *</label>
+                  <input type="text" id="cardHolder" class="form-control" placeholder="e.g. Tamil Vance">
+                </div>
+
+                <div class="grid-2 gap-2 mb-2">
+                  <div class="form-group mb-0">
+                    <label class="form-label" style="font-size:0.82rem; font-weight:600;">Expiration Date (MM/YY) *</label>
+                    <input type="text" id="cardExp" class="form-control" placeholder="08/28" maxlength="5">
+                  </div>
+                  <div class="form-group mb-0">
+                    <label class="form-label" style="font-size:0.82rem; font-weight:600;">Security Code (CVV) *</label>
+                    <input type="password" id="cardCvv" class="form-control" placeholder="•••" maxlength="4">
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANEL 2: UPI / QR CODE -->
+              <div class="payment-method-panel" data-method="upi">
+                <div class="form-group mb-3">
+                  <label class="form-label" style="font-size:0.82rem; font-weight:600;">Enter UPI ID (VPA) *</label>
+                  <div class="input-icon-wrap" style="position:relative;">
+                    <input type="text" id="upiIdInput" class="form-control" placeholder="username@okhdfcbank">
+                    <i class="fa-solid fa-mobile-screen" style="position:absolute; right:1rem; top:50%; transform:translateY(-50%); color:var(--text-dim);"></i>
+                  </div>
+                  <small style="font-size:0.75rem; color:var(--text-dim); margin-top:0.25rem; display:block;">
+                    Supports GPay, PhonePe, Paytm, BHIM, Amazon Pay & Apple UPI
+                  </small>
+                </div>
+
+                <div class="upi-qr-box">
+                  <div class="upi-qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=upi%3A%2F%2Fpay%3Fpa%3Dapexveloce%40hdfcbank%26pn%3DApex%2520Veloce%2520Motorstudio%26cu%3DUSD" alt="Apex Veloce Studio UPI QR Code">
+                  </div>
+                  <h6 style="margin:0 0 0.25rem 0; font-size:0.9rem;">Scan Apex Cleanroom Studio QR</h6>
+                  <p style="margin:0; font-size:0.78rem; color:var(--text-muted);">
+                    Scan with any UPI app on your mobile device to complete authentication instantly.
+                  </p>
+                </div>
+              </div>
+
+              <!-- PANEL 3: NET BANKING -->
+              <div class="payment-method-panel" data-method="netbanking">
+                <label class="form-label" style="font-size:0.82rem; font-weight:600; margin-bottom:0.6rem;">Popular Banks</label>
+                <div class="bank-select-grid">
+                  <div class="bank-pill active" data-bank="HDFC Bank">HDFC Bank</div>
+                  <div class="bank-pill" data-bank="ICICI Bank">ICICI Bank</div>
+                  <div class="bank-pill" data-bank="State Bank of India">SBI</div>
+                  <div class="bank-pill" data-bank="Axis Bank">Axis Bank</div>
+                  <div class="bank-pill" data-bank="Kotak Mahindra">Kotak</div>
+                  <div class="bank-pill" data-bank="JPMorgan Chase">Chase VIP</div>
+                </div>
+
+                <div class="form-group mb-0">
+                  <label class="form-label" style="font-size:0.82rem; font-weight:600;">Or Select Other Bank</label>
+                  <select id="netbankSelect" class="form-control" style="cursor:pointer;">
+                    <option value="HDFC Bank">HDFC Bank</option>
+                    <option value="ICICI Bank">ICICI Bank</option>
+                    <option value="State Bank of India">State Bank of India (SBI)</option>
+                    <option value="Axis Bank">Axis Bank</option>
+                    <option value="Kotak Mahindra Bank">Kotak Mahindra Bank</option>
+                    <option value="Bank of Baroda">Bank of Baroda</option>
+                    <option value="Punjab National Bank">Punjab National Bank</option>
+                    <option value="JPMorgan Chase">JPMorgan Chase</option>
+                    <option value="Bank of America">Bank of America</option>
+                    <option value="Citibank">Citibank International</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- PANEL 4: PAY AT STUDIO -->
+              <div class="payment-method-panel" data-method="studio">
+                <div style="background:rgba(0,229,255,0.06); border:1px solid rgba(0,229,255,0.2); border-radius:var(--radius-md); padding:1.25rem;">
+                  <div class="d-flex align-center gap-2 mb-2">
+                    <i class="fa-solid fa-shield-check" style="color:var(--secondary); font-size:1.2rem;"></i>
+                    <h5 style="margin:0; font-size:0.95rem; color:var(--text-main);">Cleanroom Bay Inspection & Handover</h5>
+                  </div>
+                  <p style="margin:0; font-size:0.84rem; color:var(--text-muted); line-height:1.6;">
+                    Reserve your positive-pressure cleanroom slot now. You can pay 100% of the build cost upon arrival at our Beverly Hills facility after our master technicians complete the initial 100-point paint inspection.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Terms Agreement -->
+              <div class="form-group mt-4 mb-4">
+                <label class="d-flex align-center gap-2" style="font-size:0.84rem; color:var(--text-muted); cursor:pointer;">
+                  <input type="checkbox" id="payTermsCheck" required checked style="accent-color:var(--primary); width:16px; height:16px;">
+                  <span>I authorize the cleanroom build slot reservation and agree to the <a href="pricing.html" style="color:var(--primary); text-decoration:underline;">Warranty & Studio Charter</a>.</span>
+                </label>
+              </div>
+
+              <!-- Submit Payment Button -->
+              <button type="submit" id="paySubmitBtn" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; padding:1rem 1.75rem; font-size:1.05rem;">
+                <span id="paySubmitBtnText">Authorize & Complete Payment</span> 
+                <span id="payBtnAmount" style="margin-left:0.4rem; font-weight:800;">$0</span>
+                <i class="fa-solid fa-arrow-right" style="margin-left:0.5rem;"></i>
+              </button>
+
+            </div>
+
+          </form>
+        </div>
+
+        <!-- RIGHT COLUMN: ORDER SUMMARY & PROMO VOUCHER -->
+        <div class="checkout-summary-box reveal reveal-delay-1">
+          
+          <div class="payment-card">
+            <h3 class="payment-section-title">
+              <i class="fa-solid fa-cart-shopping"></i> Order Summary
+            </h3>
+
+            <!-- Empty Cart Warning (Hidden when items present) -->
+            <div id="checkoutEmptyState" style="display:none; text-align:center; padding:2rem 1rem;">
+              <i class="fa-solid fa-cart-arrow-down" style="font-size:2.5rem; color:var(--text-dim); margin-bottom:1rem;"></i>
+              <h5>Your Cart is Empty</h5>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.25rem;">Select bespoke wrap or PPF packages to checkout.</p>
+              <a href="services.html" class="btn btn-secondary btn-sm">Explore Studio Services</a>
+            </div>
+
+            <!-- Items List -->
+            <div class="checkout-items-list" id="checkoutItemsList">
+              <!-- Rendered dynamically by payment.js -->
+            </div>
+
+            <!-- Coupon Code Section -->
+            <div class="mb-3">
+              <label class="form-label" style="font-size:0.82rem; font-weight:600;">Studio Promo / VIP Code</label>
+              <div class="coupon-input-wrap">
+                <input type="text" id="couponCodeInput" class="form-control" placeholder="e.g. APEXVIP10">
+                <button type="button" id="applyCouponBtn" class="btn btn-secondary btn-sm" style="white-space:nowrap; padding:0 1rem;">Apply</button>
+              </div>
+              <div id="couponMessage" style="display:none; font-size:0.8rem; margin-top:0.25rem;"></div>
+            </div>
+
+            <!-- Pricing Breakdown -->
+            <div style="border-top:1px solid var(--border-subtle); padding-top:1rem;">
+              
+              <div class="d-flex justify-between align-center mb-2" style="font-size:0.9rem; color:var(--text-muted);">
+                <span>Services Subtotal</span>
+                <span id="checkoutSubtotal" style="color:var(--text-main); font-weight:600;">$0</span>
+              </div>
+
+              <div class="d-flex justify-between align-center mb-2" style="font-size:0.9rem; color:var(--text-muted);">
+                <span>Cleanroom Prep & Inspection</span>
+                <span style="color:var(--emerald); font-weight:600;">FREE (VIP Privilege)</span>
+              </div>
+
+              <!-- Discount Row (Hidden unless active) -->
+              <div class="coupon-discount-row" id="checkoutDiscountRow">
+                <span>VIP Studio Discount</span>
+                <span id="checkoutDiscountVal">-$0</span>
+              </div>
+
+              <div class="d-flex justify-between align-center mb-2" style="font-size:0.9rem; color:var(--text-muted);">
+                <span>Environmental Care & Disposal</span>
+                <span style="color:var(--text-main); font-weight:600;">$0.00 (Included)</span>
+              </div>
+
+              <div class="checkout-total-row">
+                <span class="total-label">Total Amount Due</span>
+                <span class="total-amount" id="checkoutTotalAmount">$0</span>
+              </div>
+
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="checkout-trust-box">
+              <div class="trust-item">
+                <i class="fa-solid fa-shield-check"></i> <span>5-Yr Film Warranty</span>
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-certificate"></i> <span>Master Certified</span>
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-knife" style="color:var(--secondary);"></i> <span>100% Paint Safe</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== SITE FOOTER / CONCIERGE HUB ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand, Bio & Trust Chips -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo mb-3">
+            <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="logo-text"><span class="title">APEX VELOCE</span><span class="subtitle">BESPOKE MOTORSTUDIO</span></div>
+          </a>
+          <p>The pinnacle of bespoke vehicle wraps, self-healing paint protection armor, carbon aerodynamic coachwork, and luxury automotive styling executed in ISO-7 cleanroom laboratories.</p>
+          
+          <div class="footer-trust-chips">
+            <span class="footer-trust-chip"><i class="fa-solid fa-certificate"></i> XPEL & 3M Certified</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-fan"></i> ISO-7 Cleanroom</span>
+            <span class="footer-trust-chip"><i class="fa-solid fa-shield-heart"></i> 100% Paint-Safe</span>
+          </div>
+
+          <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/18005559827" target="_blank" rel="noopener" class="footer-social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-widget">
+          <h5>Studio Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Flagship Studio</a></li>
+            <li><a href="home-2.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Wrap & Mod Studio</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cleanroom Facility</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 4K Portfolio Gallery</a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pricing & Calculator</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Automotive Journal</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> VIP Consultation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Specialties -->
+        <div class="footer-widget">
+          <h5>Disciplines</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Cast Color Change Wraps</a></li>
+            <li><a href="service-details.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> XPEL Paint Protection</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> 9H Ceramic Matrix</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Pre-Preg Carbon Aero</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Starlight Headliners</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i> Track PPF Armor</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge & Newsletter -->
+        <div class="footer-widget">
+          <h5>Studio Concierge</h5>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>742 Motor Enclave Blvd,<br>Beverly Hills, CA 90210</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <a href="tel:+18005559827" style="color:inherit; font-weight:700;">+1 (800) 555-WRAP</a>
+              <div>
+                <span class="footer-live-badge"><span class="footer-live-dot"></span> LIVE CONCIERGE ACTIVE</span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:bespoke@apexveloce.com" style="color:inherit;">bespoke@apexveloce.com</a>
+          </div>
+
+          <!-- VIP Newsletter Box -->
+          <div class="footer-newsletter-box">
+            <small>VIP Studio Drops & Finish Alerts</small>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showApexToast) window.showApexToast('Subscribed to VIP Studio Drops!', 'success'); this.reset();">
+              <input type="email" class="footer-newsletter-input" placeholder="Enter your email..." required>
+              <button type="submit" class="footer-newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© <span class="current-year">2026</span> APEX VELOCE BESPOKE MOTORSTUDIO. ALL RIGHTS RESERVED.</span>
+          <span class="badge-spec" style="margin-left:0.75rem; font-size:0.7rem;"><i class="fa-solid fa-lock" style="color:#10B981;"></i> 256-BIT SSL SECURED</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="contact.html">Privacy Policy</a>
+          <a href="contact.html">Terms of Service</a>
+          <a href="pricing.html">Warranty Charter</a>
+          <a href="contact.html">Client Support</a>
+        </div>
+        <button type="button" class="footer-back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+          <i class="fa-solid fa-arrow-up"></i> <span>Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING STICKY CONCIERGE BAR ==================== -->
+  <div class="sticky-bottom-bar">
+    <a href="tel:+18005559827" class="sticky-bar-pill">
+      <i class="fa-solid fa-phone" style="color:var(--primary);"></i> <span>+1 (800) 555-WRAP</span>
+    </a>
+    <a href="contact.html" class="sticky-bar-pill sticky-bar-cta">
+      <i class="fa-solid fa-calendar-check"></i> <span>Book Studio Bay</span>
+    </a>
+    <button type="button" class="sticky-bar-cart cart-toggle-btn" aria-label="Open Cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-badge" style="display:none; position:absolute; top:-4px; right:-4px;">0</span>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/payment.js"></script>
+</body>
+</html>
