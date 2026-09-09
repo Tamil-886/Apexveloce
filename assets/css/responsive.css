@@ -1,17 +1,126 @@
 /* ===================================================================
    APEX VELOCE | Vehicle Wrap & Custom Studio
-   Responsive Stylesheet (responsive.css)
+   Complete Comprehensive Responsive Stylesheet (responsive.css)
    =================================================================== */
 
-/* Large Desktops / TVs (1400px down) */
-@media (max-width: 1400px) {
+/* ===================================================================
+   1. Universal Base Responsive Rules & Container Resiliency
+   =================================================================== */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Fluid Responsive Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 3.5vw, 2rem);
+  padding-right: clamp(1rem, 3.5vw, 2rem);
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: clamp(1rem, 3vw, 2.5rem);
+  padding-right: clamp(1rem, 3vw, 2.5rem);
+}
+
+/* Fluid Media Elements */
+img, video, iframe, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure flex and grid children don't cause overflow */
+.d-flex, .nav-menu, .header-actions, .grid-2, .grid-3, .grid-4,
+.stats-grid, .pricing-grid, .gallery-grid, .footer-grid,
+.payment-layout, .wizard-main-container {
+  min-width: 0;
+}
+
+/* Horizontal Touch Scroll Tables */
+.service-comparison-wrap,
+.pricing-matrix-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-lg);
+}
+
+.service-comparison-wrap::-webkit-scrollbar,
+.pricing-matrix-wrap::-webkit-scrollbar {
+  height: 6px;
+}
+
+.service-comparison-wrap::-webkit-scrollbar-thumb,
+.pricing-matrix-wrap::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.service-comparison-wrap::-webkit-scrollbar-track,
+.pricing-matrix-wrap::-webkit-scrollbar-track {
+  background: var(--bg-alt);
+}
+
+/* ===================================================================
+   2. Large Desktops & 4K/QHD Displays (1600px and up)
+   =================================================================== */
+@media (min-width: 1600px) {
   :root {
-    --container-max: 1200px;
+    --container-max: 1480px;
+    --header-height: 86px;
+  }
+
+  .hero-glider-track {
+    height: 560px;
+  }
+
+  .before-after-container {
+    height: 560px;
+  }
+
+  .section-padding {
+    padding: 7.5rem 0;
+  }
+
+  .gallery-item {
+    height: 400px;
   }
 }
 
-/* Laptops / Standard Desktops (1200px down) */
+/* ===================================================================
+   3. Standard Desktops & Laptops (1200px to 1599px)
+   =================================================================== */
+@media (max-width: 1400px) {
+  :root {
+    --container-max: 1240px;
+  }
+
+  .nav-menu {
+    gap: 1.15rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1.1fr 1.3fr;
+    gap: 2.5rem;
+  }
+}
+
 @media (max-width: 1200px) {
+  :root {
+    --container-max: 1120px;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr !important;
     text-align: center;
@@ -24,75 +133,184 @@
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 550px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .pricing-card.featured {
-    transform: none;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-  }
-}
-
-/* Tablets (992px down) */
-@media (max-width: 992px) {
-  .nav-menu, .header-cta, .nav-login-btn, .nav-signup-btn, .nav-auth-group {
-    display: none !important;
-  }
-
-  .mobile-toggle-btn {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .lightbox-content {
-    grid-template-columns: 1fr;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-
-  .lightbox-img-wrap img {
-    max-height: 320px;
-  }
-
-  .lightbox-info {
-    padding: 1.5rem;
-  }
-
-  .grid-2, .grid-3, .grid-4 {
-    grid-template-columns: 1fr !important;
-  }
-
-  .swatch-grid, .vip-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
   .tech-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .pricing-card.featured,
+  .pricing-package-card.featured-tier {
+    transform: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+  }
+
+  .payment-layout {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+  }
+
+  .cleanroom-facility-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ===================================================================
+   4. Medium Tablets & Small Laptops (993px to 1199px)
+   =================================================================== */
+@media (max-width: 1100px) {
+  .nav-menu {
+    gap: 0.85rem;
+  }
+
+  .nav-link {
+    font-size: 0.86rem;
+  }
+
+  .wizard-main-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .live-summary-card {
+    position: static;
+    top: auto;
+  }
+
+  .contact-channel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vip-perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===================================================================
+   5. Tablets — Landscape & Portrait (769px to 992px)
+   =================================================================== */
+@media (max-width: 992px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  /* Switch Desktop Nav to Mobile Drawer */
+  .nav-menu,
+  .nav-auth-group,
+  .nav-login-btn,
+  .nav-signup-btn {
+    display: none !important;
+  }
+
+  .mobile-toggle-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Grid Conversions */
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swatch-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .wrap-collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .wrap-collection-grid .service-card:nth-child(1),
+  .wrap-collection-grid .service-card:nth-child(2),
+  .wrap-collection-grid .service-card:nth-child(3),
+  .wrap-collection-grid .service-card:nth-child(4),
+  .wrap-collection-grid .service-card:nth-child(5) {
+    grid-column: span 1;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .wrap-collection-grid .service-card:nth-child(5) {
+    grid-column: span 2;
+    max-width: 540px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .featured-builds-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Payment Layout */
   .payment-layout {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  .payment-card {
-    padding: 2rem 1.5rem;
+  .checkout-summary-box {
+    position: static;
+    top: auto;
   }
 
+  /* Lightbox Modal */
+  .lightbox-content {
+    grid-template-columns: 1fr;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .lightbox-img-wrap {
+    min-height: 320px;
+    max-height: 380px;
+  }
+
+  .lightbox-img-wrap img {
+    max-height: 380px;
+  }
+
+  .lightbox-info {
+    padding: 1.75rem 1.5rem;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  /* Sliders */
   .before-after-container {
     height: 380px;
   }
 
+  .hero-glider-track {
+    height: 420px;
+  }
+
+  /* Estimator & Service Details */
   .estimator-box {
     padding: 2rem 1.5rem;
   }
@@ -100,10 +318,31 @@
   .choice-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .service-discipline-tabs {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    padding: 5rem 0;
+  }
+
+  .section-padding-sm {
+    padding: 3rem 0;
+  }
 }
 
-/* Small Tablets & Large Phones (768px down) */
+/* ===================================================================
+   6. Small Tablets & Phablets (577px to 768px)
+   =================================================================== */
 @media (max-width: 768px) {
+  :root {
+    --header-height: 68px;
+  }
+
   .section-padding {
     padding: 4rem 0;
   }
@@ -112,44 +351,73 @@
     padding: 2.5rem 0;
   }
 
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Grid Layouts to Single or Balanced Columns */
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr !important;
     gap: 1.25rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-item {
+    padding: 1.75rem 1rem;
+  }
+
+  .stat-number {
+    font-size: clamp(1.8rem, 5vw, 2.3rem);
   }
 
   .gallery-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
-  .swatch-grid, .tech-grid, .vip-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .before-after-container {
+  .gallery-item {
     height: 300px;
   }
 
-  .floating-badge {
-    position: static !important;
-    margin-top: 1rem !important;
-    width: 100% !important;
-    justify-content: flex-start !important;
-    transform: none !important;
-    animation: none !important;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+  .swatch-grid, .tech-grid, .vip-grid, .vip-perks-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
-  .floating-badge-pill {
-    position: static !important;
-    margin-top: 0.75rem !important;
-    display: inline-flex !important;
-    transform: none !important;
-    animation: none !important;
+  .wrap-collection-grid .service-card:nth-child(5) {
+    grid-column: span 1;
+    max-width: 100%;
   }
 
-  .hero-media img,
-  .about-media-main img {
-    height: 340px !important;
+  .featured-builds-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .service-before-after-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .service-workflow-grid,
+  .service-benefits-grid,
+  .service-related-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .contact-channel-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* Sliders & Visuals */
+  .before-after-container {
+    height: 320px;
   }
 
   .hero-glider-track {
@@ -162,27 +430,69 @@
     font-size: 0.85rem !important;
   }
 
-  /* Telemetry ribbon on mobile */
-  .hero-content .d-flex.gap-4 {
-    justify-content: center;
-    text-align: center;
+  .hero-glider-info {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
   }
 
-  .hero-content .d-flex.gap-4 > div {
-    border-left: none !important;
-    padding-left: 0 !important;
-    min-width: 130px;
+  .hero-glider-info h4 {
+    font-size: 1.05rem;
   }
 
-  .partner-logos {
-    gap: 1.5rem;
+  .hero-glider-dots {
+    bottom: 1rem;
+    right: 1rem;
   }
 
-  .partner-logo-item {
-    font-size: 1.15rem;
+  .hero-media img,
+  .about-media-main img,
+  .service-hero-img-wrap img {
+    height: 320px !important;
   }
 
-  /* Before / After Slider Mobile Adjustments */
+  .service-hero-meta {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  /* Floating Badges Convert to Clean Stacking */
+  .floating-badge {
+    position: static !important;
+    margin-top: 1rem !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
+    transform: none !important;
+    animation: none !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+
+  .floating-badge-pill {
+    position: static !important;
+    margin-top: 0.75rem !important;
+    display: inline-flex !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* Buttons & Action Bars */
+  .btn {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.85rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  /* Before / After Slider Bar */
   .ba-control-bar {
     flex-direction: column;
     align-items: center;
@@ -195,15 +505,16 @@
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+    gap: 0.4rem;
   }
 
   .ba-preset-btn {
-    font-size: 0.72rem;
-    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
   }
 
   .before-after-label {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     padding: 0.35rem 0.75rem;
     bottom: 1rem;
   }
@@ -212,87 +523,255 @@
   .before-after-label.label-after { left: 1rem; }
 
   .ba-corner-badge {
-    font-size: 0.65rem;
-    padding: 0.3rem 0.6rem;
+    font-size: 0.68rem;
+    padding: 0.3rem 0.65rem;
     top: 0.85rem;
   }
 
   .ba-corner-badge.top-left { left: 0.85rem; }
   .ba-corner-badge.top-right { right: 0.85rem; }
 
+  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: left;
   }
 
   .footer-bottom {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
     text-align: center;
+    align-items: center;
   }
 
+  .footer-bottom-links {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Estimator */
   .estimator-total {
     flex-direction: column;
     gap: 1.25rem;
     text-align: center;
   }
 
-  .btn {
-    width: 100%;
+  /* Wizard & Forms */
+  .wizard-progress-bar {
+    margin-bottom: 2rem;
   }
 
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
+  .wizard-step-title {
+    font-size: 0.68rem;
   }
 
-  .hero-actions .btn {
-    width: 100%;
+  .wizard-step-circle {
+    width: 38px;
+    height: 38px;
+    font-size: 0.8rem;
+  }
+
+  .service-discipline-grid,
+  .budget-tier-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .emergency-trackside-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .facility-spec-chips {
+    grid-template-columns: 1fr;
   }
 }
 
-/* Small Mobile Phones (480px down) */
-@media (max-width: 480px) {
+/* ===================================================================
+   7. Standard Mobile Phones (376px to 576px)
+   =================================================================== */
+@media (max-width: 576px) {
+  :root {
+    --header-height: 64px;
+  }
+
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .hero-media img,
-  .about-media-main img {
-    height: 260px !important;
+  /* Typography Refinements */
+  h1 { font-size: clamp(1.9rem, 7.5vw, 2.75rem); }
+  h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  h3 { font-size: clamp(1.25rem, 4.5vw, 1.6rem); }
+  h4 { font-size: 1.15rem; }
+  p { font-size: 0.95rem; line-height: 1.6; }
+
+  /* Cards Padding */
+  .card,
+  .service-card .card-body,
+  .testimonial-card,
+  .pricing-package-card,
+  .payment-card,
+  .consultation-wizard-card,
+  .live-summary-card,
+  .vip-perk-card,
+  .tech-card {
+    padding: 1.5rem 1.15rem;
   }
 
-  .hero-title {
-    font-size: 2.1rem !important;
+  /* Brand Logo in Header */
+  .brand-logo .logo-mark {
+    width: 36px;
+    height: 36px;
+    font-size: 1.15rem;
   }
 
-  .card, .service-card .card-body, .testimonial-card {
-    padding: 1.5rem 1.2rem;
+  .brand-logo .logo-text .title {
+    font-size: 1.1rem;
   }
 
-  .choice-grid {
-    grid-template-columns: 1fr;
+  .brand-logo .logo-text .subtitle {
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
   }
 
-  .filter-btn {
-    width: 100%;
-    text-align: center;
+  /* Header Action Buttons */
+  .theme-toggle-btn,
+  .cart-toggle-btn,
+  .dir-toggle-btn,
+  .mobile-toggle-btn {
+    height: 36px !important;
+    font-size: 0.9rem;
   }
 
-  .before-after-container {
-    height: 240px;
+  .theme-toggle-btn,
+  .cart-toggle-btn,
+  .mobile-toggle-btn {
+    width: 36px !important;
   }
 
+  .dir-toggle-btn {
+    padding: 0 0.65rem !important;
+    font-size: 0.7rem;
+  }
+
+  .dir-toggle-btn .dir-badge {
+    padding: 0.1rem 0.35rem;
+    font-size: 0.6rem;
+  }
+
+  .header-actions {
+    gap: 0.4rem;
+  }
+
+  /* Stickers Cluster */
+  .stickers-cluster,
+  .contact-stickers-cluster {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .apex-sticker,
+  .diecut-sticker,
+  .pricing-sticker {
+    font-size: 0.66rem;
+    padding: 0.32rem 0.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* Hero & Visual Heights */
   .hero-glider-track {
     height: 300px !important;
   }
 
+  .hero-media img,
+  .about-media-main img,
+  .service-hero-img-wrap img {
+    height: 260px !important;
+  }
+
+  .before-after-container {
+    height: 250px;
+  }
+
+  .slider-handle .handle-circle {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+
+  /* Gallery Cards & Search */
+  .gallery-controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .gallery-search-wrap {
+    max-width: 100%;
+  }
+
+  .gallery-filters {
+    gap: 0.4rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .filter-btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.78rem;
+  }
+
+  .gallery-card-title {
+    font-size: 1.15rem;
+  }
+
+  .gallery-card-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Lightbox */
+  .lightbox-modal {
+    padding: 0.75rem;
+  }
+
+  .lightbox-content {
+    border-radius: var(--radius-lg);
+  }
+
+  .lightbox-img-wrap {
+    min-height: 240px;
+    max-height: 280px;
+  }
+
+  .lightbox-img-wrap img {
+    max-height: 280px;
+  }
+
+  .lightbox-info {
+    padding: 1.25rem 1rem;
+  }
+
+  .lightbox-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .lightbox-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  /* Checkout & Payment */
   .payment-method-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 
   .bank-select-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
 
   .receipt-grid {
@@ -302,14 +781,70 @@
 
   .protocol-steps {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .success-page-card {
     padding: 2rem 1.25rem;
+    margin: 1rem auto;
   }
 
+  .success-check-badge {
+    width: 70px;
+    height: 70px;
+    font-size: 2.2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Pricing */
+  .pricing-nav-tabs {
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-nav-btn {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.84rem;
+  }
+
+  .pricing-card .price,
+  .pricing-package-card .price {
+    font-size: 2.2rem;
+  }
+
+  .financing-box {
+    padding: 2rem 1.25rem;
+  }
+
+  .choice-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* FAQ Accordion */
+  .faq-header {
+    padding: 1.15rem 1.25rem;
+    gap: 0.85rem;
+  }
+
+  .faq-question {
+    font-size: 0.95rem;
+  }
+
+  .faq-body p,
+  .faq-content {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    font-size: 0.88rem;
+  }
+
+  .faq-accordion-trigger {
+    padding: 1.1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  /* Sticky Bottom Concierge Bar */
   .sticky-bottom-bar {
-    bottom: 0.75rem;
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
     padding: 0.35rem 0.6rem;
     gap: 0.4rem;
     max-width: 96vw;
@@ -319,5 +854,213 @@
     padding: 0.35rem 0.65rem;
     font-size: 0.72rem;
   }
+
+  /* Toast Notifications on Mobile */
+  .toast-container {
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    right: 1rem;
+    left: 1rem;
+    gap: 0.5rem;
+  }
+
+  .toast {
+    min-width: 0;
+    width: 100%;
+    padding: 0.85rem 1.15rem;
+    font-size: 0.88rem;
+  }
+
+  /* Ensure iOS doesn't auto-zoom inputs */
+  .form-control,
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
 }
+
+/* ===================================================================
+   8. Ultra-Compact Mobile Phones (320px to 375px)
+   =================================================================== */
+@media (max-width: 375px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /* Brand Logo — Hide subtitle on ultra-small screens to prevent wrap */
+  .brand-logo .logo-text .subtitle {
+    display: none;
+  }
+
+  .brand-logo .logo-text .title {
+    font-size: 1rem;
+  }
+
+  .brand-logo .logo-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  /* Header action buttons compact fit */
+  .header-actions {
+    gap: 0.3rem;
+  }
+
+  .theme-toggle-btn,
+  .cart-toggle-btn,
+  .dir-toggle-btn,
+  .mobile-toggle-btn {
+    height: 34px !important;
+  }
+
+  .theme-toggle-btn,
+  .cart-toggle-btn,
+  .mobile-toggle-btn {
+    width: 34px !important;
+  }
+
+  .dir-toggle-btn {
+    padding: 0 0.5rem !important;
+    font-size: 0.65rem;
+  }
+
+  /* Hero & Headings */
+  h1 { font-size: 1.85rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  h3 { font-size: 1.2rem !important; }
+
+  .hero-glider-track {
+    height: 260px !important;
+  }
+
+  .before-after-container {
+    height: 220px;
+  }
+
+  .before-after-label {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .ba-corner-badge {
+    display: none; /* Hide non-critical overlay badges on 320px to declutter */
+  }
+
+  /* Stats grid to single column on <= 375px */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  /* Bank select in checkout to 1 col */
+  .bank-select-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Countdown grid on coming soon */
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Sticky Bottom Bar — Show only essential pills */
+  .sticky-bottom-bar .sticky-bar-pill:not(.sticky-bar-cta):not(:first-child) {
+    display: none;
+  }
+
+  .sticky-bar-pill {
+    padding: 0.3rem 0.55rem;
+    font-size: 0.68rem;
+  }
+
+  /* Cart Drawer Width */
+  .cart-drawer {
+    width: 95vw;
+  }
+
+  .mobile-drawer {
+    width: 90vw;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Auth / Login Page */
+  .login-card {
+    padding: 1.75rem 1rem !important;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===================================================================
+   9. Touch Interactions & Accessibility Enhancements
+   =================================================================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch screen optimizations */
+  .card:hover,
+  .service-card:hover,
+  .swatch-card:hover,
+  .gallery-card:hover,
+  .tech-card:hover,
+  .vip-card:hover,
+  .vip-perk-card:hover {
+    transform: none !important;
+  }
+
+  /* Gallery media overlay always accessible or visible */
+  .gallery-media-overlay {
+    opacity: 1 !important;
+  }
+
+  /* Ensure touch targets are at least 44px where suitable */
+  .btn,
+  .nav-link,
+  .drawer-link,
+  .dropdown-item,
+  .faq-header,
+  .filter-btn,
+  .swatch-filter-btn,
+  .pricing-nav-btn {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+}
+
+/* ===================================================================
+   10. RTL Mode Responsive Adjustments
+   =================================================================== */
+[dir="rtl"] .before-after-label.label-before {
+  right: auto;
+  left: 1.75rem;
+}
+
+[dir="rtl"] .before-after-label.label-after {
+  left: auto;
+  right: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .before-after-label.label-before {
+    left: 1rem;
+  }
+  [dir="rtl"] .before-after-label.label-after {
+    right: 1rem;
+  }
+
+  [dir="rtl"] .ba-corner-badge.top-left {
+    left: auto;
+    right: 0.85rem;
+  }
+
+  [dir="rtl"] .ba-corner-badge.top-right {
+    right: auto;
+    left: 0.85rem;
+  }
+}
+
 
