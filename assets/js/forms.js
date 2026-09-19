@@ -95,6 +95,48 @@
       });
     });
 
+    // Phone Helper Utilities
+    function sanitizePhone(val) {
+      return (val || '').replace(/[^0-9+\s()\-]/g, '');
+    }
+
+    function isValidPhone(val) {
+      if (!val) return false;
+      const digits = val.replace(/\D/g, '');
+      return digits.length >= 7 && digits.length <= 15;
+    }
+
+    function attachPhoneRestriction(input) {
+      if (!input || input.dataset.phoneRestricted) return;
+      input.dataset.phoneRestricted = 'true';
+      input.setAttribute('inputmode', 'tel');
+
+      input.addEventListener('keydown', (e) => {
+        const allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab', 'Enter', 'Escape', 'Home', 'End'];
+        if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+        if (!/[0-9+\s()\-]/i.test(e.key)) {
+          e.preventDefault();
+        }
+      });
+
+      input.addEventListener('input', () => {
+        const cleaned = sanitizePhone(input.value);
+        if (input.value !== cleaned) {
+          input.value = cleaned;
+        }
+      });
+
+      input.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const text = (e.clipboardData || window.clipboardData).getData('text');
+        const cleaned = sanitizePhone(text);
+        document.execCommand('insertText', false, cleaned);
+      });
+    }
+
+    // Attach to all phone inputs on page
+    document.querySelectorAll('input[type="tel"], input[name*="phone"], input[id*="phone"]').forEach(attachPhoneRestriction);
+
     // Step Validation Function
     function validateStep(step) {
       if (!wizardForm) return true;
@@ -105,6 +147,11 @@
         const phone = wizardForm.querySelector('[name="client_phone"]')?.value.trim();
         if (!name || !email || !phone) {
           window.showApexToast('Please complete your Name, Email, and Phone number.', 'error');
+          return false;
+        }
+        if (!isValidPhone(phone)) {
+          window.showApexToast('Please enter a valid numeric contact phone number (7-15 digits).', 'error');
+          wizardForm.querySelector('[name="client_phone"]')?.focus();
           return false;
         }
       } else if (step === 2) {
@@ -323,6 +370,12 @@
 
         if (!name || !email || !phone || !make || !model) {
           window.showApexToast('Please complete all required fields across the steps.', 'error');
+          return;
+        }
+
+        if (!isValidPhone(phone)) {
+          window.showApexToast('Please enter a valid numeric contact phone number (7-15 digits).', 'error');
+          wizardForm.querySelector('[name="client_phone"]')?.focus();
           return;
         }
 

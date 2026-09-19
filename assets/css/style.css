@@ -88,7 +88,7 @@ body {
   background-color: var(--bg-main);
   color: var(--text-main);
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: clip;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1148,6 +1148,11 @@ p {
   text-align: left;
   transition: all var(--transition-fast);
   cursor: pointer;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  pointer-events: auto;
+  font-family: inherit;
 }
 
 .user-dropdown-item i {

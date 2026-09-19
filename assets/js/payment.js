@@ -225,11 +225,35 @@
     }
   }
 
-  // Credit Card Input Formatters
+  // Credit Card & Phone Input Formatters
   function initCardFormatters() {
     const cardNumInput = document.querySelector('#cardNum');
     const cardExpInput = document.querySelector('#cardExp');
     const cardCvvInput = document.querySelector('#cardCvv');
+    const custPhoneInput = document.querySelector('#custPhone');
+
+    if (custPhoneInput) {
+      custPhoneInput.setAttribute('inputmode', 'tel');
+      custPhoneInput.addEventListener('keydown', (e) => {
+        const allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab', 'Enter', 'Escape', 'Home', 'End'];
+        if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+        if (!/[0-9+\s()\-]/i.test(e.key)) {
+          e.preventDefault();
+        }
+      });
+      custPhoneInput.addEventListener('input', () => {
+        const cleaned = custPhoneInput.value.replace(/[^0-9+\s()\-]/g, '');
+        if (custPhoneInput.value !== cleaned) {
+          custPhoneInput.value = cleaned;
+        }
+      });
+      custPhoneInput.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const text = (e.clipboardData || window.clipboardData).getData('text');
+        const cleaned = text.replace(/[^0-9+\s()\-]/g, '');
+        document.execCommand('insertText', false, cleaned);
+      });
+    }
 
     if (cardNumInput) {
       cardNumInput.addEventListener('input', (e) => {
@@ -299,8 +323,9 @@
         return;
       }
 
-      if (!phone || phone.length < 8) {
-        showAlert('Please enter a valid contact phone number.', 'error');
+      const phoneDigits = phone ? phone.replace(/\D/g, '') : '';
+      if (!phone || phoneDigits.length < 7 || phoneDigits.length > 15) {
+        showAlert('Please enter a valid contact phone number with 7-15 digits.', 'error');
         document.querySelector('#custPhone')?.focus();
         return;
       }

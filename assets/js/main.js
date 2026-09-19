@@ -374,5 +374,39 @@
         });
       });
     });
+
+    // 7. Universal Phone Number Numeric Input Filtering
+    function setupPhoneInputs() {
+      const phoneInputs = document.querySelectorAll('input[type="tel"], input[name*="phone"], input[id*="phone"]');
+      phoneInputs.forEach((input) => {
+        if (input.dataset.phoneBound) return;
+        input.dataset.phoneBound = 'true';
+        input.setAttribute('inputmode', 'tel');
+
+        input.addEventListener('keydown', (e) => {
+          const allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab', 'Enter', 'Escape', 'Home', 'End'];
+          if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+          if (!/[0-9+\s()\-]/i.test(e.key)) {
+            e.preventDefault();
+          }
+        });
+
+        input.addEventListener('input', () => {
+          const cleaned = input.value.replace(/[^0-9+\s()\-]/g, '');
+          if (input.value !== cleaned) {
+            input.value = cleaned;
+          }
+        });
+
+        input.addEventListener('paste', (e) => {
+          e.preventDefault();
+          const text = (e.clipboardData || window.clipboardData).getData('text');
+          const cleaned = text.replace(/[^0-9+\s()\-]/g, '');
+          document.execCommand('insertText', false, cleaned);
+        });
+      });
+    }
+
+    setupPhoneInputs();
   });
 })();

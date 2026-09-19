@@ -9,9 +9,9 @@
 html, body {
   width: 100% !important;
   max-width: 100% !important;
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
   box-sizing: border-box !important;
-  position: relative !important;
+  position: relative;
 }
 
 *, *::before, *::after {
@@ -36,8 +36,17 @@ html, body {
   box-sizing: border-box !important;
 }
 
+/* Sticky Header Enforced Across All Viewports */
+.site-header {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+}
+
 /* Sections & Main Wrappers */
-.section-padding, .hero-section, main, section, footer, header {
+.section-padding, .hero-section, main, section, footer {
   width: 100% !important;
   max-width: 100% !important;
   box-sizing: border-box !important;
@@ -540,6 +549,9 @@ img, video, iframe, canvas, svg {
     font-size: clamp(1.4rem, 5.2vw, 1.95rem) !important;
     word-break: break-word !important;
     overflow-wrap: break-word !important;
+  }
+
+  .section-header h2, .hero-content h2 {
     text-align: center !important;
   }
 
@@ -548,7 +560,34 @@ img, video, iframe, canvas, svg {
     line-height: 1.6 !important;
     max-width: 100% !important;
     word-break: break-word !important;
+  }
+
+  .section-header p, .hero-content p, .hero-desc {
     text-align: center !important;
+  }
+
+  /* Clean LTR Alignment for Cards, Content Blocks, Modals & Forms */
+  .card,
+  .service-card,
+  .service-card .card-body,
+  .testimonial-card,
+  .pricing-package-card,
+  .payment-card,
+  .consultation-wizard-card,
+  .live-summary-card,
+  .vip-perk-card,
+  .tech-card,
+  .blog-card,
+  .form-group,
+  .form-label,
+  .facility-spec-card,
+  .channel-card,
+  .discipline-card,
+  .budget-tier-card,
+  .service-benefit-card,
+  .faq-accordion-item,
+  .service-feature-tags {
+    text-align: start !important;
   }
 
   /* Grid Layouts to Single or Balanced Columns */

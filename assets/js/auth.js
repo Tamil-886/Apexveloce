@@ -194,9 +194,26 @@
         `;
       } else {
         desktopAuthContainer.innerHTML = `
-          <a href="register.html" class="btn btn-primary btn-sm nav-signup-btn">
-            <span>Register</span> <i class="fa-solid fa-user-plus"></i>
-          </a>
+          <div class="user-dropdown-wrap" id="userDropdownWrap">
+            <button type="button" class="user-profile-btn" id="userProfileBtn" aria-expanded="false" aria-label="Client Access Menu">
+              <i class="fa-regular fa-circle-user"></i>
+              <span class="user-display-name">Client Portal</span>
+              <i class="fa-solid fa-chevron-down dropdown-caret"></i>
+            </button>
+            <div class="user-dropdown-menu" id="userDropdownMenu">
+              <div class="user-dropdown-header">
+                <div class="user-dd-name">VIP Client Portal</div>
+                <div class="user-dd-email">Access your vehicle builds</div>
+              </div>
+              <div class="user-dropdown-divider"></div>
+              <a href="login.html" class="user-dropdown-item"><i class="fa-solid fa-arrow-right-to-bracket"></i> Client Login</a>
+              <a href="register.html" class="user-dropdown-item"><i class="fa-solid fa-user-plus"></i> Register VIP</a>
+              <div class="user-dropdown-divider"></div>
+              <a href="services.html" class="user-dropdown-item"><i class="fa-solid fa-layer-group"></i> Browse Services</a>
+              <a href="pricing.html" class="user-dropdown-item"><i class="fa-solid fa-calculator"></i> Build Estimator</a>
+              <a href="contact.html" class="user-dropdown-item"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
+            </div>
+          </div>
         `;
       }
     }
@@ -221,7 +238,7 @@
               <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
             </button>
           </div>
-          <a href="contact.html" class="btn btn-primary" style="width:100%;"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
         `;
       } else {
         drawerAuthContainer.innerHTML = `
@@ -231,8 +248,11 @@
               <span class="cart-badge" style="display:none; position:static; margin-left:0.4rem;">0</span>
             </button>
           </div>
-          <a href="register.html" class="btn btn-primary mb-2"><span>Register VIP</span> <i class="fa-solid fa-user-plus"></i></a>
-          <a href="contact.html" class="btn btn-secondary" style="border-color:var(--primary); color:var(--primary);"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="d-flex gap-2 mb-2">
+            <a href="login.html" class="btn btn-secondary" style="flex:1; justify-content:center;"><span>Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+            <a href="register.html" class="btn btn-primary" style="flex:1; justify-content:center;"><span>Register VIP</span> <i class="fa-solid fa-user-plus"></i></a>
+          </div>
+          <a href="contact.html" class="btn btn-secondary" style="border-color:var(--primary); color:var(--primary); width:100%; justify-content:center;"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
         `;
       }
     }
@@ -269,11 +289,21 @@
         profileBtn.setAttribute('aria-expanded', dropdownMenu.classList.contains('show'));
       });
 
+      // Close when clicking outside
       document.addEventListener('click', (e) => {
         if (!e.target.closest('#userDropdownWrap')) {
           dropdownMenu.classList.remove('show');
           profileBtn.setAttribute('aria-expanded', 'false');
         }
+      });
+
+      // Close when clicking an anchor link inside dropdown to allow smooth navigation
+      const dropdownLinks = dropdownMenu.querySelectorAll('a.user-dropdown-item');
+      dropdownLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          dropdownMenu.classList.remove('show');
+          profileBtn.setAttribute('aria-expanded', 'false');
+        });
       });
     }
 
