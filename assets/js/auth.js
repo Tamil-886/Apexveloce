@@ -159,105 +159,11 @@
       .replace(/'/g, '&#039;');
   }
 
-  // Update Navbar and Mobile Drawer with User State
+  // Update Navbar and Mobile Drawer with User State (Login/Sign Up disabled as per requirement)
   function updateAuthUI() {
-    const user = getCurrentUser();
-    const desktopAuthContainer = document.querySelector('.nav-auth-group');
-    const drawerAuthContainer = document.querySelector('.drawer-auth-group');
+    // Header space is reserved for primary conversion CTA (Book Consultation)
+    // Re-bind cart buttons if dynamically present
 
-    // 1. Desktop Navbar Update
-    if (desktopAuthContainer) {
-      if (user) {
-        desktopAuthContainer.innerHTML = `
-          <div class="user-dropdown-wrap" id="userDropdownWrap">
-            <button type="button" class="user-profile-btn" id="userProfileBtn" aria-expanded="false" aria-label="User Account Menu">
-              <i class="fa-solid fa-circle-user"></i>
-              <span class="user-display-name">${escapeHtml(user.name)}</span>
-              <i class="fa-solid fa-chevron-down dropdown-caret"></i>
-            </button>
-            <div class="user-dropdown-menu" id="userDropdownMenu">
-              <div class="user-dropdown-header">
-                <div class="user-dd-name">${escapeHtml(user.name)}</div>
-                <div class="user-dd-email">${escapeHtml(user.email)}</div>
-              </div>
-              <div class="user-dropdown-divider"></div>
-              <a href="services.html" class="user-dropdown-item"><i class="fa-solid fa-layer-group"></i> Browse Services</a>
-              <a href="pricing.html" class="user-dropdown-item"><i class="fa-solid fa-calculator"></i> Build Estimator</a>
-              <a href="payment.html" class="user-dropdown-item"><i class="fa-solid fa-credit-card"></i> Studio Checkout</a>
-              <a href="contact.html" class="user-dropdown-item"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
-              <div class="user-dropdown-divider"></div>
-              <button type="button" class="user-dropdown-item logout-btn" id="headerLogoutBtn">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
-              </button>
-            </div>
-          </div>
-        `;
-      } else {
-        desktopAuthContainer.innerHTML = `
-          <div class="user-dropdown-wrap" id="userDropdownWrap">
-            <button type="button" class="user-profile-btn" id="userProfileBtn" aria-expanded="false" aria-label="Client Access Menu">
-              <i class="fa-regular fa-circle-user"></i>
-              <span class="user-display-name">Client Portal</span>
-              <i class="fa-solid fa-chevron-down dropdown-caret"></i>
-            </button>
-            <div class="user-dropdown-menu" id="userDropdownMenu">
-              <div class="user-dropdown-header">
-                <div class="user-dd-name">VIP Client Portal</div>
-                <div class="user-dd-email">Access your vehicle builds</div>
-              </div>
-              <div class="user-dropdown-divider"></div>
-              <a href="login.html" class="user-dropdown-item"><i class="fa-solid fa-arrow-right-to-bracket"></i> Client Login</a>
-              <a href="register.html" class="user-dropdown-item"><i class="fa-solid fa-user-plus"></i> Register VIP</a>
-              <div class="user-dropdown-divider"></div>
-              <a href="services.html" class="user-dropdown-item"><i class="fa-solid fa-layer-group"></i> Browse Services</a>
-              <a href="pricing.html" class="user-dropdown-item"><i class="fa-solid fa-calculator"></i> Build Estimator</a>
-              <a href="contact.html" class="user-dropdown-item"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
-            </div>
-          </div>
-        `;
-      }
-    }
-
-    // 2. Mobile Drawer Update
-    if (drawerAuthContainer) {
-      if (user) {
-        drawerAuthContainer.innerHTML = `
-          <div class="drawer-user-card mb-2">
-            <i class="fa-solid fa-circle-user"></i>
-            <div class="drawer-user-info">
-              <div class="drawer-user-name">${escapeHtml(user.name)}</div>
-              <div class="drawer-user-email">${escapeHtml(user.email)}</div>
-            </div>
-          </div>
-          <div class="d-flex gap-2 mb-2">
-            <button type="button" class="btn btn-secondary cart-toggle-btn" style="flex:1; width:auto; border-radius:var(--radius-sm); font-size:0.9rem;">
-              <i class="fa-solid fa-cart-shopping"></i> <span>Cart</span>
-              <span class="cart-badge" style="display:none; position:static; margin-left:0.4rem;">0</span>
-            </button>
-            <button type="button" class="btn btn-secondary logout-btn" id="drawerLogoutBtn" style="flex:1; width:auto; font-size:0.9rem; border-color:rgba(255,42,84,0.4); color:var(--primary);">
-              <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
-            </button>
-          </div>
-          <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
-        `;
-      } else {
-        drawerAuthContainer.innerHTML = `
-          <div class="mb-2">
-            <button type="button" class="btn btn-secondary cart-toggle-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem;">
-              <i class="fa-solid fa-cart-shopping"></i> <span>View Cart</span>
-              <span class="cart-badge" style="display:none; position:static; margin-left:0.4rem;">0</span>
-            </button>
-          </div>
-          <div class="d-flex gap-2 mb-2">
-            <a href="login.html" class="btn btn-secondary" style="flex:1; justify-content:center;"><span>Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-            <a href="register.html" class="btn btn-primary" style="flex:1; justify-content:center;"><span>Register VIP</span> <i class="fa-solid fa-user-plus"></i></a>
-          </div>
-          <a href="contact.html" class="btn btn-secondary" style="border-color:var(--primary); color:var(--primary); width:100%; justify-content:center;"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
-        `;
-      }
-    }
-
-    // Re-bind cart buttons that might have been dynamically inserted
     if (window.ApexCart && typeof window.ApexCart.getCart === 'function') {
       const cartBadges = document.querySelectorAll('.cart-badge');
       const cart = window.ApexCart.getCart();
@@ -276,51 +182,6 @@
             window.ApexCart.open();
           }
         };
-      });
-    }
-
-    // Bind dropdown click toggle
-    const profileBtn = document.querySelector('#userProfileBtn');
-    const dropdownMenu = document.querySelector('#userDropdownMenu');
-    if (profileBtn && dropdownMenu) {
-      profileBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        dropdownMenu.classList.toggle('show');
-        profileBtn.setAttribute('aria-expanded', dropdownMenu.classList.contains('show'));
-      });
-
-      // Close when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('#userDropdownWrap')) {
-          dropdownMenu.classList.remove('show');
-          profileBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      // Close when clicking an anchor link inside dropdown to allow smooth navigation
-      const dropdownLinks = dropdownMenu.querySelectorAll('a.user-dropdown-item');
-      dropdownLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-          dropdownMenu.classList.remove('show');
-          profileBtn.setAttribute('aria-expanded', 'false');
-        });
-      });
-    }
-
-    // Bind logout buttons
-    const headerLogout = document.querySelector('#headerLogoutBtn');
-    if (headerLogout) {
-      headerLogout.addEventListener('click', (e) => {
-        e.preventDefault();
-        logout();
-      });
-    }
-
-    const drawerLogout = document.querySelector('#drawerLogoutBtn');
-    if (drawerLogout) {
-      drawerLogout.addEventListener('click', (e) => {
-        e.preventDefault();
-        logout();
       });
     }
   }

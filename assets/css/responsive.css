@@ -193,17 +193,34 @@ img, video, iframe, canvas, svg {
 }
 
 /* ===================================================================
-   4. Medium Tablets & Small Laptops (993px to 1199px)
+   4. Medium Laptops & Desktops (1025px to 1250px)
    =================================================================== */
-@media (max-width: 1100px) {
+@media (max-width: 1250px) and (min-width: 1025px) {
+  .site-header .brand-logo .logo-text .subtitle {
+    display: none !important;
+  }
+
   .nav-menu {
-    gap: 0.85rem;
+    gap: 0.85rem !important;
   }
 
   .nav-link {
-    font-size: 0.86rem;
+    font-size: 0.85rem !important;
+    padding: 0.4rem 0.2rem !important;
   }
 
+  .header-actions {
+    gap: 0.45rem !important;
+  }
+
+  .header-cta-btn,
+  .nav-signup-btn {
+    padding: 0 0.85rem !important;
+    font-size: 0.82rem !important;
+  }
+}
+
+@media (max-width: 1100px) {
   .wizard-main-container {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -228,9 +245,9 @@ img, video, iframe, canvas, svg {
 }
 
 /* ===================================================================
-   5. Tablets — Landscape & Portrait (769px to 992px)
+   5. Tablets — Landscape & Portrait (769px to 1024px)
    =================================================================== */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   :root {
     --header-height: 70px;
   }
@@ -239,7 +256,8 @@ img, video, iframe, canvas, svg {
   .nav-menu,
   .nav-auth-group,
   .nav-login-btn,
-  .nav-signup-btn {
+  .nav-signup-btn,
+  .header-cta-btn {
     display: none !important;
   }
 
@@ -312,7 +330,7 @@ img, video, iframe, canvas, svg {
   }
 
   /* Grid Conversions */
-  .grid-2, .grid-3, .grid-4 {
+  .grid-2, .grid-3, .grid-4, .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
@@ -450,7 +468,8 @@ img, video, iframe, canvas, svg {
 
   .site-header .header-actions .nav-auth-group,
   .site-header .header-actions .nav-signup-btn,
-  .site-header .header-actions .nav-login-btn {
+  .site-header .header-actions .nav-login-btn,
+  .site-header .header-actions .header-cta-btn {
     display: none !important;
   }
 
@@ -539,16 +558,18 @@ img, video, iframe, canvas, svg {
   h1, .hero-headline, h1.mb-3, [class*="hero"] h1 {
     font-size: clamp(1.75rem, 6.5vw, 2.35rem) !important;
     line-height: 1.18 !important;
-    word-break: break-word !important;
+    word-break: normal !important;
     overflow-wrap: break-word !important;
+    hyphens: none !important;
     text-align: center !important;
     max-width: 100% !important;
   }
 
   h2 {
     font-size: clamp(1.4rem, 5.2vw, 1.95rem) !important;
-    word-break: break-word !important;
+    word-break: normal !important;
     overflow-wrap: break-word !important;
+    hyphens: none !important;
   }
 
   .section-header h2, .hero-content h2 {
@@ -599,7 +620,7 @@ img, video, iframe, canvas, svg {
     width: 100% !important;
   }
 
-  .grid-2, .grid-3, .grid-4 {
+  .grid-2, .grid-3, .grid-4, .gallery-grid {
     grid-template-columns: 1fr !important;
     gap: 1.25rem;
   }
@@ -617,23 +638,20 @@ img, video, iframe, canvas, svg {
     font-size: clamp(1.8rem, 5vw, 2.3rem);
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
   .gallery-item {
     height: 300px;
   }
 
-  .swatch-grid, .tech-grid, .vip-grid, .vip-perks-grid {
-    grid-template-columns: 1fr;
+  .swatch-grid, .tech-grid, .vip-grid, .vip-perks-grid, .wrap-collection-grid {
+    grid-template-columns: 1fr !important;
     gap: 1.25rem;
   }
 
-  .wrap-collection-grid .service-card:nth-child(5) {
-    grid-column: span 1;
-    max-width: 100%;
+  .wrap-collection-grid .service-card {
+    grid-column: span 1 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    width: 100% !important;
   }
 
   .featured-builds-grid {
@@ -849,16 +867,18 @@ img, video, iframe, canvas, svg {
     font-size: clamp(1.65rem, 6.5vw, 2.15rem) !important;
     line-height: 1.18 !important;
     letter-spacing: -0.01em !important;
-    word-break: break-word !important;
+    word-break: normal !important;
     overflow-wrap: break-word !important;
+    hyphens: none !important;
     text-align: center !important;
   }
 
   h2 {
     font-size: clamp(1.35rem, 5.5vw, 1.85rem) !important;
     line-height: 1.22 !important;
-    word-break: break-word !important;
+    word-break: normal !important;
     overflow-wrap: break-word !important;
+    hyphens: none !important;
   }
 
   h3 {
@@ -918,7 +938,8 @@ img, video, iframe, canvas, svg {
 
   .site-header .header-actions .nav-auth-group,
   .site-header .header-actions .nav-signup-btn,
-  .site-header .header-actions .nav-login-btn {
+  .site-header .header-actions .nav-login-btn,
+  .site-header .header-actions .header-cta-btn {
     display: none !important;
   }
 
@@ -1268,7 +1289,8 @@ img, video, iframe, canvas, svg {
 
   .site-header .header-actions .nav-auth-group,
   .site-header .header-actions .nav-signup-btn,
-  .site-header .header-actions .nav-login-btn {
+  .site-header .header-actions .nav-login-btn,
+  .site-header .header-actions .header-cta-btn {
     display: none !important;
   }
 
@@ -1323,6 +1345,28 @@ img, video, iframe, canvas, svg {
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 0.85rem;
+  }
+
+  /* Wrap collection & service cards on ultra-compact mobile */
+  .wrap-collection-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+  }
+
+  .wrap-collection-grid .service-card {
+    grid-column: span 1 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .service-card .card-footer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.6rem !important;
+    flex-wrap: wrap !important;
   }
 
   /* Bank select in checkout to 1 col */
@@ -1453,5 +1497,34 @@ img, video, iframe, canvas, svg {
   }
 }
 
+/* ===================================================================
+   Standardized Page Hero Banner Responsive Rules
+   =================================================================== */
+@media (max-width: 768px) {
+  .page-hero-banner {
+    min-height: 320px !important;
+    padding: 4.5rem 1rem 3.5rem 1rem !important;
+  }
 
+  .page-hero-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.25rem) !important;
+    margin-bottom: 1rem !important;
+  }
 
+  .page-hero-desc {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .page-hero-badge-group {
+    gap: 0.4rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero-banner {
+    min-height: 290px !important;
+    padding: 3.5rem 0.85rem 3rem 0.85rem !important;
+  }
+}

@@ -49,11 +49,9 @@
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="cart-badge" style="display:none;">0</span>
           </button>
-          <div class="nav-auth-group">
-            <a href="register.html" class="btn btn-primary btn-sm nav-signup-btn">
-              <span>Register</span> <i class="fa-solid fa-user-plus"></i>
-            </a>
-          </div>
+          <a href="contact.html" class="btn btn-primary btn-sm header-cta-btn">
+            <span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
           <button class="mobile-toggle-btn" aria-label="Open Mobile Menu"><i class="fa-solid fa-bars-staggered"></i></button>
         </div>
       </nav>
@@ -81,7 +79,7 @@
       <li><a href="blog.html" class="drawer-link active"><span>Automotive Journal</span> <i class="fa-solid fa-chevron-right"></i></a></li>
       <li><a href="contact.html" class="drawer-link"><span>Design Consultation</span> <i class="fa-solid fa-chevron-right"></i></a></li>
     </ul>
-    <div class="drawer-footer drawer-auth-group">
+    <div class="drawer-footer">
       <div class="mb-2">
         <button type="button" class="btn btn-secondary dir-toggle-btn drawer-dir-btn" style="width:100%; border-radius:var(--radius-sm); font-size:0.9rem; justify-content:center;">
           <span class="dir-badge">LTR</span> <span>Switch to RTL</span> <i class="fa-solid fa-right-left"></i>
@@ -93,35 +91,32 @@
           <span class="cart-badge" style="display:none; position:static; margin-left:0.4rem;">0</span>
         </button>
       </div>
-      <a href="register.html" class="btn btn-primary mb-2"><span>Register VIP</span> <i class="fa-solid fa-user-plus"></i></a>
-      <a href="contact.html" class="btn btn-secondary" style="border-color:var(--primary); color:var(--primary);"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;"><span>Book Consultation</span> <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </aside>
 
   <!-- ==================== BLOG HERO BANNER ==================== -->
-  <section class="hero-section section-padding bg-alt" style="position:relative; overflow:hidden; padding-top:4.5rem; padding-bottom:5rem;">
+  <section class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?auto=format&fit=crop&w=1920&q=80');">
     <!-- Subtle Background Ambient Glow -->
-    <div style="position:absolute; top:-120px; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle, rgba(255,42,84,0.1) 0%, rgba(0,0,0,0) 70%); pointer-events:none;"></div>
+    <div style="position:absolute; top:-120px; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle, rgba(255,42,84,0.14) 0%, rgba(0,0,0,0) 70%); pointer-events:none; z-index:1;"></div>
 
-    <div class="container text-center reveal" style="position:relative; z-index:1;">
-      <div class="d-flex justify-center align-center gap-2 mb-3" style="flex-wrap:wrap;">
-        <span class="badge badge-primary"><i class="fa-solid fa-newspaper"></i> INSIGHTS & GUIDES</span>
-        <span class="badge-spec"><i class="fa-solid fa-book-open" style="color:var(--secondary);"></i> MASTER ARTICLES</span>
-        <span class="badge-spec"><i class="fa-solid fa-sparkles" style="color:var(--accent-gold);"></i> CARE SECRETS</span>
+    <div class="container text-center reveal active" style="position:relative; z-index:2;">
+      <!-- Title-Related Category Badge -->
+      <div class="d-inline-flex justify-center align-center mb-3" style="width:fit-content; max-width:100%;">
+        <span class="badge badge-primary" style="padding:0.4rem 1.15rem; font-size:0.8rem; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:0.5rem; width:fit-content;"><i class="fa-solid fa-newspaper"></i> INSIGHTS &amp; GUIDES</span>
       </div>
 
-      <h1 style="max-width:900px; margin:0 auto 1.5rem auto; font-size:clamp(1.75rem, 4.5vw, 3.8rem); line-height:1.15;">
-        THE APEX <span class="text-gradient">AUTOMOTIVE JOURNAL</span>
+      <h1 class="page-hero-title">
+        THE APEX <span style="color:var(--primary); text-shadow:0 0 25px rgba(255,42,84,0.5);">AUTOMOTIVE JOURNAL</span>
       </h1>
 
-      <p style="max-width:720px; margin:0 auto 2.5rem auto; font-size:1.15rem; color:var(--text-muted); line-height:1.7;">
+      <p class="page-hero-desc">
         Expert technical guides, paint protection analysis, car care secrets, and build spotlights written by our master installers.
       </p>
 
-
-
     </div>
   </section>
+
 
   <!-- ==================== BLOG GRID ==================== -->
   <section class="section-padding">

@@ -998,15 +998,20 @@ body.light-mode .vip-perk-card:hover {
 
 [data-theme="light"] .vip-perk-icon,
 body.light-mode .vip-perk-icon {
-  background: #F1F5F9 !important;
-  border-color: rgba(15, 23, 42, 0.1) !important;
-  color: var(--primary) !important;
+  background: #F8FAFC !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
 }
 
 [data-theme="light"] .vip-perk-card:hover .vip-perk-icon,
 body.light-mode .vip-perk-card:hover .vip-perk-icon {
-  background: var(--primary) !important;
-  color: #FFFFFF !important;
+  background: #FFFFFF !important;
+  border-color: currentColor !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.1) !important;
+}
+
+[data-theme="light"] .vip-perk-card:hover .vip-perk-icon i,
+body.light-mode .vip-perk-card:hover .vip-perk-icon i {
+  color: inherit;
 }
 
 [data-theme="light"] .emergency-trackside-box,
