@@ -375,7 +375,44 @@
       });
     });
 
-    // 7. Universal Phone Number Numeric Input Filtering
+    // 7. Universal Validation Helpers
+    if (!window.isValidName) {
+      window.isValidName = function (val) {
+        if (!val || typeof val !== 'string') return false;
+        const trimmed = val.trim();
+        if (trimmed.length < 2) return false;
+        if (/\d/.test(trimmed)) return false;
+        if (!/^[a-zA-Z\u00C0-\u00FF\s'.-]{2,60}$/.test(trimmed)) return false;
+        const letters = (trimmed.match(/[a-zA-Z\u00C0-\u00FF]/g) || []).length;
+        return letters >= 2;
+      };
+    }
+
+    if (!window.isValidEmail) {
+      window.isValidEmail = function (val) {
+        if (!val || typeof val !== 'string') return false;
+        const trimmed = val.trim();
+        if (trimmed.length < 5 || trimmed.length > 254) return false;
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_\`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(trimmed);
+      };
+    }
+
+    if (!window.isValidPhone) {
+      window.isValidPhone = function (val) {
+        if (!val || typeof val !== 'string') return false;
+        const trimmed = val.trim();
+        if (/[a-zA-Z]/.test(trimmed)) return false;
+        if (!/^[0-9+\s()\-]+$/.test(trimmed)) return false;
+        const digits = trimmed.replace(/\D/g, '');
+        if (digits.length < 7 || digits.length > 15) return false;
+        if ((trimmed.match(/\+/g) || []).length > 1) return false;
+        if (trimmed.includes('+') && !trimmed.startsWith('+')) return false;
+        return true;
+      };
+    }
+
+    // Universal Phone Number Numeric Input Filtering (Strictly Disallow Letters)
     function setupPhoneInputs() {
       const phoneInputs = document.querySelectorAll('input[type="tel"], input[name*="phone"], input[id*="phone"]');
       phoneInputs.forEach((input) => {
@@ -386,15 +423,36 @@
         input.addEventListener('keydown', (e) => {
           const allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab', 'Enter', 'Escape', 'Home', 'End'];
           if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+          if (/[a-zA-Z]/.test(e.key)) {
+            e.preventDefault();
+            if (window.showApexToast && !input.dataset.toastActive) {
+              input.dataset.toastActive = 'true';
+              window.showApexToast('Letters are not allowed in the Phone field.', 'warning');
+              setTimeout(() => { delete input.dataset.toastActive; }, 2500);
+            }
+            return;
+          }
           if (!/[0-9+\s()\-]/i.test(e.key)) {
             e.preventDefault();
           }
         });
 
         input.addEventListener('input', () => {
-          const cleaned = input.value.replace(/[^0-9+\s()\-]/g, '');
-          if (input.value !== cleaned) {
+          const original = input.value;
+          const cleaned = original.replace(/[^0-9+\s()\-]/g, '');
+          if (original !== cleaned) {
             input.value = cleaned;
+          }
+          if (input.value.trim().length > 0) {
+            if (window.isValidPhone(input.value)) {
+              input.classList.remove('is-invalid');
+              input.classList.add('is-valid');
+            } else {
+              input.classList.add('is-invalid');
+              input.classList.remove('is-valid');
+            }
+          } else {
+            input.classList.remove('is-invalid', 'is-valid');
           }
         });
 
@@ -407,6 +465,95 @@
       });
     }
 
+    // Universal Full Name Input Filtering (Disallow Numbers)
+    function setupNameInputs() {
+      const nameInputs = document.querySelectorAll('input[name*="name"], input[id*="Name"], input[id*="name"]');
+      nameInputs.forEach((input) => {
+        if (input.dataset.nameBound) return;
+        input.dataset.nameBound = 'true';
+
+        input.addEventListener('keydown', (e) => {
+          const allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab', 'Enter', 'Escape', 'Home', 'End'];
+          if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+          if (/[0-9]/.test(e.key)) {
+            e.preventDefault();
+            if (window.showApexToast && !input.dataset.toastActive) {
+              input.dataset.toastActive = 'true';
+              window.showApexToast('Numbers are not allowed in the Name field.', 'warning');
+              setTimeout(() => { delete input.dataset.toastActive; }, 2500);
+            }
+          }
+        });
+
+        input.addEventListener('input', () => {
+          const cleaned = input.value.replace(/[0-9]/g, '');
+          if (input.value !== cleaned) {
+            input.value = cleaned;
+          }
+          if (input.value.trim().length > 0) {
+            if (window.isValidName(input.value)) {
+              input.classList.remove('is-invalid');
+              input.classList.add('is-valid');
+            } else {
+              input.classList.add('is-invalid');
+              input.classList.remove('is-valid');
+            }
+          } else {
+            input.classList.remove('is-invalid', 'is-valid');
+          }
+        });
+
+        input.addEventListener('paste', (e) => {
+          e.preventDefault();
+          const text = (e.clipboardData || window.clipboardData).getData('text');
+          const cleaned = text.replace(/[0-9]/g, '');
+          document.execCommand('insertText', false, cleaned);
+        });
+      });
+    }
+
+    // Universal Email Live Feedback
+    function setupEmailInputs() {
+      const emailInputs = document.querySelectorAll('input[type="email"], input[name*="email"], input[id*="email"]');
+      emailInputs.forEach((input) => {
+        if (input.dataset.emailBound) return;
+        input.dataset.emailBound = 'true';
+
+        input.addEventListener('input', () => {
+          const val = input.value.trim();
+          if (val.length > 0) {
+            if (window.isValidEmail(val)) {
+              input.classList.remove('is-invalid');
+              input.classList.add('is-valid');
+            } else {
+              input.classList.add('is-invalid');
+              input.classList.remove('is-valid');
+            }
+          } else {
+            input.classList.remove('is-invalid', 'is-valid');
+          }
+        });
+      });
+    }
+
+    // Global Footer Newsletter Form Interceptor
+    document.querySelectorAll('.footer-newsletter-form').forEach((form) => {
+      form.addEventListener('submit', (e) => {
+        const input = form.querySelector('.footer-newsletter-input, input[type="email"]');
+        const val = input ? input.value.trim() : '';
+        if (!window.isValidEmail(val)) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          if (window.showApexToast) {
+            window.showApexToast('Please enter a valid email address (e.g. client@domain.com).', 'error');
+          }
+          if (input) input.focus();
+        }
+      }, true);
+    });
+
     setupPhoneInputs();
+    setupNameInputs();
+    setupEmailInputs();
   });
 })();

@@ -58,11 +58,12 @@
     const trimmedName = (name || '').trim();
     const trimmedEmail = (email || '').trim().toLowerCase();
 
-    if (!trimmedName) {
-      return { success: false, message: 'Please enter your full name.' };
+    if (!trimmedName || (window.isValidName && !window.isValidName(trimmedName))) {
+      return { success: false, message: 'Please enter a valid full name (minimum 2 letters, numbers not allowed).' };
     }
-    if (!trimmedEmail || !trimmedEmail.includes('@') || !trimmedEmail.includes('.')) {
-      return { success: false, message: 'Please enter a valid email address.' };
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_\`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
+    if (!trimmedEmail || !emailRegex.test(trimmedEmail)) {
+      return { success: false, message: 'Please enter a valid email address (e.g. client@domain.com).' };
     }
     if (!password || password.length < 4) {
       return { success: false, message: 'Password must be at least 4 characters.' };

@@ -57,6 +57,16 @@ html, body {
 .glow-orb, [style*="radial-gradient"] {
   max-width: 100vw !important;
   overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 991px) {
+  .glow-orb, [style*="radial-gradient"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    transform: none !important;
+  }
 }
 
 /* Fluid Media Elements */
@@ -66,10 +76,18 @@ img, video, iframe, canvas, svg {
 }
 
 /* Ensure flex and grid children don't cause overflow */
-.d-flex, .nav-menu, .header-actions, .grid-2, .grid-3, .grid-4,
+.d-flex, .grid-2, .grid-3, .grid-4,
 .stats-grid, .pricing-grid, .gallery-grid, .footer-grid,
-.payment-layout, .wizard-main-container {
+.payment-layout, .wizard-main-container,
+.service-details-main-grid {
   min-width: 0;
+  box-sizing: border-box !important;
+}
+
+/* Prevent long text or URLs from overflowing */
+p, h1, h2, h3, h4, h5, h6, a, span, label, td, th {
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 /* Horizontal Touch Scroll Tables */
@@ -130,6 +148,10 @@ img, video, iframe, canvas, svg {
 @media (max-width: 1400px) {
   :root {
     --container-max: 1240px;
+  }
+
+  .site-header .brand-logo .logo-text .subtitle {
+    display: none !important;
   }
 
   .nav-menu {
@@ -193,10 +215,18 @@ img, video, iframe, canvas, svg {
 }
 
 /* ===================================================================
-   4. Medium Laptops & Desktops (1025px to 1250px)
+   4. Laptops & Compact Desktops (992px to 1440px)
    =================================================================== */
-@media (max-width: 1250px) and (min-width: 1025px) {
+@media (max-width: 1440px) and (min-width: 992px) {
   .site-header .brand-logo .logo-text .subtitle {
+    display: none !important;
+  }
+
+  .site-header .header-actions .header-cta-btn {
+    display: none !important;
+  }
+
+  .site-header .header-actions .dir-toggle-btn {
     display: none !important;
   }
 
@@ -209,45 +239,21 @@ img, video, iframe, canvas, svg {
     padding: 0.4rem 0.2rem !important;
   }
 
+  .nav-link.active::after {
+    left: 0.2rem !important;
+    width: calc(100% - 0.4rem) !important;
+    transform: none !important;
+  }
+
   .header-actions {
-    gap: 0.45rem !important;
-  }
-
-  .header-cta-btn,
-  .nav-signup-btn {
-    padding: 0 0.85rem !important;
-    font-size: 0.82rem !important;
-  }
-}
-
-@media (max-width: 1100px) {
-  .wizard-main-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .live-summary-card {
-    position: static;
-    top: auto;
-  }
-
-  .contact-channel-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .vip-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .vip-perks-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem !important;
   }
 }
 
 /* ===================================================================
-   5. Tablets — Landscape & Portrait (769px to 1024px)
+   5. Tablets & iPads — Landscape & Portrait (768px to 991px)
    =================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   :root {
     --header-height: 70px;
   }
@@ -283,9 +289,10 @@ img, video, iframe, canvas, svg {
     flex-shrink: 0 !important;
   }
 
-  .theme-toggle-btn,
-  .cart-toggle-btn,
-  .mobile-toggle-btn {
+  .site-header .theme-toggle-btn,
+  .site-header .cart-toggle-btn,
+  .header-actions .cart-toggle-btn,
+  .site-header .mobile-toggle-btn {
     width: 38px !important;
     min-width: 38px !important;
     height: 38px !important;
@@ -329,60 +336,94 @@ img, video, iframe, canvas, svg {
     transform: translateY(0) !important;
   }
 
-  /* Grid Conversions */
-  .grid-2, .grid-3, .grid-4, .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+  /* Grid Conversions for Tablets: 2-Column Balanced Layouts */
+  .grid-2:not(.bay-slot-grid),
+  .grid-3,
+  .grid-4,
+  .gallery-grid,
+  #servicesGrid,
+  .service-workflow-grid,
+  .stats-grid,
+  .about-team-grid,
+  .uncompromising-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2.5rem !important;
   }
 
   .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 540px;
-    margin-left: auto;
-    margin-right: auto;
+    grid-template-columns: 1fr !important;
+    max-width: 540px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .swatch-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem !important;
   }
 
   .wrap-collection-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
   }
 
   .wrap-collection-grid .service-card:nth-child(1),
   .wrap-collection-grid .service-card:nth-child(2),
   .wrap-collection-grid .service-card:nth-child(3),
-  .wrap-collection-grid .service-card:nth-child(4),
-  .wrap-collection-grid .service-card:nth-child(5) {
-    grid-column: span 1;
-    max-width: 100%;
-    margin: 0;
+  .wrap-collection-grid .service-card:nth-child(4) {
+    grid-column: span 1 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
   }
 
   .wrap-collection-grid .service-card:nth-child(5) {
-    grid-column: span 2;
-    max-width: 540px;
-    margin: 0 auto;
-    width: 100%;
+    grid-column: span 2 !important;
+    max-width: 540px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
   }
 
   .featured-builds-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
   }
 
-  /* Payment Layout */
-  .payment-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  /* Payment & Service Details Layouts on Tablet */
+  .payment-layout,
+  .service-details-main-grid,
+  .grid-2[style*="2fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
   }
 
   .checkout-summary-box {
-    position: static;
-    top: auto;
+    position: static !important;
+    top: auto !important;
+    width: 100% !important;
+  }
+
+  .wizard-main-container {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .live-summary-card {
+    position: static !important;
+    top: auto !important;
+    width: 100% !important;
+  }
+
+  .contact-channel-grid,
+  .vip-grid,
+  .vip-perks-grid,
+  .choice-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem !important;
   }
 
   /* Lightbox Modal */
@@ -394,11 +435,11 @@ img, video, iframe, canvas, svg {
 
   .lightbox-img-wrap {
     min-height: 320px;
-    max-height: 380px;
+    max-height: 400px;
   }
 
   .lightbox-img-wrap img {
-    max-height: 380px;
+    max-height: 400px;
   }
 
   .lightbox-info {
@@ -419,10 +460,6 @@ img, video, iframe, canvas, svg {
   /* Estimator & Service Details */
   .estimator-box {
     padding: 2rem 1.5rem;
-  }
-
-  .choice-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .service-discipline-tabs {
@@ -511,9 +548,10 @@ img, video, iframe, canvas, svg {
     flex-shrink: 0 !important;
   }
 
-  .theme-toggle-btn,
-  .cart-toggle-btn,
-  .mobile-toggle-btn {
+  .site-header .theme-toggle-btn,
+  .site-header .cart-toggle-btn,
+  .header-actions .cart-toggle-btn,
+  .site-header .mobile-toggle-btn {
     width: 36px !important;
     min-width: 36px !important;
     height: 36px !important;
@@ -572,8 +610,24 @@ img, video, iframe, canvas, svg {
     hyphens: none !important;
   }
 
+  /* Centered Section Headers on Tablet/Mobile */
+  .section-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 2.25rem !important;
+  }
+
+  .section-header .badge {
+    margin: 0 auto 0.75rem auto !important;
+    display: inline-flex !important;
+  }
+
   .section-header h2, .hero-content h2 {
     text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 0.75rem !important;
   }
 
   p, .hero-desc, .hero-content p {
@@ -585,6 +639,9 @@ img, video, iframe, canvas, svg {
 
   .section-header p, .hero-content p, .hero-desc {
     text-align: center !important;
+    max-width: 650px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* Clean LTR Alignment for Cards, Content Blocks, Modals & Forms */
@@ -611,7 +668,7 @@ img, video, iframe, canvas, svg {
     text-align: start !important;
   }
 
-  /* Grid Layouts to Single or Balanced Columns */
+  /* Grid Layouts: Tablet 2-Column Balanced Architecture (577px to 991px) */
   .hero-grid {
     display: grid !important;
     grid-template-columns: 1fr !important;
@@ -620,14 +677,87 @@ img, video, iframe, canvas, svg {
     width: 100% !important;
   }
 
-  .grid-2, .grid-3, .grid-4, .gallery-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem;
+  .grid-2:not(.bay-slot-grid):not(.payment-layout):not(.service-details-main-grid):not(.wizard-main-container),
+  .grid-3,
+  .grid-4:not(.countdown-timer-grid),
+  .gallery-grid,
+  #servicesGrid,
+  .service-workflow-grid,
+  .service-benefits-grid,
+  .service-related-grid,
+  .featured-builds-grid,
+  .service-before-after-grid,
+  .stats-grid,
+  .about-team-grid,
+  .uncompromising-grid,
+  .footer-grid,
+  .contact-channel-grid,
+  .vip-perks-grid,
+  .vip-grid,
+  .swatch-grid,
+  .tech-grid,
+  .wrap-collection-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  .wrap-collection-grid .service-card {
+    grid-column: span 1 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .wrap-collection-grid .service-card:nth-child(5) {
+    grid-column: span 2 !important;
+    max-width: 540px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  /* Services Gallery Controls Bar & Alignment on 768px */
+  .gallery-controls-bar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  .gallery-filters {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+  }
+
+  .gallery-controls-bar > .d-flex {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
+  .gallery-search-wrap {
+    width: 100% !important;
+    max-width: 540px !important;
+    margin: 0 auto !important;
+  }
+
+  .gallery-results-count {
+    text-align: center !important;
+    width: 100% !important;
   }
 
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem;
   }
 
   .stat-item {
@@ -642,117 +772,52 @@ img, video, iframe, canvas, svg {
     height: 300px;
   }
 
-  .swatch-grid, .tech-grid, .vip-grid, .vip-perks-grid, .wrap-collection-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem;
-  }
-
-  .wrap-collection-grid .service-card {
-    grid-column: span 1 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    width: 100% !important;
-  }
-
-  .featured-builds-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  .service-before-after-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  .service-workflow-grid,
-  .service-benefits-grid,
-  .service-related-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  .contact-channel-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  /* Sliders & Visuals */
-  .before-after-container {
-    height: 320px;
-  }
-
-  .hero-glider-track {
-    height: 360px !important;
-  }
-
-  .hero-glider-nav {
-    width: 38px !important;
-    height: 38px !important;
-    font-size: 0.85rem !important;
-  }
-
-  .hero-glider-info {
-    bottom: 1rem;
-    left: 1rem;
-    right: 1rem;
-  }
-
-  .hero-glider-info h4 {
-    font-size: 1.05rem;
-  }
-
-  .hero-glider-dots {
-    bottom: 1rem;
-    right: 1rem;
-  }
-
-  .hero-media img,
-  .about-media-main img,
-  .service-hero-img-wrap img {
-    height: 320px !important;
-  }
-
-  .service-hero-meta {
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-  }
-
-  /* Floating Badges Convert to Clean Stacking */
-  .floating-badge {
-    position: static !important;
-    margin-top: 1rem !important;
-    width: 100% !important;
-    justify-content: flex-start !important;
-    transform: none !important;
-    animation: none !important;
-    box-shadow: var(--shadow-md) !important;
-  }
-
-  .floating-badge-pill {
-    position: static !important;
-    margin-top: 0.75rem !important;
-    display: inline-flex !important;
-    transform: none !important;
-    animation: none !important;
-  }
-
-  /* Buttons & Action Bars */
-  .btn {
-    width: 100%;
-    min-height: 46px;
-  }
-
+  /* Buttons & Action Bars on Tablet (768px) */
   .hero-actions {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.85rem;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
   }
 
   .hero-actions .btn {
-    width: 100%;
+    width: auto !important;
+    min-width: 180px !important;
+  }
+
+  /* Exempt pills, filter buttons, icons, and inline controls from 100% width */
+  .filter-btn,
+  .category-filter-pill,
+  .swatch-filter-btn,
+  .ba-preset-btn,
+  .btn-icon,
+  .service-card .card-footer .btn,
+  .theme-toggle-btn,
+  .cart-toggle-btn,
+  .mobile-toggle-btn,
+  .lightbox-nav-btn,
+  .pricing-nav-btn,
+  .rating-filter-pill,
+  .tag-pill,
+  .toast-close,
+  .drawer-close {
+    width: auto !important;
+  }
+
+  /* Subscribe & Newsletter Forms */
+  .subscribe-form {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+    gap: 0.75rem !important;
+  }
+
+  .subscribe-form .btn {
+    width: 100% !important;
   }
 
   /* Before / After Slider Bar */
@@ -950,9 +1015,10 @@ img, video, iframe, canvas, svg {
     flex-shrink: 0 !important;
   }
 
-  .theme-toggle-btn,
-  .cart-toggle-btn,
-  .mobile-toggle-btn {
+  .site-header .theme-toggle-btn,
+  .site-header .cart-toggle-btn,
+  .header-actions .cart-toggle-btn,
+  .site-header .mobile-toggle-btn {
     width: 34px !important;
     min-width: 34px !important;
     height: 34px !important;
@@ -1019,15 +1085,144 @@ img, video, iframe, canvas, svg {
     word-break: break-word !important;
   }
 
+  /* Grid Layouts to Single Column on Mobile Phones (<= 576px) */
+  .grid-2:not(.countdown-timer-grid),
+  .grid-3,
+  .grid-4:not(.countdown-timer-grid),
+  .gallery-grid,
+  #servicesGrid,
+  .service-workflow-grid,
+  .service-benefits-grid,
+  .service-related-grid,
+  .featured-builds-grid,
+  .service-before-after-grid,
+  .about-team-grid,
+  .uncompromising-grid,
+  .footer-grid,
+  .contact-channel-grid,
+  .vip-perks-grid,
+  .vip-grid,
+  .swatch-grid,
+  .tech-grid,
+  .wrap-collection-grid,
+  .pricing-grid,
+  .service-discipline-grid,
+  .budget-tier-grid,
+  .facility-spec-chips {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .wrap-collection-grid .service-card {
+    grid-column: span 1 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Bay Slot Grid & Countdown Grid on Mobile */
+  .bay-slot-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+
+  .countdown-timer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Inline card padding compression on mobile */
+  .pricing-package-card,
+  .pricing-card,
+  .card[style*="padding:4rem"],
+  .card[style*="padding: 4rem"],
+  .pricing-package-card[style*="padding:4rem"],
+  .pricing-package-card[style*="padding: 4rem"],
+  .hover-glow-card {
+    padding: 2rem 1.15rem !important;
+  }
+
+  /* Hero Actions Stack on Mobile Phones */
+  .hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.85rem !important;
+  }
+
+  .hero-actions .btn {
+    width: 100% !important;
+  }
+
+  .service-card .card-footer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.6rem !important;
+    flex-wrap: wrap !important;
+  }
+
   /* Hero & Visual Heights */
   .hero-glider-track {
     height: 300px !important;
   }
 
   .hero-media img,
-  .about-media-main img,
+  .about-media-main img {
+    height: 280px !important;
+    object-fit: cover !important;
+  }
+
   .service-hero-img-wrap img {
-    height: 260px !important;
+    height: 390px !important;
+    object-fit: cover !important;
+    width: 100% !important;
+  }
+
+  .service-hero-meta {
+    position: absolute !important;
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    bottom: 0.75rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.45rem !important;
+    padding: 0.85rem !important;
+    background: rgba(11, 13, 18, 0.90) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .service-hero-meta h1 {
+    font-size: clamp(1.25rem, 5vw, 1.65rem) !important;
+    margin-bottom: 0.2rem !important;
+    text-align: left !important;
+  }
+
+  .service-hero-meta p {
+    font-size: 0.84rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.35rem !important;
+    text-align: left !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  #heroSpecsPills {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+  }
+
+  #heroSpecsPills .badge {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.5rem !important;
   }
 
   .before-after-container {
@@ -1182,41 +1377,7 @@ img, video, iframe, canvas, svg {
     font-size: 0.95rem;
   }
 
-  /* Sticky Bottom Concierge Bar */
-  .sticky-bottom-bar {
-    position: fixed !important;
-    bottom: max(0.65rem, env(safe-area-inset-bottom)) !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: auto !important;
-    max-width: calc(100vw - 1.25rem) !important;
-    padding: 0.25rem 0.45rem !important;
-    gap: 0.35rem !important;
-    box-sizing: border-box !important;
-  }
 
-  .sticky-bar-pill {
-    padding: 0.35rem 0.6rem !important;
-    font-size: 0.72rem !important;
-  }
-
-  .sticky-bottom-bar .sticky-bar-pill:first-child span {
-    display: none !important;
-  }
-
-  .sticky-bottom-bar .sticky-bar-pill:first-child::after {
-    content: 'Call' !important;
-  }
-
-  .sticky-bar-cta span {
-    font-size: 0.72rem !important;
-  }
-
-  .sticky-bar-cart {
-    width: 32px !important;
-    height: 32px !important;
-    min-width: 32px !important;
-  }
 
   /* Toast Notifications on Mobile */
   .toast-container {
@@ -1301,9 +1462,10 @@ img, video, iframe, canvas, svg {
     flex-shrink: 0 !important;
   }
 
-  .theme-toggle-btn,
-  .cart-toggle-btn,
-  .mobile-toggle-btn {
+  .site-header .theme-toggle-btn,
+  .site-header .cart-toggle-btn,
+  .header-actions .cart-toggle-btn,
+  .site-header .mobile-toggle-btn {
     width: 32px !important;
     min-width: 32px !important;
     height: 32px !important;
@@ -1375,29 +1537,200 @@ img, video, iframe, canvas, svg {
   }
 
   /* Countdown grid on coming soon */
-  .grid-4 {
+  .countdown-timer-grid,
+  .coming-soon-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.75rem !important;
   }
 
-  /* Sticky Bottom Bar — Show only essential pills */
-  .sticky-bottom-bar .sticky-bar-pill:not(.sticky-bar-cta):not(:first-child) {
-    display: none;
+  /* General grid-4 on mobile <= 480px / 360px is strictly 1-column */
+  .grid-4:not(.countdown-timer-grid):not(.coming-soon-grid) {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
   }
 
-  .sticky-bar-pill {
-    padding: 0.25rem 0.45rem !important;
-    font-size: 0.68rem !important;
+  /* Home Page 2 - Specialization Explore Containers Alignment (360px & Mobile) */
+  #specializations .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
   }
 
-  /* Cart Drawer Width */
+  #specializations .card {
+    padding: 1.75rem 1.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #specializations .card .btn-icon {
+    margin: 0 auto 1rem auto !important;
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 1.45rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #specializations .card h4 {
+    text-align: center !important;
+    width: 100% !important;
+    min-height: auto !important;
+    margin-bottom: 0.6rem !important;
+    font-size: 1.2rem !important;
+  }
+
+  #specializations .card p {
+    text-align: center !important;
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.25rem !important;
+    flex-grow: 1 !important;
+    width: 100% !important;
+  }
+
+  #specializations .card .btn {
+    width: 100% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    min-height: 44px !important;
+  }
+
+  /* Home Page 1 Image Section Contrast & Readability (360px) */
+  .hero-glider-info {
+    bottom: 0.75rem !important;
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    padding: 0.75rem 0.95rem !important;
+    background: rgba(11, 13, 18, 0.92) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .hero-glider-info h4 {
+    font-size: 0.98rem !important;
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .hero-glider-specs {
+    font-size: 0.74rem !important;
+    color: #F1F5F9 !important;
+    gap: 0.4rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  .hero-glider-specs span {
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .gallery-overlay {
+    opacity: 1 !important;
+    background: linear-gradient(0deg, rgba(11, 13, 18, 0.95) 0%, rgba(11, 13, 18, 0.75) 55%, rgba(11, 13, 18, 0.25) 100%) !important;
+    padding: 1.25rem !important;
+  }
+
+  .gallery-overlay h4 {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+    font-size: 1.1rem !important;
+  }
+
+  .gallery-overlay p {
+    color: #E2E8F0 !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* Consultation Wizard Progress Bar (360px & ultra-compact mobile) */
+  .wizard-progress-bar {
+    display: flex !important;
+    justify-content: space-between !important;
+    position: relative !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .wizard-progress-bar::before {
+    top: 15px !important;
+  }
+
+  .wizard-step-circle {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 0.75rem !important;
+  }
+
+  .wizard-step-title {
+    font-size: 0.58rem !important;
+    max-width: 60px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+  }
+
+  /* Cart Drawer & Mobile Drawer Dimensions */
   .cart-drawer {
-    width: 95vw;
+    width: calc(100vw - 20px) !important;
+    max-width: 330px !important;
   }
 
   .mobile-drawer {
-    width: 90vw;
-    padding: 1.5rem 1rem;
+    width: calc(100vw - 20px) !important;
+    max-width: 330px !important;
+    padding: 1.25rem 0.85rem !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+  }
+
+  .drawer-header {
+    margin-bottom: 1.25rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  .drawer-menu {
+    gap: 0.45rem !important;
+  }
+
+  .drawer-link {
+    font-size: 0.95rem !important;
+    padding: 0.55rem 0.5rem !important;
+  }
+
+  .drawer-footer {
+    margin-top: 1.25rem !important;
+    padding-top: 1rem !important;
+    gap: 0.65rem !important;
+  }
+
+  .drawer-footer .cart-toggle-btn,
+  .drawer-footer .btn.cart-toggle-btn,
+  .mobile-drawer .cart-toggle-btn.btn {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    font-size: 0.92rem !important;
+    white-space: nowrap !important;
   }
 
   /* Auth / Login Page */
@@ -1487,9 +1820,10 @@ img, video, iframe, canvas, svg {
     gap: 0.22rem !important;
   }
 
-  .theme-toggle-btn,
-  .cart-toggle-btn,
-  .mobile-toggle-btn {
+  .site-header .theme-toggle-btn,
+  .site-header .cart-toggle-btn,
+  .header-actions .cart-toggle-btn,
+  .site-header .mobile-toggle-btn {
     width: 30px !important;
     min-width: 30px !important;
     height: 30px !important;

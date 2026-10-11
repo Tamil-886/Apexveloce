@@ -431,7 +431,7 @@
         <div class="form-group mb-3">
           <label class="form-label" style="font-size:0.85rem; font-weight:600;">Full Name *</label>
           <div class="input-icon-wrap">
-            <input type="text" id="regName" class="form-control" placeholder="e.g. Marcus Vance" required autocomplete="name">
+            <input type="text" id="regName" class="form-control" placeholder="e.g. Marcus Vance" minlength="2" maxlength="60" pattern="[a-zA-ZÀ-ÿ\s'.-]{2,60}" title="Minimum 2 characters. Only letters, spaces, hyphens, and apostrophes are allowed (numbers not allowed)." required autocomplete="name">
             <i class="fa-solid fa-user field-icon"></i>
           </div>
         </div>
@@ -440,7 +440,7 @@
         <div class="form-group mb-3">
           <label class="form-label" style="font-size:0.85rem; font-weight:600;">Email Address *</label>
           <div class="input-icon-wrap">
-            <input type="email" id="regEmail" class="form-control" placeholder="marcus@example.com" required autocomplete="email">
+            <input type="email" id="regEmail" class="form-control" placeholder="marcus@example.com" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address (e.g. marcus@example.com)." required autocomplete="email">
             <i class="fa-solid fa-envelope field-icon"></i>
           </div>
         </div>
@@ -651,14 +651,14 @@
           const password = passwordInput.value;
           const confirmPassword = confirmInput.value;
 
-          if (!name) {
-            showAlert('Please enter your full name.', 'error');
+          if (!name || (window.isValidName && !window.isValidName(name))) {
+            showAlert('Please enter a valid full name (minimum 2 letters, numbers not allowed).', 'error');
             nameInput.focus();
             return;
           }
 
-          if (!email) {
-            showAlert('Please enter a valid email address.', 'error');
+          if (!email || (window.isValidEmail && !window.isValidEmail(email))) {
+            showAlert('Please enter a valid email address (e.g. client@domain.com).', 'error');
             emailInput.focus();
             return;
           }

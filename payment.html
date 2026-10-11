@@ -79,18 +79,18 @@
               <div class="grid-2 gap-2 mb-3">
                 <div class="form-group mb-0">
                   <label class="form-label" style="font-size:0.85rem; font-weight:600;">Full Name *</label>
-                  <input type="text" id="custName" class="form-control" placeholder="e.g. Tamil Vance" required autocomplete="name">
+                  <input type="text" id="custName" class="form-control" placeholder="e.g. Tamil Vance" minlength="2" maxlength="60" pattern="[a-zA-ZÀ-ÿ\s'.-]{2,60}" title="Minimum 2 characters. Only letters, spaces, hyphens, and apostrophes are allowed (numbers not allowed)." required autocomplete="name">
                 </div>
                 <div class="form-group mb-0">
                   <label class="form-label" style="font-size:0.85rem; font-weight:600;">Email Address *</label>
-                  <input type="email" id="custEmail" class="form-control" placeholder="client@example.com" required autocomplete="email">
+                  <input type="email" id="custEmail" class="form-control" placeholder="client@example.com" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address (e.g. client@example.com)." required autocomplete="email">
                 </div>
               </div>
 
               <div class="grid-2 gap-2 mb-3">
                 <div class="form-group mb-0">
                   <label class="form-label" style="font-size:0.85rem; font-weight:600;">Phone Number *</label>
-                  <input type="tel" id="custPhone" class="form-control" placeholder="+1 (555) 019-2834" inputmode="tel" pattern="[0-9+\s()\-]*" required autocomplete="tel">
+                  <input type="tel" id="custPhone" class="form-control" placeholder="+1 (555) 019-2834" inputmode="tel" pattern="[\+]?[0-9\s()\-]{7,20}" title="Please enter a valid phone number with 7-15 digits. Letters are not allowed." required autocomplete="tel">
                 </div>
                 <div class="form-group mb-0">
                   <label class="form-label" style="font-size:0.85rem; font-weight:600;">Vehicle (Year, Make & Model) *</label>
@@ -192,7 +192,7 @@
 
                 <div class="form-group mb-3">
                   <label class="form-label" style="font-size:0.82rem; font-weight:600;">Cardholder Name *</label>
-                  <input type="text" id="cardHolder" class="form-control" placeholder="e.g. Tamil Vance">
+                  <input type="text" id="cardHolder" class="form-control" placeholder="e.g. Tamil Vance" minlength="2" maxlength="60" pattern="[a-zA-ZÀ-ÿ\s'.-]{2,60}" title="Minimum 2 characters. Only letters, spaces, hyphens, and apostrophes are allowed (numbers not allowed).">
                 </div>
 
                 <div class="grid-2 gap-2 mb-2">
@@ -482,19 +482,7 @@
     </div>
   </footer>
 
-  <!-- ==================== FLOATING STICKY CONCIERGE BAR ==================== -->
-  <div class="sticky-bottom-bar">
-    <a href="tel:+18005559827" class="sticky-bar-pill">
-      <i class="fa-solid fa-phone" style="color:var(--primary);"></i> <span>+1 (800) 555-WRAP</span>
-    </a>
-    <a href="contact.html" class="sticky-bar-pill sticky-bar-cta">
-      <i class="fa-solid fa-calendar-check"></i> <span>Book Studio Bay</span>
-    </a>
-    <button type="button" class="sticky-bar-cart cart-toggle-btn" aria-label="Open Cart">
-      <i class="fa-solid fa-cart-shopping"></i>
-      <span class="cart-badge" style="display:none; position:absolute; top:-4px; right:-4px;">0</span>
-    </button>
-  </div>
+
 
   <!-- Scripts -->
   <script src="assets/js/theme.js"></script>

@@ -96,24 +96,23 @@
   </aside>
 
   <!-- ==================== ARTICLE HERO ==================== -->
-  <section class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1920&q=80'); text-align: left;">
-    <div class="container" style="max-width:900px; position:relative; z-index:2;">
-      <div class="d-flex align-center gap-2 mb-2" style="font-size:0.85rem; color:var(--text-muted);">
+  <section class="page-hero-banner" id="articleHeroBanner" style="background-image: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1920&q=80'); text-align: start;">
+    <div class="container" style="max-width:880px; width:100%; margin:0 auto; position:relative; z-index:2;">
+      <div class="d-flex align-center gap-2 mb-2" id="articleBreadcrumbs" style="font-size:0.85rem; color:var(--text-muted); flex-wrap:wrap;">
         <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:0.65rem;"></i>
         <a href="blog.html">Journal</a> <i class="fa-solid fa-chevron-right" style="font-size:0.65rem;"></i>
-        <span style="color:var(--primary);">Wrap Maintenance Guide</span>
+        <span id="breadcrumbCurrent" style="color:var(--primary); font-weight:600;">Matte Wrap Maintenance</span>
       </div>
       <div class="d-inline-flex align-center mb-3" style="width:fit-content; max-width:100%;">
-        <span class="badge badge-primary" style="padding:0.4rem 1.15rem; font-size:0.8rem; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:0.5rem; width:fit-content;"><i class="fa-solid fa-car-side"></i> VEHICLE WRAP GUIDE</span>
+        <span class="badge badge-primary" id="articleCategoryBadge" style="padding:0.4rem 1.15rem; font-size:0.8rem; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:0.5rem; width:fit-content;"><i class="fa-solid fa-car-side"></i> VEHICLE WRAP GUIDE</span>
       </div>
-      <h1 class="page-hero-title mb-3" style="font-size:clamp(1.75rem, 4vw, 3.2rem); margin:0 0 1rem 0; text-align:left;">How to Maintain Your Matte Wrap: 7 Pro Secrets</h1>
+      <h1 class="page-hero-title mb-3" id="articleTitle" style="font-size:clamp(1.75rem, 4vw, 3.2rem); margin:0 0 1.25rem 0; text-align:start; max-width:100%; line-height:1.2;">How to Maintain Your Matte Wrap: 7 Pro Secrets</h1>
 
-      
-      <div class="d-flex align-center gap-3" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:1.25rem;">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Julian Vance" style="width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid var(--primary);">
+      <div class="d-flex align-center gap-3" id="articleAuthorBar" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:1.25rem; flex-wrap:wrap;">
+        <img id="articleAuthorImg" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Julian Vance" style="width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid var(--primary); flex-shrink:0;">
         <div>
-          <h5 style="margin:0; font-size:0.95rem; color:#fff;">Julian Vance</h5>
-          <span style="font-size:0.8rem; color:var(--text-muted);">Master Installer • September 5, 2026 • 6 min read</span>
+          <h5 id="articleAuthorName" style="margin:0; font-size:0.95rem; color:#fff;">Julian Vance</h5>
+          <span id="articleMetaDetails" style="font-size:0.8rem; color:var(--text-muted);">Master Installer • September 5, 2026 • 6 min read</span>
         </div>
       </div>
     </div>
@@ -122,13 +121,13 @@
 
   <!-- ==================== ARTICLE CONTENT ==================== -->
   <section class="section-padding">
-    <div class="container" style="max-width:860px;">
+    <div class="container" style="max-width:880px; width:100%; margin:0 auto;">
       
-      <div class="reveal" style="border-radius:var(--radius-xl); overflow:hidden; border:1px solid var(--border-card); margin-bottom:3rem;">
-        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80" alt="Matte Wrap Maintenance" style="width:100%; height:460px; object-fit:cover;">
+      <div class="reveal active" style="border-radius:var(--radius-xl); overflow:hidden; border:1px solid var(--border-card); margin-bottom:3rem;">
+        <img id="articleFeaturedImg" src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80" alt="Matte Wrap Maintenance" style="width:100%; height:460px; object-fit:cover;">
       </div>
 
-      <div class="reveal" style="font-size:1.1rem; line-height:1.8; color:var(--text-main);">
+      <div id="articleBodyContent" class="reveal active" style="font-size:1.05rem; line-height:1.8; color:var(--text-main);">
         <p class="mb-4">
           Matte and satin vehicle wraps provide an unmistakable, menacing aesthetic that commands attention on any street or show circuit. However, because matte vinyl lacks a reflective high-gloss clear coat, it requires specialized care. Unlike gloss finishes that can be wet-sanded and machine-polished to remove swirl marks, <strong>matte finishes cannot be polished</strong>—doing so will permanently create shiny, uneven patches.
         </p>
@@ -160,33 +159,44 @@
       </div>
 
       <!-- Author Bio Card -->
-      <div class="card reveal mb-5" style="background:var(--bg-surface); padding:2rem;">
+      <div class="card reveal active mb-5" id="articleAuthorCard" style="background:var(--bg-surface); padding:2rem;">
         <div class="d-flex align-center gap-3">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Julian Vance" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid var(--primary);">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Julian Vance" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid var(--primary); flex-shrink:0;">
           <div>
             <h4 style="margin-bottom:0.25rem;">Written by Julian Vance</h4>
             <span class="badge badge-primary mb-2">FOUNDER & MASTER INSTALLER</span>
-            <p style="font-size:0.9rem; margin:0;">Julian has wrapped over 1,200 hypercars and luxury vehicles. He conducts masterclasses for professional automotive restylers nationwide.</p>
+            <p style="font-size:0.9rem; margin:0; color:var(--text-muted);">Julian has wrapped over 1,200 hypercars and luxury vehicles. He conducts masterclasses for professional automotive restylers nationwide.</p>
           </div>
         </div>
       </div>
 
       <!-- Social Sharing & Next Link -->
-      <div class="d-flex justify-between align-center reveal mb-5" style="border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle); padding:1.5rem 0;">
+      <div class="d-flex justify-between align-center reveal active mb-5" style="border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle); padding:1.5rem 0; flex-wrap:wrap; gap:1rem;">
         <div class="d-flex align-center gap-2">
           <span style="font-weight:700; font-size:0.9rem;">Share Article:</span>
-          <a href="#" class="footer-social-btn" aria-label="Share on X"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" class="footer-social-btn" aria-label="Share on Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" class="footer-social-btn" aria-label="Share on LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" id="shareTwitter" class="footer-social-btn" aria-label="Share on X" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" id="shareFacebook" class="footer-social-btn" aria-label="Share on Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" id="shareLinkedIn" class="footer-social-btn" aria-label="Share on LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+          <button type="button" id="copyArticleLink" class="footer-social-btn" aria-label="Copy Link" title="Copy Article Link" style="cursor:pointer; background:none; border:none;"><i class="fa-solid fa-link"></i></button>
         </div>
         <a href="blog.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-arrow-left"></i> Back to Journal</a>
       </div>
 
+      <!-- Related Journal Articles Section -->
+      <div class="reveal active mb-5" id="relatedArticlesSection">
+        <h3 style="margin-bottom:1.5rem; font-size:1.5rem; display:flex; align-items:center; gap:0.6rem;">
+          <i class="fa-solid fa-layer-group" style="color:var(--primary); font-size:1.2rem;"></i> Related Journal Articles
+        </h3>
+        <div class="grid-3" id="relatedArticlesGrid">
+          <!-- Dynamically populated with 3 related cards by blog.js -->
+        </div>
+      </div>
+
       <!-- Consultation Banner -->
-      <div class="card card-glass text-center reveal" style="padding:3rem 2rem; border-color:var(--primary);">
-        <h3>Ready to Wrap Your Vehicle?</h3>
-        <p class="mb-4" style="font-size:0.95rem; max-width:550px; margin-left:auto; margin-right:auto;">Book your private studio consultation with Julian and the Apex team to review sample books and 3D concept renders.</p>
-        <a href="contact.html" class="btn btn-primary">Book Consultation Now</a>
+      <div class="card card-glass text-center reveal active" id="articleCtaBanner" style="padding:3rem 2rem; border-color:var(--primary);">
+        <h3 id="articleCtaTitle">Ready to Wrap Your Vehicle?</h3>
+        <p id="articleCtaText" class="mb-4" style="font-size:0.95rem; max-width:550px; margin-left:auto; margin-right:auto;">Book your private studio consultation with Julian and the Apex team to review sample books and 3D concept renders.</p>
+        <a href="contact.html" id="articleCtaBtn" class="btn btn-primary">Book Consultation Now</a>
       </div>
 
     </div>
@@ -341,19 +351,7 @@
     </div>
   </footer>
 
-  <!-- ==================== FLOATING STICKY CONCIERGE BAR ==================== -->
-  <div class="sticky-bottom-bar">
-    <a href="tel:+18005559827" class="sticky-bar-pill">
-      <i class="fa-solid fa-phone" style="color:var(--primary);"></i> <span>+1 (800) 555-WRAP</span>
-    </a>
-    <a href="contact.html" class="sticky-bar-pill sticky-bar-cta">
-      <i class="fa-solid fa-calendar-check"></i> <span>Book Studio Bay</span>
-    </a>
-    <button type="button" class="sticky-bar-cart cart-toggle-btn" aria-label="Open Cart">
-      <i class="fa-solid fa-cart-shopping"></i>
-      <span class="cart-badge" style="display:none; position:absolute; top:-4px; right:-4px;">0</span>
-    </button>
-  </div>
+
 
   <script src="assets/js/theme.js"></script>
   <script src="assets/js/navigation.js"></script>
@@ -361,5 +359,6 @@
   <script src="assets/js/cart.js"></script>
   <script src="assets/js/auth.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/blog.js"></script>
 </body>
 </html>

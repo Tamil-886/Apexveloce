@@ -179,6 +179,11 @@
 
   // Open & Close Cart Drawer
   function openCartDrawer() {
+    const mobileDrawer = document.querySelector('#mobileDrawer');
+    const drawerBackdrop = document.querySelector('#drawerBackdrop');
+    if (mobileDrawer) mobileDrawer.classList.remove('open');
+    if (drawerBackdrop) drawerBackdrop.classList.remove('open');
+
     const drawer = document.querySelector('#cartDrawer');
     const backdrop = document.querySelector('#cartBackdrop');
     if (drawer) drawer.classList.add('open');

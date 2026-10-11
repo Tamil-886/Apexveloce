@@ -225,18 +225,110 @@
     }
   }
 
-  // Credit Card & Phone Input Formatters
+  // Validation Helper Utilities
+  function isValidName(val) {
+    if (!val || typeof val !== 'string') return false;
+    const trimmed = val.trim();
+    if (trimmed.length < 2) return false;
+    if (/\d/.test(trimmed)) return false; // Strictly reject numbers
+    if (!/^[a-zA-Z\u00C0-\u00FF\s'.-]{2,60}$/.test(trimmed)) return false;
+    const letters = (trimmed.match(/[a-zA-Z\u00C0-\u00FF]/g) || []).length;
+    return letters >= 2;
+  }
+
+  function isValidEmail(val) {
+    if (!val || typeof val !== 'string') return false;
+    const trimmed = val.trim();
+    if (trimmed.length < 5 || trimmed.length > 254) return false;
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_\`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(trimmed);
+  }
+
+  function isValidPhone(val) {
+    if (!val || typeof val !== 'string') return false;
+    const trimmed = val.trim();
+    if (/[a-zA-Z]/.test(trimmed)) return false; // Strictly reject alphabetic characters
+    if (!/^[0-9+\s()\-]+$/.test(trimmed)) return false;
+    const digits = trimmed.replace(/\D/g, '');
+    if (digits.length < 7 || digits.length > 15) return false;
+    if ((trimmed.match(/\+/g) || []).length > 1) return false;
+    if (trimmed.includes('+') && !trimmed.startsWith('+')) return false;
+    return true;
+  }
+
+  // Credit Card & Customer Input Formatters
   function initCardFormatters() {
     const cardNumInput = document.querySelector('#cardNum');
+    const cardHolderInput = document.querySelector('#cardHolder');
     const cardExpInput = document.querySelector('#cardExp');
     const cardCvvInput = document.querySelector('#cardCvv');
     const custPhoneInput = document.querySelector('#custPhone');
+    const custNameInput = document.querySelector('#custName');
+    const custEmailInput = document.querySelector('#custEmail');
 
+    // Name Inputs: Disallow Numbers
+    [custNameInput, cardHolderInput].forEach((input) => {
+      if (!input) return;
+      input.addEventListener('keydown', (e) => {
+        const allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab', 'Enter', 'Escape', 'Home', 'End'];
+        if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+        if (/[0-9]/.test(e.key)) {
+          e.preventDefault();
+        }
+      });
+      input.addEventListener('input', () => {
+        const cleaned = input.value.replace(/[0-9]/g, '');
+        if (input.value !== cleaned) {
+          input.value = cleaned;
+        }
+        if (input.value.trim().length > 0) {
+          if (isValidName(input.value)) {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+          } else {
+            input.classList.add('is-invalid');
+            input.classList.remove('is-valid');
+          }
+        } else {
+          input.classList.remove('is-invalid', 'is-valid');
+        }
+      });
+      input.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const text = (e.clipboardData || window.clipboardData).getData('text');
+        const cleaned = text.replace(/[0-9]/g, '');
+        document.execCommand('insertText', false, cleaned);
+      });
+    });
+
+    // Email Input Live Validation
+    if (custEmailInput) {
+      custEmailInput.addEventListener('input', () => {
+        const val = custEmailInput.value.trim();
+        if (val.length > 0) {
+          if (isValidEmail(val)) {
+            custEmailInput.classList.remove('is-invalid');
+            custEmailInput.classList.add('is-valid');
+          } else {
+            custEmailInput.classList.add('is-invalid');
+            custEmailInput.classList.remove('is-valid');
+          }
+        } else {
+          custEmailInput.classList.remove('is-invalid', 'is-valid');
+        }
+      });
+    }
+
+    // Phone Input: Disallow Letters
     if (custPhoneInput) {
       custPhoneInput.setAttribute('inputmode', 'tel');
       custPhoneInput.addEventListener('keydown', (e) => {
         const allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab', 'Enter', 'Escape', 'Home', 'End'];
         if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+        if (/[a-zA-Z]/.test(e.key)) {
+          e.preventDefault();
+          return;
+        }
         if (!/[0-9+\s()\-]/i.test(e.key)) {
           e.preventDefault();
         }
@@ -245,6 +337,17 @@
         const cleaned = custPhoneInput.value.replace(/[^0-9+\s()\-]/g, '');
         if (custPhoneInput.value !== cleaned) {
           custPhoneInput.value = cleaned;
+        }
+        if (custPhoneInput.value.trim().length > 0) {
+          if (isValidPhone(custPhoneInput.value)) {
+            custPhoneInput.classList.remove('is-invalid');
+            custPhoneInput.classList.add('is-valid');
+          } else {
+            custPhoneInput.classList.add('is-invalid');
+            custPhoneInput.classList.remove('is-valid');
+          }
+        } else {
+          custPhoneInput.classList.remove('is-invalid', 'is-valid');
         }
       });
       custPhoneInput.addEventListener('paste', (e) => {
@@ -311,21 +414,20 @@
       const slotTime = document.querySelector('#slotTime')?.value || 'Morning Bay (9:00 AM)';
       const notes = document.querySelector('#custNotes')?.value.trim() || 'No special instructions.';
 
-      if (!name) {
-        showAlert('Please enter your full name.', 'error');
+      if (!name || !isValidName(name)) {
+        showAlert('Please enter a valid full name (minimum 2 letters, numbers not allowed).', 'error');
         document.querySelector('#custName')?.focus();
         return;
       }
 
-      if (!email || !email.includes('@')) {
-        showAlert('Please enter a valid email address.', 'error');
+      if (!email || !isValidEmail(email)) {
+        showAlert('Please enter a valid email address (e.g. client@domain.com).', 'error');
         document.querySelector('#custEmail')?.focus();
         return;
       }
 
-      const phoneDigits = phone ? phone.replace(/\D/g, '') : '';
-      if (!phone || phoneDigits.length < 7 || phoneDigits.length > 15) {
-        showAlert('Please enter a valid contact phone number with 7-15 digits.', 'error');
+      if (!phone || !isValidPhone(phone)) {
+        showAlert('Please enter a valid contact phone number without letters (7-15 digits).', 'error');
         document.querySelector('#custPhone')?.focus();
         return;
       }
@@ -356,8 +458,8 @@
           document.querySelector('#cardNum')?.focus();
           return;
         }
-        if (!cardHolder) {
-          showAlert('Please enter the cardholder name.', 'error');
+        if (!cardHolder || !isValidName(cardHolder)) {
+          showAlert('Please enter a valid cardholder name (minimum 2 letters, numbers not allowed).', 'error');
           document.querySelector('#cardHolder')?.focus();
           return;
         }

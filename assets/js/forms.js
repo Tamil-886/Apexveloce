@@ -76,9 +76,9 @@
         }
       });
 
-      // Update progress line fill
+      // Update progress line fill (centers from 12.5% to 87.5% across 4 steps)
       if (progressLineFill) {
-        const percentage = ((currentStep - 1) / (totalSteps - 1)) * 90;
+        const percentage = ((currentStep - 1) / (totalSteps - 1)) * 75;
         progressLineFill.style.width = percentage + '%';
       }
 
@@ -95,17 +95,96 @@
       });
     });
 
-    // Phone Helper Utilities
+    // Validation Helper Utilities
+    function isValidName(val) {
+      if (!val || typeof val !== 'string') return false;
+      const trimmed = val.trim();
+      if (trimmed.length < 2) return false;
+      if (/\d/.test(trimmed)) return false; // Strictly reject numbers
+      if (!/^[a-zA-Z\u00C0-\u00FF\s'.-]{2,60}$/.test(trimmed)) return false;
+      const letters = (trimmed.match(/[a-zA-Z\u00C0-\u00FF]/g) || []).length;
+      return letters >= 2;
+    }
+
+    function isValidEmail(val) {
+      if (!val || typeof val !== 'string') return false;
+      const trimmed = val.trim();
+      if (trimmed.length < 5 || trimmed.length > 254) return false;
+      const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_\`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
+      return emailRegex.test(trimmed);
+    }
+
     function sanitizePhone(val) {
       return (val || '').replace(/[^0-9+\s()\-]/g, '');
     }
 
     function isValidPhone(val) {
-      if (!val) return false;
-      const digits = val.replace(/\D/g, '');
-      return digits.length >= 7 && digits.length <= 15;
+      if (!val || typeof val !== 'string') return false;
+      const trimmed = val.trim();
+      if (/[a-zA-Z]/.test(trimmed)) return false; // Strictly reject alphabetic characters
+      if (!/^[0-9+\s()\-]+$/.test(trimmed)) return false;
+      const digits = trimmed.replace(/\D/g, '');
+      if (digits.length < 7 || digits.length > 15) return false;
+      if ((trimmed.match(/\+/g) || []).length > 1) return false;
+      if (trimmed.includes('+') && !trimmed.startsWith('+')) return false;
+      return true;
     }
 
+    // Expose helpers globally
+    window.isValidName = isValidName;
+    window.isValidEmail = isValidEmail;
+    window.isValidPhone = isValidPhone;
+
+    // Full Name Restriction: Disallow Numbers
+    function attachNameRestriction(input) {
+      if (!input || input.dataset.nameRestricted) return;
+      input.dataset.nameRestricted = 'true';
+
+      input.addEventListener('keydown', (e) => {
+        const allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab', 'Enter', 'Escape', 'Home', 'End'];
+        if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+        if (/[0-9]/.test(e.key)) {
+          e.preventDefault();
+          if (window.showApexToast && !input.dataset.toastShown) {
+            input.dataset.toastShown = 'true';
+            window.showApexToast('Numbers are not allowed in the Name field.', 'warning');
+            setTimeout(() => { delete input.dataset.toastShown; }, 2500);
+          }
+        }
+      });
+
+      input.addEventListener('input', () => {
+        const cleaned = input.value.replace(/[0-9]/g, '');
+        if (input.value !== cleaned) {
+          input.value = cleaned;
+          if (window.showApexToast && !input.dataset.toastShown) {
+            input.dataset.toastShown = 'true';
+            window.showApexToast('Numbers are not allowed in the Name field.', 'warning');
+            setTimeout(() => { delete input.dataset.toastShown; }, 2500);
+          }
+        }
+        if (input.value.trim().length > 0) {
+          if (isValidName(input.value)) {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+          } else {
+            input.classList.add('is-invalid');
+            input.classList.remove('is-valid');
+          }
+        } else {
+          input.classList.remove('is-invalid', 'is-valid');
+        }
+      });
+
+      input.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const text = (e.clipboardData || window.clipboardData).getData('text');
+        const cleaned = text.replace(/[0-9]/g, '');
+        document.execCommand('insertText', false, cleaned);
+      });
+    }
+
+    // Phone Restriction: Disallow Alphabetic Characters
     function attachPhoneRestriction(input) {
       if (!input || input.dataset.phoneRestricted) return;
       input.dataset.phoneRestricted = 'true';
@@ -114,15 +193,41 @@
       input.addEventListener('keydown', (e) => {
         const allowed = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab', 'Enter', 'Escape', 'Home', 'End'];
         if (allowed.includes(e.key) || e.ctrlKey || e.metaKey) return;
+        if (/[a-zA-Z]/.test(e.key)) {
+          e.preventDefault();
+          if (window.showApexToast && !input.dataset.toastShown) {
+            input.dataset.toastShown = 'true';
+            window.showApexToast('Letters are not allowed in the Phone field.', 'warning');
+            setTimeout(() => { delete input.dataset.toastShown; }, 2500);
+          }
+          return;
+        }
         if (!/[0-9+\s()\-]/i.test(e.key)) {
           e.preventDefault();
         }
       });
 
       input.addEventListener('input', () => {
-        const cleaned = sanitizePhone(input.value);
-        if (input.value !== cleaned) {
+        const original = input.value;
+        const cleaned = sanitizePhone(original);
+        if (original !== cleaned) {
           input.value = cleaned;
+          if (/[a-zA-Z]/.test(original) && window.showApexToast && !input.dataset.toastShown) {
+            input.dataset.toastShown = 'true';
+            window.showApexToast('Letters are not allowed in the Phone field.', 'warning');
+            setTimeout(() => { delete input.dataset.toastShown; }, 2500);
+          }
+        }
+        if (input.value.trim().length > 0) {
+          if (isValidPhone(input.value)) {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+          } else {
+            input.classList.add('is-invalid');
+            input.classList.remove('is-valid');
+          }
+        } else {
+          input.classList.remove('is-invalid', 'is-valid');
         }
       });
 
@@ -134,24 +239,73 @@
       });
     }
 
-    // Attach to all phone inputs on page
-    document.querySelectorAll('input[type="tel"], input[name*="phone"], input[id*="phone"]').forEach(attachPhoneRestriction);
+    // Email Live Validation Feedback
+    function attachEmailValidation(input) {
+      if (!input || input.dataset.emailValidated) return;
+      input.dataset.emailValidated = 'true';
+      input.addEventListener('input', () => {
+        const val = input.value.trim();
+        if (val.length > 0) {
+          if (isValidEmail(val)) {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+          } else {
+            input.classList.add('is-invalid');
+            input.classList.remove('is-valid');
+          }
+        } else {
+          input.classList.remove('is-invalid', 'is-valid');
+        }
+      });
+    }
+
+    // Attach to form inputs on page
+    document.querySelectorAll('input[name*="name"], input[id*="name"], input[id*="Name"]').forEach(attachNameRestriction);
+    document.querySelectorAll('input[type="tel"], input[name*="phone"], input[id*="phone"], input[id*="Phone"]').forEach(attachPhoneRestriction);
+    document.querySelectorAll('input[type="email"], input[name*="email"], input[id*="email"]').forEach(attachEmailValidation);
 
     // Step Validation Function
     function validateStep(step) {
       if (!wizardForm) return true;
 
       if (step === 1) {
-        const name = wizardForm.querySelector('[name="client_name"]')?.value.trim();
-        const email = wizardForm.querySelector('[name="client_email"]')?.value.trim();
-        const phone = wizardForm.querySelector('[name="client_phone"]')?.value.trim();
-        if (!name || !email || !phone) {
-          window.showApexToast('Please complete your Name, Email, and Phone number.', 'error');
+        const nameInput = wizardForm.querySelector('[name="client_name"]');
+        const emailInput = wizardForm.querySelector('[name="client_email"]');
+        const phoneInput = wizardForm.querySelector('[name="client_phone"]');
+        const name = nameInput?.value.trim();
+        const email = emailInput?.value.trim();
+        const phone = phoneInput?.value.trim();
+
+        if (!name) {
+          window.showApexToast('Please enter your full name.', 'error');
+          nameInput?.focus();
+          return false;
+        }
+        if (!isValidName(name)) {
+          window.showApexToast('Please enter a valid full name (minimum 2 letters, numbers not allowed).', 'error');
+          nameInput?.focus();
+          return false;
+        }
+
+        if (!email) {
+          window.showApexToast('Please enter your email address.', 'error');
+          emailInput?.focus();
+          return false;
+        }
+        if (!isValidEmail(email)) {
+          window.showApexToast('Please enter a valid email address (e.g. client@domain.com).', 'error');
+          emailInput?.focus();
+          return false;
+        }
+
+        if (!phone) {
+          window.showApexToast('Please enter your contact phone number.', 'error');
+          phoneInput?.focus();
           return false;
         }
         if (!isValidPhone(phone)) {
-          window.showApexToast('Please enter a valid numeric contact phone number (7-15 digits).', 'error');
-          wizardForm.querySelector('[name="client_phone"]')?.focus();
+          window.showApexToast('Please enter a valid phone number without letters (7-15 digits).', 'error');
+          phoneInput?.focus();
           return false;
         }
       } else if (step === 2) {
@@ -359,23 +513,42 @@
       wizardForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const name = wizardForm.querySelector('[name="client_name"]')?.value.trim();
-        const email = wizardForm.querySelector('[name="client_email"]')?.value.trim();
-        const phone = wizardForm.querySelector('[name="client_phone"]')?.value.trim();
+        const nameInput = wizardForm.querySelector('[name="client_name"]');
+        const emailInput = wizardForm.querySelector('[name="client_email"]');
+        const phoneInput = wizardForm.querySelector('[name="client_phone"]');
+        const name = nameInput?.value.trim();
+        const email = emailInput?.value.trim();
+        const phone = phoneInput?.value.trim();
         const make = wizardForm.querySelector('[name="vehicle_make"]')?.value.trim();
         const model = wizardForm.querySelector('[name="vehicle_model"]')?.value.trim();
         const year = wizardForm.querySelector('[name="vehicle_year"]')?.value.trim();
         const notes = wizardForm.querySelector('[name="project_notes"]')?.value.trim();
         const preferredDate = wizardForm.querySelector('[name="preferred_date"]')?.value;
 
-        if (!name || !email || !phone || !make || !model) {
-          window.showApexToast('Please complete all required fields across the steps.', 'error');
+        if (!name || !isValidName(name)) {
+          window.showApexToast('Please enter a valid full name (minimum 2 letters, numbers not allowed).', 'error');
+          if (typeof goToStep === 'function') goToStep(1);
+          nameInput?.focus();
           return;
         }
 
-        if (!isValidPhone(phone)) {
-          window.showApexToast('Please enter a valid numeric contact phone number (7-15 digits).', 'error');
-          wizardForm.querySelector('[name="client_phone"]')?.focus();
+        if (!email || !isValidEmail(email)) {
+          window.showApexToast('Please enter a valid email address (e.g. client@domain.com).', 'error');
+          if (typeof goToStep === 'function') goToStep(1);
+          emailInput?.focus();
+          return;
+        }
+
+        if (!phone || !isValidPhone(phone)) {
+          window.showApexToast('Please enter a valid phone number without letters (7-15 digits).', 'error');
+          if (typeof goToStep === 'function') goToStep(1);
+          phoneInput?.focus();
+          return;
+        }
+
+        if (!make || !model) {
+          window.showApexToast('Please specify vehicle Make and Model.', 'error');
+          if (typeof goToStep === 'function') goToStep(2);
           return;
         }
 
@@ -413,6 +586,7 @@
 
         // Reset wizard
         wizardForm.reset();
+        wizardForm.querySelectorAll('.is-valid, .is-invalid').forEach((el) => el.classList.remove('is-valid', 'is-invalid'));
         disciplineCards.forEach((c) => c.classList.remove('selected'));
         budgetCards.forEach((c, idx) => {
           if (idx === 1) c.classList.add('selected');
@@ -443,6 +617,10 @@
         e.preventDefault();
         const clientPhone = prompt('Enter your phone or WhatsApp number for an immediate 60-second callback:');
         if (clientPhone && clientPhone.trim()) {
+          if (!isValidPhone(clientPhone)) {
+            window.showApexToast('Please enter a valid numeric phone number without letters (7-15 digits).', 'error');
+            return;
+          }
           window.showApexToast('Callback request queued for ' + clientPhone + '. An Apex specialist is dialing...', 'success');
         }
       });
@@ -451,15 +629,19 @@
     // =========================================================================
     // 9. Quick Newsletter Subscription
     // =========================================================================
-    const subscribeForms = document.querySelectorAll('.subscribe-form');
+    const subscribeForms = document.querySelectorAll('.subscribe-form, .footer-newsletter-form');
     subscribeForms.forEach((form) => {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const emailInput = form.querySelector('input[type="email"]');
-        if (emailInput && emailInput.value.trim()) {
-          window.showApexToast('Subscribed to VIP Studio announcements & private build releases!', 'success');
-          form.reset();
+        const emailInput = form.querySelector('input[type="email"], .footer-newsletter-input');
+        const val = emailInput ? emailInput.value.trim() : '';
+        if (!isValidEmail(val)) {
+          window.showApexToast('Please enter a valid email address (e.g. client@domain.com).', 'error');
+          if (emailInput) emailInput.focus();
+          return;
         }
+        window.showApexToast('Subscribed to VIP Studio announcements & private build releases!', 'success');
+        form.reset();
       });
     });
 

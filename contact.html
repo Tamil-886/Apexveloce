@@ -19,7 +19,6 @@
     }
     
     /* Disable all movement, jumping & rotation on cards, icons, buttons */
-    .pricing-sticker,
     .status-dot-active,
     .badge,
     .badge-primary,
@@ -34,67 +33,39 @@
     .discipline-card,
     .budget-tier-card,
     .contact-pill-btn,
+    .wizard-step-circle,
     .card {
       animation: none !important;
       -webkit-animation: none !important;
       transform: none !important;
     }
 
-    /* Convert tilted glowing stickers into clean, elegant flat badges */
-    .pricing-sticker {
-      position: absolute !important;
-      top: 1.25rem !important;
-      right: 1.25rem !important;
-      transform: none !important;
-      box-shadow: none !important;
-      border-style: solid !important;
-      border-width: 1px !important;
-      padding: 0.25rem 0.65rem !important;
-      font-size: 0.7rem !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.04em !important;
-      border-radius: var(--radius-full) !important;
-      transition: none !important;
+    .justify-end {
+      justify-content: flex-end !important;
     }
 
-    .pricing-sticker:hover {
-      transform: none !important;
-      box-shadow: none !important;
+    /* Equal height and bottom alignment for consultation wizard and summary card */
+    .wizard-main-container {
+      align-items: stretch !important;
     }
-
-    .sticker-neon-red {
-      background: rgba(255, 42, 84, 0.12) !important;
-      color: var(--primary) !important;
-      border-color: rgba(255, 42, 84, 0.3) !important;
-      box-shadow: none !important;
+    .consultation-wizard-card,
+    .live-summary-card {
+      display: flex !important;
+      flex-direction: column !important;
+      height: 100% !important;
     }
-
-    .sticker-emerald {
-      background: rgba(16, 185, 129, 0.12) !important;
-      color: #10B981 !important;
-      border-color: rgba(16, 185, 129, 0.3) !important;
-      box-shadow: none !important;
+    #consultationForm {
+      display: flex !important;
+      flex-direction: column !important;
+      flex-grow: 1 !important;
     }
-
-    .sticker-cyan {
-      background: rgba(0, 229, 255, 0.12) !important;
-      color: var(--secondary) !important;
-      border-color: rgba(0, 229, 255, 0.3) !important;
-      box-shadow: none !important;
+    .wizard-pane.active {
+      display: flex !important;
+      flex-direction: column !important;
+      flex-grow: 1 !important;
     }
-
-    .sticker-gold {
-      background: rgba(212, 175, 55, 0.12) !important;
-      color: var(--accent-gold) !important;
-      border-color: rgba(212, 175, 55, 0.3) !important;
-      box-shadow: none !important;
-    }
-
-    .sticker-hologram {
-      background: rgba(168, 85, 247, 0.12) !important;
-      color: #A855F7 !important;
-      border-color: rgba(168, 85, 247, 0.3) !important;
-      box-shadow: none !important;
+    .wizard-pane > div:last-child {
+      margin-top: auto !important;
     }
 
     /* Clean Card Hover States without jumping, rotating or glowing halos */
@@ -279,7 +250,6 @@
       <div class="contact-channel-grid">
         <!-- Channel 1: Hotline -->
         <div class="contact-channel-card">
-          <div class="pricing-sticker sticker-neon-red" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-fire"></i> DIRECT HOTLINE</div>
           <div>
             <div class="channel-icon-wrap" style="color:var(--primary); background:rgba(255,42,84,0.1); border-color:rgba(255,42,84,0.25);"><i class="fa-solid fa-phone-volume"></i></div>
             <div class="channel-status-pill" style="color:var(--primary); background:rgba(255,42,84,0.1); border-color:rgba(255,42,84,0.25);"><span class="status-dot-active" style="background:var(--primary);"></span> OPERATORS ONLINE</div>
@@ -295,7 +265,6 @@
 
         <!-- Channel 2: WhatsApp -->
         <div class="contact-channel-card">
-          <div class="pricing-sticker sticker-emerald" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-comment-dots"></i> FAST QUOTES</div>
           <div>
             <div class="channel-icon-wrap" style="color:#10B981; background:rgba(16,185,129,0.1); border-color:rgba(16,185,129,0.25);"><i class="fa-brands fa-whatsapp"></i></div>
             <div class="channel-status-pill" style="color:#10B981; background:rgba(16,185,129,0.1); border-color:rgba(16,185,129,0.25);"><span class="status-dot-active"></span> AVG RESPONSE &lt; 5 MINS</div>
@@ -310,7 +279,6 @@
 
         <!-- Channel 3: CAD & RFP Desk -->
         <div class="contact-channel-card">
-          <div class="pricing-sticker sticker-cyan" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-bezier-curve"></i> 3D CAD PROPOSALS</div>
           <div>
             <div class="channel-icon-wrap" style="color:var(--secondary); background:rgba(0,229,255,0.1); border-color:rgba(0,229,255,0.25);"><i class="fa-solid fa-envelope-open-text"></i></div>
             <div class="channel-status-pill" style="color:var(--secondary); background:rgba(0,229,255,0.1); border-color:rgba(0,229,255,0.25);"><span class="status-dot-active" style="background:var(--secondary);"></span> SAME-DAY PROPOSALS</div>
@@ -325,7 +293,6 @@
 
         <!-- Channel 4: Beverly Hills Cleanroom -->
         <div class="contact-channel-card">
-          <div class="pricing-sticker sticker-gold" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-truck-ramp-box"></i> WHITE-GLOVE</div>
           <div>
             <div class="channel-icon-wrap" style="color:var(--accent-gold); background:rgba(212,175,55,0.1); border-color:rgba(212,175,55,0.25);"><i class="fa-solid fa-location-dot"></i></div>
             <div class="channel-status-pill" style="color:var(--accent-gold); background:rgba(212,175,55,0.1); border-color:rgba(212,175,55,0.25);"><span class="status-dot-active" style="background:var(--accent-gold);"></span> 50 STATES ACTIVE</div>
@@ -344,7 +311,7 @@
   <!-- ==================== SECTION 2: 4-STEP INTERACTIVE CONSULTATION WIZARD ==================== -->
   <section class="section-padding bg-alt" id="wizardSection" style="padding-top:4rem; padding-bottom:5rem;">
     <div class="container">
-      <div class="section-header text-center mb-4">
+      <div class="section-header text-center mb-5">
         <span class="badge badge-primary mb-2"><i class="fa-solid fa-wand-magic-sparkles"></i> INTERACTIVE 4-STEP CONFIGURATOR</span>
         <h2 style="font-size:clamp(1.5rem, 3.8vw, 2.9rem);">Bespoke Customization Brief</h2>
         <p style="max-width:700px; margin:0 auto; color:var(--text-muted);">Configure your vehicle transformation scope, receive an instant itemized summary, and reserve master technician bay hours.</p>
@@ -377,28 +344,26 @@
           <form id="consultationForm">
             <!-- STEP 1: VIP Identity -->
             <div class="wizard-pane active" data-step="1">
-              <div class="d-flex align-center justify-between mb-3" style="gap:1rem; flex-wrap:wrap;">
-                <div>
-                  <span class="badge badge-primary mb-1" style="font-size:0.72rem; padding:0.25rem 0.7rem;">STAGE 01 OF 04</span>
-                  <h3 style="margin:0; font-size:1.45rem; font-weight:800; color:var(--text-main);">Client &amp; Contact Identity</h3>
-                </div>
+              <div class="d-flex align-center justify-between mb-2" style="gap:1rem; flex-wrap:wrap;">
+                <span class="badge badge-primary" style="font-size:0.72rem; padding:0.25rem 0.7rem;">STAGE 01 OF 04</span>
                 <span class="badge-spec" style="padding:0.35rem 0.85rem; font-size:0.78rem;"><i class="fa-solid fa-lock" style="color:#10B981;"></i> 256-Bit Encrypted</span>
               </div>
+              <h3 style="margin:0 0 0.4rem 0; font-size:1.45rem; font-weight:800; color:var(--text-main);">Client &amp; Contact Identity</h3>
               <p class="mb-4" style="font-size:0.9rem; color:var(--text-muted); line-height:1.55;">Please provide your primary contact details so our concierge team can route your brief to the appropriate specialist.</p>
               <div class="grid-2 gap-3 mb-3">
                 <div class="form-group mb-0">
                   <label class="form-label" style="font-size:0.84rem; font-weight:600; margin-bottom:0.4rem; display:block;">Full Name *</label>
-                  <input type="text" name="client_name" class="form-control" placeholder="e.g. Alexander Sterling" required>
+                  <input type="text" name="client_name" class="form-control" placeholder="e.g. Alexander Sterling" minlength="2" maxlength="60" pattern="[a-zA-ZÀ-ÿ\s'.-]{2,60}" title="Minimum 2 characters. Only letters, spaces, hyphens, and apostrophes are allowed (numbers not allowed)." required>
                 </div>
                 <div class="form-group mb-0">
                   <label class="form-label" style="font-size:0.84rem; font-weight:600; margin-bottom:0.4rem; display:block;">Email Address *</label>
-                  <input type="email" name="client_email" class="form-control" placeholder="alexander@domain.com" required>
+                  <input type="email" name="client_email" class="form-control" placeholder="alexander@domain.com" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address (e.g. alexander@domain.com)." required>
                 </div>
               </div>
               <div class="grid-2 gap-3 mb-4">
                 <div class="form-group mb-0">
                   <label class="form-label" style="font-size:0.84rem; font-weight:600; margin-bottom:0.4rem; display:block;">Phone / WhatsApp *</label>
-                  <input type="tel" name="client_phone" class="form-control" placeholder="+1 (555) 392-8812" inputmode="tel" pattern="[0-9+\s()\-]*" required>
+                  <input type="tel" name="client_phone" class="form-control" placeholder="+1 (555) 392-8812" inputmode="tel" pattern="[\+]?[0-9\s()\-]{7,20}" title="Please enter a valid phone number with 7-15 digits. Letters are not allowed." required>
                 </div>
                 <div class="form-group mb-0">
                   <label class="form-label" style="font-size:0.84rem; font-weight:600; margin-bottom:0.4rem; display:block;">Preferred Contact Method</label>
@@ -410,20 +375,18 @@
                   </select>
                 </div>
               </div>
-              <div class="d-flex justify-end mt-4 pt-2">
+              <div class="d-flex justify-end mt-4 pt-2" style="justify-content:flex-end;">
                 <button type="button" class="btn btn-primary" data-wizard-next style="padding:0.75rem 1.75rem; font-weight:700;"><span>Continue to Vehicle Specs</span> <i class="fa-solid fa-arrow-right"></i></button>
               </div>
             </div>
 
             <!-- STEP 2: Vehicle Specs -->
             <div class="wizard-pane" data-step="2">
-              <div class="d-flex align-center justify-between mb-3" style="gap:1rem; flex-wrap:wrap;">
-                <div>
-                  <span class="badge badge-primary mb-1" style="font-size:0.72rem; padding:0.25rem 0.7rem;">STAGE 02 OF 04</span>
-                  <h3 style="margin:0; font-size:1.45rem; font-weight:800; color:var(--text-main);">Vehicle Portfolio &amp; Condition</h3>
-                </div>
+              <div class="d-flex align-center justify-between mb-2" style="gap:1rem; flex-wrap:wrap;">
+                <span class="badge badge-primary" style="font-size:0.72rem; padding:0.25rem 0.7rem;">STAGE 02 OF 04</span>
                 <span class="badge-spec" style="padding:0.35rem 0.85rem; font-size:0.78rem;"><i class="fa-solid fa-car"></i> Exotic &amp; Luxury Ready</span>
               </div>
+              <h3 style="margin:0 0 0.4rem 0; font-size:1.45rem; font-weight:800; color:var(--text-main);">Vehicle Portfolio &amp; Condition</h3>
               <p class="mb-4" style="font-size:0.9rem; color:var(--text-muted); line-height:1.55;">Specify your vehicle details to allow precise panel measurements and CAD pattern indexing.</p>
               <div class="grid-3 gap-2 mb-3">
                 <div class="form-group mb-0">
@@ -467,13 +430,11 @@
 
             <!-- STEP 3: Disciplines -->
             <div class="wizard-pane" data-step="3">
-              <div class="d-flex align-center justify-between mb-3" style="gap:1rem; flex-wrap:wrap;">
-                <div>
-                  <span class="badge badge-primary mb-1" style="font-size:0.72rem; padding:0.25rem 0.7rem;">STAGE 03 OF 04</span>
-                  <h3 style="margin:0; font-size:1.45rem; font-weight:800; color:var(--text-main);">Customization Scope &amp; Disciplines</h3>
-                </div>
+              <div class="d-flex align-center justify-between mb-2" style="gap:1rem; flex-wrap:wrap;">
+                <span class="badge badge-primary" style="font-size:0.72rem; padding:0.25rem 0.7rem;">STAGE 03 OF 04</span>
                 <span class="badge-spec" style="padding:0.35rem 0.85rem; font-size:0.78rem;"><i class="fa-solid fa-wand-magic-sparkles"></i> Multi-Select</span>
               </div>
+              <h3 style="margin:0 0 0.4rem 0; font-size:1.45rem; font-weight:800; color:var(--text-main);">Customization Scope &amp; Disciplines</h3>
               <p class="mb-4" style="font-size:0.9rem; color:var(--text-muted); line-height:1.55;">Select one or more services to combine into a seamless multi-craft transformation package.</p>
               <div class="service-discipline-grid mb-4">
                 <div class="discipline-card selected" data-discipline="Color Change Wrap">
@@ -539,13 +500,11 @@
 
             <!-- STEP 4: Budget & Schedule -->
             <div class="wizard-pane" data-step="4">
-              <div class="d-flex align-center justify-between mb-3" style="gap:1rem; flex-wrap:wrap;">
-                <div>
-                  <span class="badge badge-primary mb-1" style="font-size:0.72rem; padding:0.25rem 0.7rem;">STAGE 04 OF 04</span>
-                  <h3 style="margin:0; font-size:1.45rem; font-weight:800; color:var(--text-main);">Budget, Schedule &amp; Photo Upload</h3>
-                </div>
+              <div class="d-flex align-center justify-between mb-2" style="gap:1rem; flex-wrap:wrap;">
+                <span class="badge badge-primary" style="font-size:0.72rem; padding:0.25rem 0.7rem;">STAGE 04 OF 04</span>
                 <span class="badge-spec" style="padding:0.35rem 0.85rem; font-size:0.78rem;"><i class="fa-solid fa-cloud-arrow-up"></i> Photo Inspection</span>
               </div>
+              <h3 style="margin:0 0 0.4rem 0; font-size:1.45rem; font-weight:800; color:var(--text-main);">Budget, Schedule &amp; Photo Upload</h3>
               <p class="mb-4" style="font-size:0.9rem; color:var(--text-muted); line-height:1.55;">Select your target investment bracket and attach photos of your car for millimetric estimation.</p>
               <label class="form-label mb-2" style="font-size:0.84rem; font-weight:600; display:block;">Estimated Investment Tier</label>
               <div class="budget-tier-grid mb-4">
@@ -639,20 +598,12 @@
             <span class="summary-label"><i class="fa-solid fa-clock-rotate-left"></i> Est. Turnaround</span>
             <span class="summary-val" id="summaryTimeline" style="color:#10B981;">4 - 6 Studio Days</span>
           </div>
-          <div class="assigned-tech-box">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Master Technician" class="tech-avatar">
-            <div>
-              <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; letter-spacing:0.04em;">Assigned Lead Master</div>
-              <strong style="font-size:0.92rem; color:var(--text-main); display:block; margin:0.1rem 0;">Marcus Vance</strong>
-              <div style="font-size:0.78rem; color:var(--primary); font-weight:600;">Master Certified XPEL &amp; Avery</div>
-            </div>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:0.5rem; font-size:0.82rem; color:var(--text-muted); line-height:1.4;">
+          <div class="mt-4" style="display:flex; flex-direction:column; gap:0.6rem; font-size:0.82rem; color:var(--text-muted); line-height:1.4;">
             <div class="d-flex align-center gap-2"><i class="fa-solid fa-circle-check" style="color:#10B981; font-size:0.85rem;"></i> <span>Guaranteed Response within 60 Minutes</span></div>
             <div class="d-flex align-center gap-2"><i class="fa-solid fa-circle-check" style="color:#10B981; font-size:0.85rem;"></i> <span>Strict Non-Disclosure (NDA) Protection</span></div>
             <div class="d-flex align-center gap-2"><i class="fa-solid fa-circle-check" style="color:#10B981; font-size:0.85rem;"></i> <span>10-Year Material &amp; Craftsmanship Warranty</span></div>
           </div>
-          <div class="mt-3 pt-3" style="border-top:1px solid var(--border-subtle);">
+          <div class="mt-auto pt-3" style="border-top:1px solid var(--border-subtle); margin-top: auto !important;">
             <a href="tel:+18005559827" class="btn btn-secondary btn-sm" style="width:100%; justify-content:center; font-weight:700;"><i class="fa-solid fa-phone"></i> <span>Direct Hotline: (800) 555-WRAP</span></a>
           </div>
         </aside>
@@ -677,7 +628,6 @@
           <div style="position:relative; height:300px; overflow:hidden;">
             <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80" alt="Apex Cleanroom Laboratory" style="width:100%; height:100%; object-fit:cover;">
             <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,13,18,0.2) 0%, rgba(11,13,18,0.88) 100%);"></div>
-            <div class="pricing-sticker sticker-gold" style="top:1.25rem; left:1.25rem;"><i class="fa-solid fa-award"></i> BEVERLY HILLS FLAGSHIP</div>
             <div style="position:absolute; bottom:1.25rem; left:1.5rem; right:1.5rem;">
               <span class="badge badge-primary mb-2" style="font-size:0.75rem; padding:0.25rem 0.75rem;">AIR-PURIFIED LABORATORY</span>
               <h3 style="color:#FFFFFF; margin:0; font-size:1.35rem; font-weight:800;">ISO-7 Dust-Free Cleanroom Bays</h3>
@@ -698,8 +648,6 @@
 
         <!-- Right: Bay Reservation -->
         <div class="card" style="padding:2.25rem; border-color:var(--border-card); display:flex; flex-direction:column; justify-content:space-between; position:relative;">
-          <div class="pricing-sticker sticker-cyan" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-calendar-check"></i> VIP ACCESS</div>
-          
           <div>
             <span class="badge badge-primary mb-2" style="font-size:0.75rem; padding:0.3rem 0.8rem;"><i class="fa-solid fa-calendar-check"></i> STUDIO VISIT SCHEDULER</span>
             <h3 class="mb-2" style="font-size:1.4rem; font-weight:800; color:var(--text-main);">Reserve an In-Person Design Session</h3>
@@ -708,7 +656,7 @@
             <label class="form-label mb-2" style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim); display:flex; align-items:center; gap:0.4rem;">
               <i class="fa-regular fa-clock" style="color:var(--primary);"></i> Preferred Visit Window
             </label>
-            <div class="d-grid gap-2 mb-3" style="grid-template-columns:repeat(2, 1fr);">
+            <div class="d-grid gap-2 mb-3 bay-slot-grid" style="grid-template-columns:repeat(2, 1fr);">
               <button type="button" class="btn btn-secondary btn-sm bay-slot-btn active" data-slot="Morning 9:00 AM" style="font-size:0.8rem; padding:0.55rem 0.75rem; justify-content:center;"><i class="fa-regular fa-sun"></i> Morning: 9:00 AM</button>
               <button type="button" class="btn btn-secondary btn-sm bay-slot-btn" data-slot="Midday 1:00 PM" style="font-size:0.8rem; padding:0.55rem 0.75rem; justify-content:center;"><i class="fa-solid fa-sun"></i> Midday: 1:00 PM</button>
               <button type="button" class="btn btn-secondary btn-sm bay-slot-btn" data-slot="Afternoon 4:30 PM" style="font-size:0.8rem; padding:0.55rem 0.75rem; justify-content:center;"><i class="fa-solid fa-cloud-sun"></i> Afternoon: 4:30 PM</button>
@@ -770,37 +718,31 @@
 
       <div class="vip-perks-grid">
         <div class="vip-perk-card">
-          <div class="pricing-sticker sticker-neon-red" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-shield"></i> 10-YR BACKED</div>
           <div class="vip-perk-icon" style="color:var(--primary); background:rgba(255,42,84,0.1); border-color:rgba(255,42,84,0.25);"><i class="fa-solid fa-certificate"></i></div>
           <h4>10-Year Global Warranty</h4>
           <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Guaranteed against yellowing, peeling, lifting, bubbling, or cracking backed directly by manufacturer warranties.</p>
         </div>
         <div class="vip-perk-card">
-          <div class="pricing-sticker sticker-emerald" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-bullseye"></i> 100% PAINT SAFE</div>
           <div class="vip-perk-icon" style="color:#10B981; background:rgba(16,185,129,0.1); border-color:rgba(16,185,129,0.25);"><i class="fa-solid fa-scissors"></i></div>
           <h4>Zero-Blade Cut Guarantee</h4>
           <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">We utilize knifeless tape and precision CAD plotter patterns. No razor blades ever touch your factory clearcoat.</p>
         </div>
         <div class="vip-perk-card">
-          <div class="pricing-sticker sticker-cyan" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-truck-fast"></i> DOOR-TO-DOOR</div>
           <div class="vip-perk-icon" style="color:var(--secondary); background:rgba(0,229,255,0.1); border-color:rgba(0,229,255,0.25);"><i class="fa-solid fa-truck-ramp-box"></i></div>
           <h4>Enclosed Exotic Transport</h4>
           <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Climate-controlled enclosed carriers with live GPS telemetry available across all 50 states and international airfreight.</p>
         </div>
         <div class="vip-perk-card">
-          <div class="pricing-sticker sticker-gold" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-user-secret"></i> 100% PRIVATE</div>
           <div class="vip-perk-icon" style="color:var(--accent-gold); background:rgba(212,175,55,0.1); border-color:rgba(212,175,55,0.25);"><i class="fa-solid fa-lock"></i></div>
           <h4>Strict NDA & Confidentiality</h4>
           <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Complete discretion for high-profile collectors, celebrities, and unreleased prototype vehicles with private bays.</p>
         </div>
         <div class="vip-perk-card">
-          <div class="pricing-sticker sticker-hologram" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-award"></i> MASTER LAB</div>
           <div class="vip-perk-icon" style="color:#A855F7; background:rgba(168,85,247,0.1); border-color:rgba(168,85,247,0.25);"><i class="fa-solid fa-medal"></i></div>
           <h4>XPEL & 3M Master Certified</h4>
           <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Every technician holds elite master installer credentials with a minimum of 8 years exclusive exotic experience.</p>
         </div>
         <div class="vip-perk-card">
-          <div class="pricing-sticker sticker-neon-red" style="top:1.25rem; right:1.25rem;"><i class="fa-solid fa-stopwatch"></i> ON-TIME SLA</div>
           <div class="vip-perk-icon" style="color:var(--primary); background:rgba(255,42,84,0.1); border-color:rgba(255,42,84,0.25);"><i class="fa-solid fa-hourglass-half"></i></div>
           <h4>Strict Turnaround SLA</h4>
           <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Clear delivery deadlines agreed upon upfront. We honor your time with exact scheduled vehicle release windows.</p>
@@ -881,7 +823,6 @@
   <section class="section-padding" style="padding-top:1rem; padding-bottom:5rem;">
     <div class="container">
       <div class="emergency-trackside-box text-center">
-        <div class="pricing-sticker sticker-neon-red" style="top:1.5rem; right:1.5rem;"><i class="fa-solid fa-bolt"></i> PRIORITY RESPONSE</div>
         <span class="badge badge-primary mb-2"><i class="fa-solid fa-flag-checkered"></i> TRACKSIDE & URGENT SUPPORT</span>
         <h2 style="font-size:clamp(1.4rem, 3.2vw, 2.5rem); margin-bottom:1rem;">Urgent Track Protection or Fast-Turnaround Build?</h2>
         <p style="max-width:680px; margin:0 auto 2rem auto; color:var(--text-muted); font-size:1.05rem;">Racing this weekend or preparing for an upcoming rally, rallye, or concours? Our rapid-response cleanroom team offers expedited 48-hour track armor application.</p>
@@ -990,12 +931,7 @@
     </div>
   </footer>
 
-  <!-- ==================== FLOATING STICKY CONCIERGE BAR ==================== -->
-  <div class="sticky-bottom-bar">
-    <a href="tel:+18005559827" class="sticky-bar-pill"><i class="fa-solid fa-phone" style="color:var(--primary);"></i> <span>+1 (800) 555-WRAP</span></a>
-    <a href="#wizardSection" class="sticky-bar-pill sticky-bar-cta"><i class="fa-solid fa-calendar-check"></i> <span>Book Studio Bay</span></a>
-    <button type="button" class="sticky-bar-cart cart-toggle-btn" aria-label="Open Cart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" style="display:none; position:absolute; top:-4px; right:-4px;">0</span></button>
-  </div>
+
 
   <script src="assets/js/theme.js"></script>
   <script src="assets/js/navigation.js"></script>

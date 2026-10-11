@@ -180,7 +180,7 @@
   <!-- ==================== SERVICE DETAILS BODY ==================== -->
   <section class="section-padding" style="padding-top:3.5rem;">
     <div class="container">
-      <div class="grid-2" style="grid-template-columns: 2fr 1fr; gap:3.5rem; align-items:start;">
+      <div class="grid-2 service-details-main-grid" style="grid-template-columns: 2fr 1fr; gap:3.5rem; align-items:start;">
         
         <!-- Main Content Area -->
         <div class="reveal active">
@@ -351,16 +351,16 @@
             <form id="consultationForm">
               <div class="form-group mb-2">
                 <label class="form-label" style="font-size:0.8rem;">Your Name *</label>
-                <input type="text" name="client_name" class="form-control" placeholder="e.g. John Wick" required>
+                <input type="text" name="client_name" class="form-control" placeholder="e.g. John Wick" minlength="2" maxlength="60" pattern="[a-zA-ZÀ-ÿ\s'.-]{2,60}" title="Minimum 2 characters. Only letters, spaces, hyphens, and apostrophes are allowed (numbers not allowed)." required>
               </div>
               <div class="grid-2 gap-2 mb-2">
                 <div class="form-group mb-0">
                   <label class="form-label" style="font-size:0.8rem;">Phone / WhatsApp *</label>
-                  <input type="tel" name="client_phone" class="form-control" placeholder="+1 (555) 000-0000" inputmode="tel" pattern="[0-9+\s()\-]*" required>
+                  <input type="tel" name="client_phone" class="form-control" placeholder="+1 (555) 000-0000" inputmode="tel" pattern="[\+]?[0-9\s()\-]{7,20}" title="Please enter a valid phone number with 7-15 digits. Letters are not allowed." required>
                 </div>
                 <div class="form-group mb-0">
                   <label class="form-label" style="font-size:0.8rem;">Email *</label>
-                  <input type="email" name="client_email" class="form-control" placeholder="client@domain.com" required>
+                  <input type="email" name="client_email" class="form-control" placeholder="client@domain.com" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address (e.g. client@domain.com)." required>
                 </div>
               </div>
               <div class="grid-2 gap-2 mb-2">
