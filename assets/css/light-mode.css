@@ -524,10 +524,98 @@ body.light-mode .wrap-collection-grid .service-card:hover {
 
 [data-theme="light"] .service-card .card-price,
 body.light-mode .service-card .card-price {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(15, 23, 42, 0.90) !important;
+  color: #FCD34D !important;
+  border: 1px solid rgba(252, 211, 77, 0.45) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Card badges over images retain high-contrast solid dark pill styling in light mode */
+[data-theme="light"] .service-card .card-badge,
+body.light-mode .service-card .card-badge,
+[data-theme="light"] .card-thumb .card-badge,
+body.light-mode .card-thumb .card-badge,
+[data-theme="light"] .badge.card-badge,
+body.light-mode .badge.card-badge,
+[data-theme="light"] .gallery-card-badge .badge,
+body.light-mode .gallery-card-badge .badge {
+  background: #0B0E14 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="light"] .card-thumb .card-badge.badge-cyan,
+body.light-mode .card-thumb .card-badge.badge-cyan,
+[data-theme="light"] .service-card .card-badge.badge-cyan,
+body.light-mode .service-card .card-badge.badge-cyan,
+[data-theme="light"] .badge.card-badge.badge-cyan,
+body.light-mode .badge.card-badge.badge-cyan,
+[data-theme="light"] .gallery-card-badge .badge.badge-cyan,
+body.light-mode .gallery-card-badge .badge.badge-cyan {
+  background: #061118 !important;
+  color: #00F0FF !important;
+  border: 1.5px solid #00D5EC !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 229, 255, 0.5) !important;
+}
+
+[data-theme="light"] .card-thumb .card-badge.badge-gold,
+body.light-mode .card-thumb .card-badge.badge-gold,
+[data-theme="light"] .service-card .card-badge.badge-gold,
+body.light-mode .service-card .card-badge.badge-gold,
+[data-theme="light"] .badge.card-badge.badge-gold,
+body.light-mode .badge.card-badge.badge-gold,
+[data-theme="light"] .gallery-card-badge .badge.badge-gold,
+body.light-mode .gallery-card-badge .badge.badge-gold {
+  background: #181307 !important;
+  color: #FFD25F !important;
+  border: 1.5px solid #F59E0B !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 8px rgba(245, 158, 11, 0.5) !important;
+}
+
+[data-theme="light"] .card-thumb .card-badge.badge-primary,
+body.light-mode .card-thumb .card-badge.badge-primary,
+[data-theme="light"] .service-card .card-badge.badge-primary,
+body.light-mode .service-card .card-badge.badge-primary,
+[data-theme="light"] .badge.card-badge.badge-primary,
+body.light-mode .badge.card-badge.badge-primary,
+[data-theme="light"] .gallery-card-badge .badge.badge-primary,
+body.light-mode .gallery-card-badge .badge.badge-primary {
+  background: #18070B !important;
+  color: #FF3B62 !important;
+  border: 1.5px solid #FF2A54 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 8px rgba(255, 42, 84, 0.5) !important;
+}
+
+/* Page Section Badges in Light Mode (high-contrast accessible tones on white backgrounds) */
+[data-theme="light"] .badge-cyan:not(.card-badge):not(.glider-counter-pill),
+body.light-mode .badge-cyan:not(.card-badge):not(.glider-counter-pill) {
+  background: rgba(2, 132, 199, 0.12) !important;
+  color: #0284C7 !important;
+  border: 1px solid rgba(2, 132, 199, 0.35) !important;
+  font-weight: 800;
+}
+
+[data-theme="light"] .badge-gold:not(.card-badge):not(.glider-counter-pill),
+body.light-mode .badge-gold:not(.card-badge):not(.glider-counter-pill) {
+  background: rgba(180, 83, 9, 0.12) !important;
   color: #B45309 !important;
-  border: 1px solid rgba(212, 175, 55, 0.4) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid rgba(180, 83, 9, 0.35) !important;
+  font-weight: 800;
+}
+
+[data-theme="light"] .badge-primary:not(.card-badge):not(.glider-counter-pill),
+body.light-mode .badge-primary:not(.card-badge):not(.glider-counter-pill) {
+  background: rgba(225, 29, 72, 0.12) !important;
+  color: #BE123C !important;
+  border: 1px solid rgba(225, 29, 72, 0.35) !important;
+  font-weight: 800;
+}
+
+[data-theme="light"] .badge-emerald:not(.card-badge):not(.glider-counter-pill),
+body.light-mode .badge-emerald:not(.card-badge):not(.glider-counter-pill) {
+  background: rgba(5, 150, 105, 0.12) !important;
+  color: #047857 !important;
+  border: 1px solid rgba(5, 150, 105, 0.35) !important;
+  font-weight: 800;
 }
 
 [data-theme="light"] .service-card .card-body h4,

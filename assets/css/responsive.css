@@ -1113,10 +1113,19 @@ p, h1, h2, h3, h4, h5, h6, a, span, label, td, th {
     gap: 1.25rem !important;
   }
 
-  .wrap-collection-grid .service-card {
-    grid-column: span 1 !important;
+  .wrap-collection-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .wrap-collection-grid .service-card,
+  .wrap-collection-grid .service-card:nth-child(5),
+  .wrap-collection-grid .service-card:nth-child(n) {
+    grid-column: 1 / -1 !important;
     max-width: 100% !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
     width: 100% !important;
   }
 
@@ -1514,13 +1523,16 @@ p, h1, h2, h3, h4, h5, h6, a, span, label, td, th {
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;
     width: 100% !important;
+    margin: 0 auto !important;
   }
 
-  .wrap-collection-grid .service-card {
-    grid-column: span 1 !important;
+  .wrap-collection-grid .service-card,
+  .wrap-collection-grid .service-card:nth-child(5),
+  .wrap-collection-grid .service-card:nth-child(n) {
+    grid-column: 1 / -1 !important;
     max-width: 100% !important;
     width: 100% !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
   }
 
   .service-card .card-footer {
@@ -1850,8 +1862,11 @@ p, h1, h2, h3, h4, h5, h6, a, span, label, td, th {
     line-height: 1.6 !important;
   }
 
-  .page-hero-badge-group {
+  .page-hero-badge-group,
+  .page-hero-banner .d-inline-flex {
     gap: 0.4rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     margin-bottom: 1rem !important;
   }
 }
